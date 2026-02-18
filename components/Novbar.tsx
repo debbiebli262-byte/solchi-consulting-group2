@@ -1,81 +1,85 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const navLinks = [
-    { name: 'דף ראשי', path: '/' },
+    { name: 'דף הבית', path: '/' },
     { name: 'אודות', path: '/about' },
-    { name: 'חטיבת החשמל', path: '/electricity' },
-    { name: 'מערכות מידע', path: '/it' },
+    { name: 'חטיבת חשמל', path: '/electricity' },
+    { name: 'מערכות מידע', path: '/is' }, 
     { name: 'צור קשר', path: '/contact' },
   ];
 
+  const isActive = (path: string) => location.pathname === path;
+  const logoUrl = '/logo.png'; 
+
   return (
-    <nav className="bg-slate-900 border-b border-slate-800 sticky top-0 z-50" dir="rtl">
+    <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-lg shadow-lg z-50 border-b border-blue-100/50" dir="rtl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex justify-between h-24 items-center">
           
-          {/* לוגו / שם האתר */}
+          {/* לוגו */}
           <div className="flex-shrink-0">
-            <Link to="/" className="text-white font-bold text-xl tracking-wider">
-              SOLCHI <span className="text-blue-500">GROUP</span>
+            <Link to="/">
+              <img src={logoUrl} alt="Solchi Logo" className="h-16 md:h-20 w-auto" />
             </Link>
           </div>
 
-          {/* תפריט למחשב (מוסתר בטלפון) */}
-          <div className="hidden md:block">
-            <div className="mr-10 flex items-baseline space-x-8 space-x-reverse">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors"
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </div>
+          {/* תפריט למחשב - נשאר בדיוק אותו דבר */}
+          <div className="hidden md:flex items-center space-x-reverse space-x-2">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`text-sm font-bold px-4 py-2 rounded-xl transition-all ${
+                  isActive(link.path) ? 'text-blue-600 bg-blue-50' : 'text-slate-600 hover:text-blue-600'
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
           </div>
 
-          {/* כפתור המבורגר (3 פסים) - מופיע רק בטלפון */}
+          {/* כפתור 3 פסים לטלפון - הוספתי כאן */}
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none"
+              className="p-2 rounded-lg text-blue-600 hover:bg-blue-50 transition-colors"
             >
-              <span className="sr-only">פתח תפריט</span>
-              {/* סמל ה-X או ההמבורגר משתנה לפי המצב */}
-              {isOpen ? (
-                <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                {isOpen ? (
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                ) : (
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              )}
+                )}
+              </svg>
             </button>
           </div>
         </div>
       </div>
 
-      {/* תפריט נפתח לנייד (מוצג רק כשהכפתור נלחץ) */}
-      <div className={`${isOpen ? 'block' : 'hidden'} md:hidden bg-slate-900 border-t border-slate-800`}>
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-right">
-          {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              onClick={() => setIsOpen(false)} // סוגר את התפריט אחרי לחיצה
-              className="text-slate-300 hover:text-white block px-3 py-4 rounded-md text-base font-medium border-b border-slate-800 last:border-0"
-            >
-              {link.name}
-            </Link>
-          ))}
+      {/* התפריט שנפתח בטלפון */}
+      {isOpen && (
+        <div className="md:hidden bg-white border-b border-blue-100 animate-fade-in">
+          <div className="px-4 pt-2 pb-6 space-y-2 text-right">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                onClick={() => setIsOpen(false)}
+                className={`block px-4 py-4 rounded-xl text-base font-bold ${
+                  isActive(link.path) ? 'text-blue-600 bg-blue-50' : 'text-slate-600'
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </nav>
   );
 };

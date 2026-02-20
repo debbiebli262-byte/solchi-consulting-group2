@@ -9,6 +9,8 @@ import ThankYou from './pages/ThankYou';
 import Accessibility from './pages/Accessibility';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import { useState, useEffect } from "react";
+import { copy, type Lang } from "./i18n";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();

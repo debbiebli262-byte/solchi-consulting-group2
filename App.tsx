@@ -40,7 +40,7 @@ const App: React.FC = () => {
       </button>
 
       <div className="flex flex-col min-h-screen">
-        <Navbar />
+        <Navbar lang={lang} />
         <main className="flex-grow pt-24">
           <Routes>
             <Route path="/" element={<Home />} />

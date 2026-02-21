@@ -1,31 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import type { Lang } from "../i18n";
+import { useI18n } from "../i18n";
 
-type NavbarProps = {
-  lang: Lang;
-};
-
-const Navbar: React.FC<NavbarProps> = ({ lang }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const Navbar: React.FC = () => {
   const location = useLocation();
+  const { lang, toggleLang, t } = useI18n();
 
-  const navLinks =
-    lang === "he"
-      ? [
-          { name: "דף הבית", path: "/" },
-          { name: "אודות", path: "/about" },
-          { name: "חטיבת חשמל", path: "/electricity" },
-          { name: "מערכות מידע", path: "/is" },
-          { name: "צור קשר", path: "/contact" },
-        ]
-      : [
-          { name: "Home", path: "/" },
-          { name: "About", path: "/about" },
-          { name: "Electricity Division", path: "/electricity" },
-          { name: "Information Systems", path: "/is" },
-          { name: "Contact", path: "/contact" },
-        ];
+  const navLinks = [
+    { name: t("nav.home"), path: "/" },
+    { name: t("nav.about"), path: "/about" },
+    { name: t("nav.electricity"), path: "/electricity" },
+    { name: t("nav.is"), path: "/is" },
+    { name: t("nav.contact"), path: "/contact" },
+  ];
 
   const isActive = (path: string) => location.pathname === path;
   const logoUrl = "/logo.png";
@@ -36,11 +23,19 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
         <div className="flex justify-between h-24 items-center">
           <div className="flex-shrink-0">
             <Link to="/">
-              <img src={logoUrl} alt="Solchi Logo" className="h-16 md:h-20 w-auto" />
+              <img
+                src={logoUrl}
+                alt="Solchi Logo"
+                className="h-16 md:h-20 w-auto"
+              />
             </Link>
           </div>
 
-          <div className="hidden md:flex items-center space-x-reverse space-x-2">
+          <div
+            className={`hidden md:flex items-center space-x-2 ${
+              lang === "he" ? "space-x-reverse" : ""
+            }`}
+          >
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -54,6 +49,16 @@ const Navbar: React.FC<NavbarProps> = ({ lang }) => {
                 {link.name}
               </Link>
             ))}
+
+            {/* כפתור החלפת שפה */}
+            <button
+              type="button"
+              onClick={toggleLang}
+              className="text-sm font-bold px-4 py-2 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-50"
+              aria-label="Switch language"
+            >
+              {t("switchTo")}
+            </button>
           </div>
         </div>
       </div>

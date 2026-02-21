@@ -41,16 +41,11 @@ type I18nContextValue = {
 const I18nContext = createContext<I18nContextValue | null>(null);
 
 function getDefaultLang(): Lang {
-  // 1) אם שמור בדפדפן
   const saved = (typeof window !== "undefined" && localStorage.getItem(STORAGE_KEY)) as Lang | null;
   if (saved === "he" || saved === "en") return saved;
 
-  // 2) אחרת לפי שפת דפדפן (אם en -> אנגלית, אחרת עברית)
-  if (typeof navigator !== "undefined") {
-    const n = navigator.language?.toLowerCase() || "";
-    if (n.startsWith("en")) return "en";
-  }
   return "he";
+}
 }
 
 function getValueByPath(obj: any, path: string): any {

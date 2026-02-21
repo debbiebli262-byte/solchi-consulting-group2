@@ -1,3 +1,6 @@
+import React from "react";
+import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
+
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Electricity from "./Pages/Electricity";
@@ -5,6 +8,9 @@ import InformationSystems from "./Pages/InformationSystems";
 import Contact from "./Pages/Contact";
 import ThankYou from "./Pages/ThankYou";
 import Accessibility from "./Pages/Accessibility";
+
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -16,7 +22,7 @@ const ScrollToTop = () => {
 
 const App: React.FC = () => {
   return (
-    <Router>
+    <HashRouter>
       <ScrollToTop />
 
       <div className="flex flex-col min-h-screen">
@@ -35,7 +41,7 @@ const App: React.FC = () => {
         </main>
         <Footer />
       </div>
-    </Router>
+    </HashRouter>
   );
 };
 

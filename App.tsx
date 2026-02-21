@@ -1,14 +1,10 @@
-import React from "react";
-import { HashRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Electricity from "./pages/Electricity";
-import InformationSystems from "./pages/InformationSystems";
-import Contact from "./pages/Contact";
-import ThankYou from "./pages/ThankYou";
-import Accessibility from "./pages/Accessibility";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import Electricity from "./Pages/Electricity";
+import InformationSystems from "./Pages/InformationSystems";
+import Contact from "./Pages/Contact";
+import ThankYou from "./Pages/ThankYou";
+import Accessibility from "./Pages/Accessibility";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();

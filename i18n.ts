@@ -137,6 +137,29 @@ export const copy = {
       alertSendFailed:
         "אירעה שגיאה בשליחת ההודעה. אנא בדקו את החיבור לאינטרנט או נסו שנית מאוחר יותר.",
     },
+
+    thankYou: {
+      title: "הודעתכם התקבלה!",
+      subtitle: "תודה שפניתם ל-Solchi. נציג מטעמנו יחזור אליכם בהקדם.",
+      backHome: "חזרה לדף הבית",
+    },
+
+    footer: {
+      description:
+        "בוטיק הייעוץ Solchi מתמחה בייעוץ וליווי אסטרטגי, שילוב מערכות עתירות אנרגיה וטרנספורמציה דיגיטלית במגזר הפיננסי והתשתיתי.",
+      quickNav: "ניווט מהיר",
+      nav: {
+        home: "דף הבית",
+        about: "אודות הקבוצה",
+        electricity: "חטיבת חשמל",
+        is: "מערכות מידע",
+        contact: "צור קשר",
+      },
+      contactTitle: "צרו קשר",
+      address: "הורד 544, מושב קידרון, ישראל",
+      rights: "כל הזכויות שמורות.",
+      accessibility: "הצהרת נגישות",
+    },
   },
 
   en: {
@@ -271,6 +294,29 @@ export const copy = {
       submit: "Send Message",
       alertSendFailed:
         "There was an error sending your message. Please check your internet connection or try again later.",
+    },
+
+    thankYou: {
+      title: "Message Received!",
+      subtitle: "Thank you for contacting Solchi. Our team will get back to you shortly.",
+      backHome: "Back to Home",
+    },
+
+    footer: {
+      description:
+        "Solchi is a boutique consulting firm specializing in strategic advisory, high-energy systems integration, and digital transformation within financial and infrastructure sectors.",
+      quickNav: "Quick Navigation",
+      nav: {
+        home: "Home",
+        about: "About",
+        electricity: "Electricity Division",
+        is: "Information Systems",
+        contact: "Contact",
+      },
+      contactTitle: "Contact",
+      address: "Ha-Vered 544, Kidron, Israel",
+      rights: "All rights reserved.",
+      accessibility: "Accessibility Statement",
     },
   },
 } as const;

@@ -1,9 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import { useI18n } from "../i18n";
 
 const ThankYou: React.FC = () => {
-const logoUrl = '/logo.png';
-  
+  const { t } = useI18n();
+  const logoUrl = "/logo.png";
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-50 px-4">
       <div className="max-w-md w-full bg-white rounded-3xl shadow-xl p-8 text-center relative">
@@ -19,10 +21,20 @@ const logoUrl = '/logo.png';
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h1 className="text-3xl font-bold text-slate-900 mb-4">הודעתכם התקבלה!</h1>
-          <p className="text-slate-600 mb-8">תודה שפניתם ל-Solchi. נציג מטעמנו יחזור אליכם בהקדם.</p>
-          <Link to="/" className="inline-block w-full bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-700 transition-colors">
-            חזרה לדף הבית
+
+          <h1 className="text-3xl font-bold text-slate-900 mb-4">
+            {t("thankYou.title")}
+          </h1>
+
+          <p className="text-slate-600 mb-8">
+            {t("thankYou.subtitle")}
+          </p>
+
+          <Link
+            to="/"
+            className="inline-block w-full bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-700 transition-colors"
+          >
+            {t("thankYou.backHome")}
           </Link>
         </div>
       </div>

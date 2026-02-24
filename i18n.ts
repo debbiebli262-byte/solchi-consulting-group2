@@ -160,6 +160,38 @@ export const copy = {
       rights: "כל הזכויות שמורות.",
       accessibility: "הצהרת נגישות",
     },
+
+    accessibility: {
+      title: "הצהרת נגישות",
+      updatedLine: "הצהרת נגישות אתר מעודכנת לתאריך 1.11.2023",
+      intro:
+        "מתן שירות לאנשים עם מוגבלויות הוא בחשיבות עליונה מבחינתנו, ואנו עושים ככל שמתאפשר לנו בעניין הנגשת האתר שלנו.",
+      levelTitle: "רמת הנגישות באתר:",
+      levelText:
+        'עשינו כמיטב יכולתנו על מנת שהאתר יעמוד בתקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע"ג 2013 ברמת AA, ושהאתר יקיים את הוראות מסמך WCAG2.0 מאת ארגון W3C.',
+      adjustmentsTitle: "התאמות הנגישות שביצענו:",
+      adjustments: [
+        "האתר מותאם לצפייה בדפדפנים הפופולריים גם באמצעות מחשב וגם באמצעות טלפון נייד.",
+        "הניווט באתר פשוט, ידידותי וברור.",
+        "תכני האתר כתובים בצורה מסודרת ובאופן ברור ומפורט.",
+        "האתר מותאם למגוון גדלים של מסכים ורזולוציות.",
+        "הדפים באתר בעלי מבנה פשוט וידידותי לגולשים.",
+        "לתמונות באתר יש הסבר טקסטואלי חלופי (Alt Text).",
+        "האתר מאפשר שינוי גודל תצוגה על ידי שימוש במקש Ctrl וגלגלת העכבר.",
+        "אין באתר שימוש בטקסט מהבהב או באלמנטים לא ברורים.",
+        "צבעי האתר מנוגדים בצורה מצוינת וברורה.",
+      ],
+      issueTitle: "נתקלתם בבעיה?",
+      issueText:
+        "למרות מאמצינו להנגיש את האתר, עלולים להיות פרטים שלא הונגשו בצורה מושלמת. אם נתקלתם בפרט כזה – אנא אל תהססו לפנות אלינו באמצעות כתובת הדואר האלקטרוני שנמצאת באתר.",
+      businessArrangementsTitle: "הסדרי נגישות בבית העסק:",
+      businessArrangements: [
+        "קיימת גישה לבעלי מוגבלויות.",
+        "קיימות חניות נכים בסביבה הקרובה וברחובות הסמוכים.",
+        "קיימים שירותי נכים נגישים.",
+        "קיימים שלטי זיהוי והכוונה.",
+      ],
+    },
   },
 
   en: {
@@ -318,6 +350,38 @@ export const copy = {
       rights: "All rights reserved.",
       accessibility: "Accessibility Statement",
     },
+
+    accessibility: {
+      title: "Accessibility Statement",
+      updatedLine: "Website accessibility statement updated on 01.11.2023",
+      intro:
+        "Providing accessible service for people with disabilities is a top priority for us, and we make every reasonable effort to ensure our website is accessible.",
+      levelTitle: "Accessibility level:",
+      levelText:
+        "We have made our best efforts for the website to comply with the Equal Rights for Persons with Disabilities Regulations (Service Accessibility Adjustments), 2013, at AA level, and to follow the WCAG 2.0 guidelines published by the W3C.",
+      adjustmentsTitle: "Accessibility adjustments we implemented:",
+      adjustments: [
+        "The website is optimized for popular browsers on both desktop and mobile devices.",
+        "Site navigation is simple, clear, and user-friendly.",
+        "Content is organized and written in a clear, detailed manner.",
+        "The website supports a range of screen sizes and resolutions.",
+        "Pages are designed with a simple and user-friendly structure.",
+        "Images include alternative text (Alt Text).",
+        "Users can adjust display size using Ctrl and the mouse wheel.",
+        "No flashing text or unclear elements are used on the site.",
+        "Color contrast is clear and highly readable.",
+      ],
+      issueTitle: "Found an issue?",
+      issueText:
+        "Despite our efforts, some parts of the website may not be perfectly accessible. If you encounter an accessibility issue, please contact us via the email address listed on the website.",
+      businessArrangementsTitle: "Accessibility arrangements at our business:",
+      businessArrangements: [
+        "Accessible access is available.",
+        "Accessible parking is available nearby and on adjacent streets.",
+        "Accessible restroom facilities are available.",
+        "Clear identification and directional signage are available.",
+      ],
+    },
   },
 } as const;
 
@@ -337,7 +401,6 @@ function getDefaultLang(): Lang {
     localStorage.getItem(STORAGE_KEY)) as Lang | null;
   if (saved === "he" || saved === "en") return saved;
 
-  // Default: Hebrew
   return "he";
 }
 

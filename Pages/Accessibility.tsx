@@ -1,56 +1,62 @@
-
-import React from 'react';
+import React from "react";
+import { useI18n } from "../i18n";
 
 const Accessibility: React.FC = () => {
+  const { t } = useI18n();
+
   return (
     <div className="min-h-screen bg-white py-20 animate-fade-in">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl font-bold mb-10 tech-font border-r-4 border-blue-600 pr-4">הצהרת נגישות</h1>
-        
+        <h1 className="text-3xl font-bold mb-10 tech-font border-r-4 border-blue-600 pr-4">
+          {t("accessibility.title")}
+        </h1>
+
         <div className="prose prose-lg text-slate-700 leading-relaxed space-y-8">
           <section>
-            <p className="font-bold">הצהרת נגישות אתר מעודכנת לתאריך 1.11.2023</p>
-            <p>
-              מתן שירות לאנשים עם מוגבלויות הוא בחשיבות עליונה מבחינתנו, ואנו עושים ככל שמתאפשר לנו בעניין הנגשת האתר שלנו.
-            </p>
+            <p className="font-bold">{t("accessibility.updatedLine")}</p>
+            <p>{t("accessibility.intro")}</p>
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-slate-900 mb-4">רמת הנגישות באתר:</h2>
-            <p>
-              עשינו כמיטב יכולתנו על מנת שהאתר יעמוד בתקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע"ג 2013 ברמת AA, ושהאתר יקיים את הוראות מסמך WCAG2.0 מאת ארגון W3C.
-            </p>
+            <h2 className="text-xl font-bold text-slate-900 mb-4">
+              {t("accessibility.levelTitle")}
+            </h2>
+            <p>{t("accessibility.levelText")}</p>
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-slate-900 mb-4">התאמות הנגישות שביצענו:</h2>
+            <h2 className="text-xl font-bold text-slate-900 mb-4">
+              {t("accessibility.adjustmentsTitle")}
+            </h2>
             <ul className="list-disc pr-6 space-y-2">
-              <li>האתר מותאם לצפייה בדפדפנים הפופולריים גם באמצעות מחשב וגם באמצעות טלפון נייד.</li>
-              <li>הניווט באתר פשוט, ידידותי וברור.</li>
-              <li>תכני האתר כתובים בצורה מסודרת ובאופן ברור ומפורט.</li>
-              <li>האתר מותאם למגוון גדלים של מסכים ורזולוציות.</li>
-              <li>הדפים באתר בעלי מבנה פשוט וידידותי לגולשים.</li>
-              <li>לתמונות באתר יש הסבר טקסטואלי חלופי (Alt Text).</li>
-              <li>האתר מאפשר שינוי גודל תצוגה על ידי שימוש במקש Ctrl וגלגלת העכבר.</li>
-              <li>אין באתר שימוש בטקסט מהבהב או באלמנטים לא ברורים.</li>
-              <li>צבעי האתר מנוגדים בצורה מצוינת וברורה.</li>
+              <li>{t("accessibility.adjustments.0")}</li>
+              <li>{t("accessibility.adjustments.1")}</li>
+              <li>{t("accessibility.adjustments.2")}</li>
+              <li>{t("accessibility.adjustments.3")}</li>
+              <li>{t("accessibility.adjustments.4")}</li>
+              <li>{t("accessibility.adjustments.5")}</li>
+              <li>{t("accessibility.adjustments.6")}</li>
+              <li>{t("accessibility.adjustments.7")}</li>
+              <li>{t("accessibility.adjustments.8")}</li>
             </ul>
           </section>
 
           <section className="bg-blue-50 p-6 rounded-xl border border-blue-100">
-            <h2 className="text-xl font-bold text-blue-900 mb-4">נתקלתם בבעיה?</h2>
-            <p>
-              למרות מאמצינו להנגיש את האתר, עלולים להיות פרטים שלא הונגשו בצורה מושלמת. אם נתקלתם בפרט כזה – אנא אל תהססו לפנות אלינו באמצעות כתובת הדואר האלקטרוני שנמצאת באתר.
-            </p>
+            <h2 className="text-xl font-bold text-blue-900 mb-4">
+              {t("accessibility.issueTitle")}
+            </h2>
+            <p>{t("accessibility.issueText")}</p>
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-slate-900 mb-4">הסדרי נגישות בבית העסק:</h2>
+            <h2 className="text-xl font-bold text-slate-900 mb-4">
+              {t("accessibility.businessArrangementsTitle")}
+            </h2>
             <ul className="list-disc pr-6 space-y-2">
-              <li>קיימת גישה לבעלי מוגבלויות.</li>
-              <li>קיימות חניות נכים בסביבה הקרובה וברחובות הסמוכים.</li>
-              <li>קיימים שירותי נכים נגישים.</li>
-              <li>קיימים שלטי זיהוי והכוונה.</li>
+              <li>{t("accessibility.businessArrangements.0")}</li>
+              <li>{t("accessibility.businessArrangements.1")}</li>
+              <li>{t("accessibility.businessArrangements.2")}</li>
+              <li>{t("accessibility.businessArrangements.3")}</li>
             </ul>
           </section>
         </div>

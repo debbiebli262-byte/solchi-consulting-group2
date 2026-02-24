@@ -19,9 +19,9 @@ export const copy = {
     /* ---------------- HOME ---------------- */
     home: {
       hero: {
-        titlePrefix: "אנחנו גורמים ל-",
+        titlePrefix: "We Make",
         titleHighlight: "IT",
-        titleSuffix: "לעבוד",
+        titleSuffix: "Work",
         subtitle:
           "אנו ב-Solchi מבינים שאין שני עסקים זהים. נלווה אותך באופן אישי ליישום אסטרטגיות טכנולוגיות בהתאמה למטרות העסקיות הייחודיות ונבנה את התוכנית המתאימה ביותר לצורך הייחודי שלך.",
         ctaPrimary: "בואו נדבר",

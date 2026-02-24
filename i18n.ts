@@ -108,6 +108,35 @@ export const copy = {
         ],
       },
     },
+
+    contact: {
+      pageTitle: "צור קשר",
+      pageSubtitle: "אנחנו כאן כדי לענות על כל שאלה ולתאם פגישת היכרות מקצועית.",
+      detailsTitle: "פרטי התקשרות",
+      addressTitle: "כתובתנו",
+      addressText: "הורד 544, מושב קידרון, ישראל",
+      addressHint: "לחצו לניווט במפות",
+      emailTitle: 'דוא"ל פניות',
+      availabilityTitle: "זמינות שירות",
+      availabilityHours: "ימי א' - ה' | בין השעות 08:30 - 18:00",
+      formTitle: "שלחו לנו הודעה",
+      fields: {
+        fullName: "שם מלא",
+        email: 'דוא"ל',
+        phone: "טלפון",
+        message: "הודעה",
+      },
+      placeholders: {
+        fullName: "ישראל ישראלי",
+        email: "name@company.com",
+        phone: "05X-XXXXXXX",
+        message: "תארו בקצרה את הצורך שלכם...",
+      },
+      sending: "שולח פניה...",
+      submit: "שלח פניה",
+      alertSendFailed:
+        "אירעה שגיאה בשליחת ההודעה. אנא בדקו את החיבור לאינטרנט או נסו שנית מאוחר יותר.",
+    },
   },
 
   en: {
@@ -213,6 +242,36 @@ export const copy = {
         ],
       },
     },
+
+    contact: {
+      pageTitle: "Contact",
+      pageSubtitle:
+        "We’re here to answer any question and schedule a professional introductory meeting.",
+      detailsTitle: "Contact Details",
+      addressTitle: "Our Address",
+      addressText: "Ha-Vered 544, Kidron, Israel",
+      addressHint: "Click to open in Maps",
+      emailTitle: "Email",
+      availabilityTitle: "Service Availability",
+      availabilityHours: "Sunday–Thursday | 08:30–18:00",
+      formTitle: "Send Us a Message",
+      fields: {
+        fullName: "Full Name",
+        email: "Email",
+        phone: "Phone",
+        message: "Message",
+      },
+      placeholders: {
+        fullName: "John Doe",
+        email: "name@company.com",
+        phone: "+972-5X-XXXXXXX",
+        message: "Briefly describe what you need...",
+      },
+      sending: "Sending...",
+      submit: "Send Message",
+      alertSendFailed:
+        "There was an error sending your message. Please check your internet connection or try again later.",
+    },
   },
 } as const;
 
@@ -232,7 +291,7 @@ function getDefaultLang(): Lang {
     localStorage.getItem(STORAGE_KEY)) as Lang | null;
   if (saved === "he" || saved === "en") return saved;
 
-  // ברירת מחדל: עברית
+  // Default: Hebrew
   return "he";
 }
 

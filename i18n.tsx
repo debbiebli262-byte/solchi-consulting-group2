@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 
 export type Lang = "he" | "en";
 
@@ -14,8 +20,11 @@ export const copy = {
       contact: "צור קשר",
       language: "שפה",
     },
+
+    // הכפתור/טוגל בשפה
     switchTo: "English",
 
+    // ---------- HOME ----------
     home: {
       hero: {
         titlePrefix: "We Make",
@@ -80,11 +89,12 @@ export const copy = {
       philosophy: {
         title: "הפילוסופיה שלנו",
         text:
-          "היועצים ב- Solchi בעלי ניסיון רב המאפשר גיבוש אסטרטגיה עסקית וליווי מקצה לקצה בפרויקטים מורכבים. אנחנו חושבים פשוט, נותנים שירות בגובה העיניים ומחויבים לספק פתרונות אשר יאפשרו לכם לצמוח בסביבה הטכנולוגית המשתנה במהירות.",
+          "היועצים ב-Solchi בעלי ניסיון רב המאפשר גיבוש אסטרטגיה עסקית וליווי מקצה לקצה בפרויקטים מורכבים. אנחנו חושבים פשוט, נותנים שירות בגובה העיניים ומחויבים לספק פתרונות אשר יאפשרו לכם לצמוח בסביבה הטכנולוגית המשתנה במהירות.",
         quote: '"אנחנו לא רק מייעצים, אנחנו פותרים"',
       },
     },
 
+    // ---------- ABOUT (זה מה שמתקן את הבאג שלך) ----------
     about: {
       hero: {
         title: "קצת עלינו",
@@ -109,6 +119,7 @@ export const copy = {
       },
     },
 
+    // ---------- ELECTRICITY PAGE ----------
     electricity: {
       pageTag: "חטיבת החשמל",
       name: "יחיאל אמיר כהן",
@@ -140,6 +151,7 @@ export const copy = {
       clients: ["יצרני חשמל פרטיים", "משרדי ממשלה", "חברות תשתיות", "ארגונים תעשייתיים"],
     },
 
+    // ---------- INFORMATION SYSTEMS PAGE ----------
     isPage: {
       hero: {
         tag: "חטיבת מערכות מידע",
@@ -156,7 +168,7 @@ export const copy = {
         p1:
           "אנו מביאים ערך מוסף משמעותי לארגונים פיננסיים בזכות ניסיון רב במערכות אשראי ובתהליכים פיננסיים מקצה לקצה. היכולת שלנו לחבר בין צרכים עסקיים מורכבים לפתרונות טכנולוגיים יציבים היא הליבה של הפעילות שלנו.",
         p2:
-          'ב-Solchi, אנו מחויבים לצמצם את המורכבות ולפשט את החוויה מקצה לקצה, משלב הייזום ועד ליישום מלא של המערכת, ניהול כ"א וספקים.',
+          "ב-Solchi, אנו מחויבים לצמצם את המורכבות ולפשט את החוויה מקצה לקצה, משלב הייזום ועד ליישום מלא של המערכת, ניהול כ״א וספקים.",
       },
       credit: {
         title: "מערכות אשראי ופיננסים",
@@ -184,12 +196,13 @@ export const copy = {
         items: [
           "הבנה פיננסית עמוקה לצד מומחיות טכנולוגית ללא פשרות",
           "ניסיון מוכח במערכות אשראי ובנקאות מהמובילות בישראל",
-          "יכולת הובלה חוצת־ארגון מול מנהלים, ספקים ולקוחות קצה",
+          "יכולת הובלה חוצת-ארגון מול מנהלים, ספקים ולקוחות קצה",
           "ראייה מערכתית וארוכת טווח המותאמת לצרכי הרגולציה",
         ],
       },
     },
 
+    // ---------- CONTACT ----------
     contact: {
       pageTitle: "צור קשר",
       pageSubtitle: "אנחנו כאן כדי לענות על כל שאלה ולתאם פגישת היכרות מקצועית.",
@@ -219,12 +232,14 @@ export const copy = {
         "אירעה שגיאה בשליחת ההודעה. אנא בדקו את החיבור לאינטרנט או נסו שנית מאוחר יותר.",
     },
 
+    // ---------- THANK YOU ----------
     thankYou: {
       title: "הודעתכם התקבלה!",
       subtitle: "תודה שפניתם ל-Solchi. נציג מטעמנו יחזור אליכם בהקדם.",
       backHome: "חזרה לדף הבית",
     },
 
+    // ---------- FOOTER ----------
     footer: {
       description:
         "בוטיק הייעוץ Solchi מתמחה בייעוץ וליווי אסטרטגי, שילוב מערכות עתירות אנרגיה וטרנספורמציה דיגיטלית במגזר הפיננסי והתשתיתי.",
@@ -242,6 +257,7 @@ export const copy = {
       accessibility: "הצהרת נגישות",
     },
 
+    // ---------- ACCESSIBILITY ----------
     accessibility: {
       title: "הצהרת נגישות",
       updatedLine: "הצהרת נגישות אתר מעודכנת לתאריך 1.11.2023",
@@ -284,6 +300,7 @@ export const copy = {
       contact: "Contact",
       language: "Language",
     },
+
     switchTo: "עברית",
 
     home: {
@@ -355,6 +372,7 @@ export const copy = {
       },
     },
 
+    // ABOUT (English)
     about: {
       hero: {
         title: "About Us",
@@ -420,7 +438,7 @@ export const copy = {
         tag: "Information Systems Division",
         name: "Hila Cohen",
         subtitle:
-          "Leader of the Information Systems activity. Expert in managing and implementing complex IS projects for financial organizations.",
+          "Expert in managing complex information systems projects in financial organizations.",
         badges: {
           salesforce: "Salesforce Specialist",
           fintech: "Fintech Expert",
@@ -429,38 +447,38 @@ export const copy = {
       expertise: {
         title: "Expertise & Value",
         p1:
-          "We deliver significant value to financial organizations through deep experience with credit systems and end-to-end financial processes.",
+          "Extensive experience in credit systems and end-to-end financial processes.",
         p2:
-          "At Solchi, we are committed to reducing complexity and simplifying delivery—from initiation through full implementation, including team and vendor management.",
+          "Simplifying complexity from initiation to full implementation.",
       },
       credit: {
         title: "Credit & Finance Systems",
         items: [
-          "Application submission & underwriting",
-          "Loan operations & servicing",
-          "Controls & reporting",
-          "Compliance & regulation support",
-          "Business process analysis",
-          "Integrations (ERP, CRM)",
+          "Underwriting",
+          "Loan operations",
+          "Reporting & controls",
+          "Compliance",
+          "Business analysis",
+          "ERP/CRM integrations",
         ],
       },
       more: {
-        title: "Additional Areas of Expertise",
+        title: "Additional Expertise",
         items: [
-          { title: "Strategic Roadmap", desc: "Building an IT plan, defining KPIs, and tracking them throughout the project lifecycle." },
-          { title: "Salesforce Expertise", desc: "Developing core systems on the platform and managing complex Salesforce projects." },
-          { title: "Delivery Management", desc: "Leading internal or outsourced development projects from initiation to full implementation." },
-          { title: "RFPs & Tenders", desc: "Selecting solutions and infrastructure, including writing and managing tenders professionally." },
-          { title: "Feasibility Analysis", desc: "Evaluating implementation alternatives—cost, effectiveness, and financial/operational feasibility." },
+          { title: "Strategic Roadmap", desc: "IT planning & KPI tracking." },
+          { title: "Salesforce", desc: "Core platform development." },
+          { title: "Delivery", desc: "End-to-end project leadership." },
+          { title: "RFPs", desc: "Professional tender management." },
+          { title: "Feasibility", desc: "Cost-benefit analysis." },
         ],
       },
       why: {
-        title: "Why Solchi for Information Systems?",
+        title: "Why Solchi?",
         items: [
-          "Deep financial understanding alongside uncompromising technical expertise",
-          "Proven experience in leading credit and banking systems in Israel",
-          "Cross-organization leadership with executives, vendors, and end users",
-          "Long-term systems thinking aligned with regulatory requirements",
+          "Financial & tech expertise",
+          "Proven banking systems experience",
+          "Cross-organizational leadership",
+          "Long-term systems vision",
         ],
       },
     },
@@ -564,17 +582,24 @@ type I18nContextValue = {
 const I18nContext = createContext<I18nContextValue | null>(null);
 
 function getDefaultLang(): Lang {
-  const saved = (typeof window !== "undefined" && localStorage.getItem(STORAGE_KEY)) as Lang | null;
+  const saved = (typeof window !== "undefined" &&
+    localStorage.getItem(STORAGE_KEY)) as Lang | null;
   if (saved === "he" || saved === "en") return saved;
 
+  // ברירת מחדל: עברית
   return "he";
 }
 
 function getValueByPath(obj: any, path: string): any {
-  return path.split(".").reduce((acc, part) => (acc && acc[part] != null ? acc[part] : undefined), obj);
+  return path.split(".").reduce((acc, part) => {
+    if (acc == null) return undefined;
+    return acc[part];
+  }, obj);
 }
 
-export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const [lang, setLangState] = useState<Lang>(() => getDefaultLang());
 
   const setLang = (l: Lang) => {
@@ -592,18 +617,19 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     if (typeof window !== "undefined") {
       document.documentElement.lang = lang;
       document.documentElement.dir = lang === "he" ? "rtl" : "ltr";
+      localStorage.setItem(STORAGE_KEY, lang);
     }
   }, [lang]);
 
   const t = (key: string) => {
     const current = copy[lang] as unknown as Copy;
     const value = getValueByPath(current, key);
-    return typeof value === "string" ? value : key; // אם חסר תרגום מחזיר את ה-key
+    return typeof value === "string" ? value : key;
   };
 
   const value = useMemo(() => ({ lang, setLang, toggleLang, t }), [lang]);
 
-  return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;
+  return React.createElement(I18nContext.Provider, { value }, children);
 };
 
 export function useI18n() {

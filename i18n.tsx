@@ -475,9 +475,9 @@ export const copy = {
       expertise: {
         title: "Expertise & Value",
         p1:
-          "Extensive experience in credit systems and end-to-end financial processes.",
+          "We deliver significant added value to organizations across diverse industries, driven by hands-on experience in managing and implementing complex systems and end-to-end organizational processes. Our ability to translate complex business needs into stable, precise, and practical technological solutions lies at the core of our work.",
         p2:
-          "Simplifying complexity from initiation to full implementation.",
+          "At Solchi, we are committed to reducing complexity, streamlining processes, and enhancing the organizational and business experience from end to end — from initial analysis and initiation, through full system design and implementation, to vendor management and performance control. We focus on creating more efficient processes, optimizing resources, driving continuous improvement, and delivering measurable long-term value.",
       },
       credit: {
         title: "Credit & Finance Systems",

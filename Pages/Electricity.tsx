@@ -24,9 +24,7 @@ const Electricity: React.FC = () => {
                 {t("electricity.role")}
               </p>
 
-              <p className="mt-6 text-slate-400">
-                {t("electricity.lead")}
-              </p>
+              <p className="mt-6 text-slate-400">{t("electricity.lead")}</p>
             </div>
 
             <div className="md:w-1/2 flex justify-center">
@@ -59,6 +57,8 @@ const Electricity: React.FC = () => {
             <div className="space-y-6 text-lg text-slate-700 leading-relaxed text-justify">
               <p>{t("electricity.experienceP1")}</p>
               <p>{t("electricity.experienceP2")}</p>
+              <p>{t("electricity.experienceP3")}</p>
+              <p>{t("electricity.experienceP4")}</p>
             </div>
 
             <h3 className="text-2xl font-bold text-slate-900 mt-16 mb-8 tech-font">

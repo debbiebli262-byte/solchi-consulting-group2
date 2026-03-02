@@ -78,8 +78,34 @@ const Electricity: React.FC = () => {
                 </div>
               ))}
             </div>
+
+            {/* Planning / Design Services */}
+            <h3 className="text-2xl font-bold text-slate-900 mt-16 mb-8 tech-font">
+              {t("electricity.planningTitle")}
+            </h3>
+
+            <div className="bg-slate-50 rounded-3xl border border-slate-100 p-8 md:p-10">
+              <p className="text-slate-700 text-lg leading-relaxed mb-8">
+                {t("electricity.planningIntro")}
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => (
+                  <div
+                    key={i}
+                    className="flex gap-4 p-5 bg-white rounded-2xl border border-slate-100 hover:border-blue-200 transition-colors group"
+                  >
+                    <div className="mt-2 flex-shrink-0 w-2 h-2 rounded-full bg-blue-600 group-hover:scale-125 transition-transform"></div>
+                    <p className="text-slate-700 leading-relaxed">
+                      {t(`electricity.planningItems.${i}`)}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
+          {/* Right sticky card */}
           <div className="lg:col-span-4">
             <div className="sticky top-28">
               <div className="bg-blue-600 p-8 rounded-[2.5rem] text-white shadow-xl shadow-blue-600/20">
@@ -93,9 +119,7 @@ const Electricity: React.FC = () => {
                       key={i}
                       className="border-b border-blue-400 pb-4 leading-relaxed flex gap-3"
                     >
-                      <span className="font-bold text-blue-200">
-                        0{i + 1}
-                      </span>
+                      <span className="font-bold text-blue-200">0{i + 1}</span>
                       <p>{t(`electricity.services.${i}`)}</p>
                     </li>
                   ))}

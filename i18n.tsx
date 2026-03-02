@@ -94,7 +94,7 @@ export const copy = {
       },
     },
 
-    // ---------- ABOUT (זה מה שמתקן את הבאג שלך) ----------
+    // ---------- ABOUT ----------
     about: {
       hero: {
         title: "קצת עלינו",
@@ -148,7 +148,12 @@ export const copy = {
         "בטיחות ותחזוקה: ליווי שוטף בהיבטי בטיחות לשחרור מתקן ממתח.",
       ],
       clientsTitle: "הלקוחות שלנו בתחום האנרגיה",
-      clients: ["יצרני חשמל פרטיים", "משרדי ממשלה", "חברות תשתיות", "ארגונים תעשייתיים"],
+      clients: [
+        "יצרני חשמל פרטיים",
+        "משרדי ממשלה",
+        "חברות תשתיות",
+        "ארגונים תעשייתיים",
+      ],
     },
 
     // ---------- INFORMATION SYSTEMS PAGE ----------
@@ -166,9 +171,9 @@ export const copy = {
       expertise: {
         title: "מומחיות וערך מוסף",
         p1:
-          "אנו מביאים ערך מוסף משמעותי לארגונים פיננסיים בזכות ניסיון רב במערכות אשראי ובתהליכים פיננסיים מקצה לקצה. היכולת שלנו לחבר בין צרכים עסקיים מורכבים לפתרונות טכנולוגיים יציבים היא הליבה של הפעילות שלנו.",
+          "אנו מביאים ערך מוסף משמעותי לארגונים ממגוון תחומים, בזכות ניסיון מעשי בניהול והטמעה של מערכות מורכבות ובתהליכים ארגוניים מקצה לקצה. היכולת שלנו לחבר בין צרכים עסקיים מורכבים לפתרונות טכנולוגיים יציבים, מדויקים וישימים – היא הליבה של הפעילות שלנו.",
         p2:
-          "ב-Solchi, אנו מחויבים לצמצם את המורכבות ולפשט את החוויה מקצה לקצה, משלב הייזום ועד ליישום מלא של המערכת, ניהול כ״א וספקים.",
+          "ב-Solchi אנו מחויבים לצמצם מורכבות, לפשט תהליכים ולשפר את החוויה הארגונית והעסקית מקצה לקצה – משלב האפיון והייזום, דרך תכנון ויישום מלא של מערכות, ועד לניהול ספקים ובקרת ביצועים. אנו מתמקדים ביצירת תהליכים יעילים יותר, חיסכון במשאבים, שיפור מתמיד והתייעלות ארגונית שמייצרת ערך מדיד לאורך זמן.",
       },
       credit: {
         title: "מערכות אשראי ופיננסים",
@@ -184,11 +189,33 @@ export const copy = {
       more: {
         title: "תחומי התמחות נוספים",
         items: [
-          { title: "Roadmap אסטרטגי", desc: "בניית תוכנית עבודה למחשוב הארגון, קביעת KPI ובחינתם לאורך חיי הפרויקט." },
-          { title: "מומחיות Salesforce", desc: "פיתוח מערכות ליבה על גבי הפלטפורמה וניהול פרויקטי Salesforce מורכבים." },
-          { title: "ניהול Delivery", desc: "הובלת פרויקטי פיתוח פנימיים או במיקור חוץ משלב הייזום עד ליישום מלא." },
-          { title: "כתיבת מכרזים", desc: "איתור ובחירת פתרונות ותשתיות, כולל כתיבת מכרזים וניהולם המקצועי." },
-          { title: "ניתוח כדאיות", desc: "בחינת חלופות ליישום - עלות, אפקטיביות וכדאיות פיננסית ותפעולית." },
+          {
+            title: "Roadmap אסטרטגי",
+            desc:
+              "בניית תוכנית עבודה למחשוב הארגון, קביעת KPI ובחינתם לאורך חיי הפרויקט",
+          },
+          {
+            title: "מומחיות Salesforce",
+            desc:
+              "פיתוח מערכות ליבה על גבי הפלטפורמה וניהול פרויקטי Salesforce מורכבים",
+          },
+          {
+            title: "ניהול Delivery",
+            desc:
+              "הובלת פרויקטי פיתוח פנימיים או במיקור חוץ משלב הייזום עד ליישום מלא",
+          },
+
+          // --- swapped order: ניתוח כדאיות לפני כתיבת מכרזים ---
+          {
+            title: "ניתוח כדאיות",
+            desc:
+              "בחינת חלופות ליישום - עלות, אפקטיביות וכדאיות פיננסית ותפעולית",
+          },
+          {
+            title: "כתיבת מכרזים",
+            desc:
+              "איתור ובחירת פתרונות ותשתיות, כולל כתיבת מכרזים וניהולם המקצועי",
+          },
         ],
       },
       why: {
@@ -205,7 +232,8 @@ export const copy = {
     // ---------- CONTACT ----------
     contact: {
       pageTitle: "צור קשר",
-      pageSubtitle: "אנחנו כאן כדי לענות על כל שאלה ולתאם פגישת היכרות מקצועית.",
+      pageSubtitle:
+        "אנחנו כאן כדי לענות על כל שאלה ולתאם פגישת היכרות מקצועית.",
       detailsTitle: "פרטי התקשרות",
       addressTitle: "כתובתנו",
       addressText: "הורד 544, מושב קידרון, ישראל",
@@ -465,11 +493,13 @@ export const copy = {
       more: {
         title: "Additional Expertise",
         items: [
-          { title: "Strategic Roadmap", desc: "IT planning & KPI tracking." },
-          { title: "Salesforce", desc: "Core platform development." },
-          { title: "Delivery", desc: "End-to-end project leadership." },
-          { title: "RFPs", desc: "Professional tender management." },
-          { title: "Feasibility", desc: "Cost-benefit analysis." },
+          { title: "Strategic Roadmap", desc: "IT planning & KPI tracking" },
+          { title: "Salesforce", desc: "Core platform development" },
+          { title: "Delivery", desc: "End-to-end project leadership" },
+
+          // swapped order: feasibility before RFPs
+          { title: "Feasibility", desc: "Cost-benefit analysis" },
+          { title: "RFPs", desc: "Professional tender management" },
         ],
       },
       why: {
@@ -515,7 +545,8 @@ export const copy = {
 
     thankYou: {
       title: "Message Received!",
-      subtitle: "Thank you for contacting Solchi. Our team will get back to you shortly.",
+      subtitle:
+        "Thank you for contacting Solchi. Our team will get back to you shortly.",
       backHome: "Back to Home",
     },
 
@@ -559,7 +590,8 @@ export const copy = {
       issueTitle: "Found an issue?",
       issueText:
         "Despite our efforts, some parts of the website may not be perfectly accessible. If you encounter an accessibility issue, please contact us via the email address listed on the website.",
-      businessArrangementsTitle: "Accessibility arrangements at our business:",
+      businessArrangementsTitle:
+        "Accessibility arrangements at our business:",
       businessArrangements: [
         "Accessible access is available.",
         "Accessible parking is available nearby and on adjacent streets.",

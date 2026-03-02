@@ -49,11 +49,9 @@ const Electricity: React.FC = () => {
       {/* Content */}
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-
           {/* LEFT STICKY COLUMN */}
           <div className="lg:col-span-4 order-2 lg:order-1">
             <div className="sticky top-28 space-y-16">
-
               {/* שירותי הייעוץ */}
               <div className="bg-blue-600 p-8 rounded-[2.5rem] text-white shadow-xl shadow-blue-600/20">
                 <h3 className="text-xl font-bold mb-8 tech-font">
@@ -74,42 +72,64 @@ const Electricity: React.FC = () => {
               </div>
 
               {/* שירותי התכנון */}
-              <a href="#planning-services">
-                <div className="bg-blue-600 p-8 rounded-[2.5rem] text-white shadow-xl shadow-blue-600/20 cursor-pointer hover:bg-blue-700 transition-colors">
-                  <h3 className="text-xl font-bold mb-8 tech-font">
-                    שירותי התכנון שלנו
-                  </h3>
+              <div
+                onClick={() => {
+                  const section = document.getElementById("planning-services");
+                  section?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="bg-blue-600 p-8 rounded-[2.5rem] text-white shadow-xl shadow-blue-600/20 cursor-pointer hover:bg-blue-700 transition-colors"
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    const section = document.getElementById("planning-services");
+                    section?.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+              >
+                <h3 className="text-xl font-bold mb-8 tech-font">
+                  שירותי התכנון שלנו
+                </h3>
 
-                  <ul className="space-y-6 text-sm">
-                    <li className="border-b border-blue-400 pb-4 flex gap-3">
-                      <span className="font-bold text-blue-200">01</span>
-                      <p>תכנון עקרוני (Concept Design) המייצר תשתית מדויקת לפרויקט, כולל בחינת חלופות טכנו־כלכליות המובילות לקבלת החלטות מושכלת.</p>
-                    </li>
+                <ul className="space-y-6 text-sm">
+                  <li className="border-b border-blue-400 pb-4 flex gap-3 leading-relaxed">
+                    <span className="font-bold text-blue-200">01</span>
+                    <p>
+                      תכנון עקרוני (Concept Design) המייצר תשתית מדויקת לפרויקט,
+                      כולל בחינת חלופות טכנו־כלכליות המובילות לקבלת החלטות מושכלת.
+                    </p>
+                  </li>
 
-                    <li className="border-b border-blue-400 pb-4 flex gap-3">
-                      <span className="font-bold text-blue-200">02</span>
-                      <p>תכנון מפורט (Detail Design) לכל מערכות החשמל והעזר — חישובים, שרטוטים, מפרטים ותוצרים הנדסיים ברמת ביצוע.</p>
-                    </li>
+                  <li className="border-b border-blue-400 pb-4 flex gap-3 leading-relaxed">
+                    <span className="font-bold text-blue-200">02</span>
+                    <p>
+                      תכנון מפורט (Detail Design) לכל מערכות החשמל והעזר — חישובים,
+                      שרטוטים, מפרטים ותוצרים הנדסיים ברמת ביצוע.
+                    </p>
+                  </li>
 
-                    <li className="border-b border-blue-400 pb-4 flex gap-3">
-                      <span className="font-bold text-blue-200">03</span>
-                      <p>הכנת מסמכי מכרז מלאים, המייצרים בהירות הנדסית ומבטיחים קבלת הצעות איכותיות ומדויקות מקבלנים.</p>
-                    </li>
+                  <li className="border-b border-blue-400 pb-4 flex gap-3 leading-relaxed">
+                    <span className="font-bold text-blue-200">03</span>
+                    <p>
+                      הכנת מסמכי מכרז מלאים, המייצרים בהירות הנדסית ומבטיחים קבלת
+                      הצעות איכותיות ומדויקות מקבלנים.
+                    </p>
+                  </li>
 
-                    <li className="flex gap-3">
-                      <span className="font-bold text-blue-200">04</span>
-                      <p>ליווי הנדסי מלא משלב הייזום ועד המסירה, כולל תמיכה מקצועית בבדיקות FAT/SAT ו-Commissioning בשטח.</p>
-                    </li>
-                  </ul>
-                </div>
-              </a>
-
+                  <li className="flex gap-3 leading-relaxed">
+                    <span className="font-bold text-blue-200">04</span>
+                    <p>
+                      ליווי הנדסי מלא משלב הייזום ועד המסירה, כולל תמיכה מקצועית
+                      בבדיקות FAT/SAT ו-Commissioning בשטח.
+                    </p>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
 
           {/* MAIN CONTENT */}
           <div className="lg:col-span-8 order-1 lg:order-2">
-
             <h2 className="text-3xl font-bold text-slate-900 mb-8 tech-font border-b-2 border-blue-600 pb-2 inline-block">
               {t("electricity.experienceTitle")}
             </h2>
@@ -165,7 +185,6 @@ const Electricity: React.FC = () => {
                 </div>
               </div>
             </section>
-
           </div>
         </div>
       </section>

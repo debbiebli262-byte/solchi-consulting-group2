@@ -121,41 +121,51 @@ export const copy = {
 
     // ---------- ELECTRICITY PAGE ----------
     electricity: {
-      pageTag: "חטיבת החשמל",
-      name: "יחיאל אמיר כהן",
-      role:
-        "מהנדס חשמל בכיר, יועץ ומנהל פרויקטים בתחום מערכות עתירות אנרגיה בכלל ותחנות השנאה/הוצאת אנרגיה בפרט.",
-      lead: "מוביל הפעילות בחטיבת החשמל והאנרגיה",
-      experienceTitle: "ניסיון ומומחיות",
-      experienceP1:
-        "בעל מעל 30 שנות ניסיון בכל הקשור לניהול פרויקטים עתירי אנרגיה לפיתוח מערכות מורכבות במתודולוגיות שונות וטכנולוגיות מגוונות מול יצרני חשמל, משרדי ממשלה וארגונים עסקיים.",
-      experienceP2:
-        'התמחות במסדרים מבודדי גז (GIS) מיצרנים שונים, ובעל היכרות מעמיקה של מערכת החשמל בישראל. בעל ניסיון של "מורשה בכיר" בחברת החשמל, כולל ליווי בתקלות ושחרור מתקנים ממתח.',
-      expertiseTitle: "תחומי התמחות מרכזיים:",
-      expertise: [
-        "התנעה והובלת פרויקטים אינטגרטיביים",
-        "שילוב מערכות עתירות אנרגיה ברשת החשמל",
-        "ביצוע תכנון פרטני של המתקן החשמלי",
-        "פיתוח ויישום מתודולוגיות תפעול ותחזוקה",
-        "שמירה בלתי פוסקת על בטיחות והגנה על מתקנים",
-        "מתן מענה לתקלות קריטיות בזמן אמת",
-      ],
-      servicesTitle: "שירותי הייעוץ שלנו",
-      services: [
-        "ליווי מקצה לקצה: משלב הייזום והתכנון ועד ליישום מלא בראיה תפעולית ותחזוקתית",
-        "אופטימיזציה: איתור פתרונות, בחינת חלופות וכדאיות פיננסית אל מול השקעה",
-        'רגולציה: ליווי מול חברת החשמל ו-"נגה" באפיון המערכת ושילובה במשק',
-        "בטיחות ותחזוקה: ליווי שוטף בהיבטי בטיחות לשחרור מתקן ממתח",
-      ],
-      clientsTitle: "הלקוחות שלנו בתחום האנרגיה",
-      clients: [
-        "יצרני חשמל פרטיים",
-        "משרדי ממשלה",
-        "חברות תשתיות",
-        "ארגונים תעשייתיים",
-      ],
-    },
+  pageTag: "חטיבת החשמל",
+  name: "יחיאל אמיר כהן",
+  role:
+    "מהנדס חשמל בכיר, יועץ ומנהל פרויקטים בתחום מערכות עתירות אנרגיה בכלל ותחנות השנאה/הוצאת אנרגיה בפרט.",
+  lead: "מוביל הפעילות בחטיבת החשמל והאנרגיה",
 
+  experienceTitle: "ניסיון ומומחיות",
+  experienceP1:
+    "בעל מעל 30 שנות ניסיון בכל הקשור לניהול פרויקטים עתירי אנרגיה לפיתוח מערכות מורכבות במתודולוגיות שונות וטכנולוגיות מגוונות מול יצרני חשמל, משרדי ממשלה וארגונים עסקיים.",
+
+  // ✅ חדש - פסקה בין P1 ל-P2
+  experienceP2:
+    "ניסיון רב בתכנון מערכי בדיקה ותהליכי הכנסה לניצול של פרויקטים עתירי אנרגיה.",
+
+  // (הפסקה שהייתה קודם כ-P2)
+  experienceP3:
+    'התמחות במסדרים מבודדי גז (GIS) מיצרנים שונים, ובעל היכרות מעמיקה של מערכת החשמל בישראל. בעל ניסיון של "מורשה בכיר" בחברת החשמל, כולל ליווי בתקלות ושחרור מתקנים ממתח.',
+
+  // ✅ חדש - פסקה בסוף
+  experienceP4:
+    "התמחות בתכנון מפורט לתחנות השנאה ותחנות כח.",
+
+  expertiseTitle: "תחומי התמחות מרכזיים:",
+  expertise: [
+    "התנעה והובלת פרויקטים אינטגרטיביים",
+    "שילוב מערכות עתירות אנרגיה ברשת החשמל",
+    // ✅ תיקון ניסוח במקום 'פרטני'
+    "ביצוע תכנון מפורט של המתקן החשמלי, משלב היזום עד חיבור הגיד האחרון",
+    "פיתוח ויישום מתודולוגיות תפעול ותחזוקה",
+    "שמירה בלתי פוסקת על בטיחות והגנה על מתקנים",
+    "מתן מענה לתקלות קריטיות בזמן אמת",
+  ],
+
+  servicesTitle: "שירותי הייעוץ שלנו",
+  services: [
+    "ליווי מקצה לקצה: משלב הייזום והתכנון ועד ליישום מלא בראיה תפעולית ותחזוקתית",
+    "אופטימיזציה: איתור פתרונות, בחינת חלופות וכדאיות פיננסית אל מול השקעה",
+    'רגולציה: ליווי מול חברת החשמל ו-"נגה" באפיון המערכת ושילובה במשק',
+    "בטיחות ותחזוקה: ליווי שוטף בהיבטי בטיחות לשחרור מתקן ממתח",
+  ],
+
+  clientsTitle: "הלקוחות שלנו בתחום האנרגיה",
+  clients: ["יצרני חשמל פרטיים", "משרדי ממשלה", "חברות תשתיות", "ארגונים תעשייתיים"],
+},
+    
     // ---------- INFORMATION SYSTEMS PAGE ----------
     isPage: {
       hero: {
@@ -426,40 +436,50 @@ export const copy = {
     },
 
     electricity: {
-      pageTag: "Electricity Division",
-      name: "Yehiel Amir Cohen",
-      role:
-        "Senior electrical engineer, consultant and project manager specializing in high-energy systems, with a focus on substations and power evacuation facilities.",
-      lead: "Head of the Electricity & Energy Division",
-      experienceTitle: "Experience & Expertise",
-      experienceP1:
-        "Over 30 years of experience managing high-energy projects and developing complex systems across diverse methodologies and technologies, working with power producers, government offices, and business organizations.",
-      experienceP2:
-        "Expertise in Gas-Insulated Switchgear (GIS) from multiple manufacturers, with deep familiarity with Israel’s power system. Former senior authorized professional at the national electric company, including fault support and energization/de-energization procedures.",
-      expertiseTitle: "Core areas of expertise:",
-      expertise: [
-        "Initiating and leading integrative projects",
-        "Integrating high-energy systems into the power grid",
-        "Detailed design of electrical facilities",
-        "Developing and implementing operations & maintenance methodologies",
-        "Continuous focus on safety and facility protection",
-        "Real-time response to critical faults",
-      ],
-      servicesTitle: "Our Consulting Services",
-      services: [
-        "End-to-end guidance: from initiation and planning through full implementation, with operational and maintenance perspective.",
-        "Optimization: identifying solutions, evaluating alternatives, and assessing financial feasibility versus investment.",
-        "Regulation: guidance with the national electric company and Noga in system definition and market integration.",
-        "Safety & maintenance: ongoing safety support, including procedures for de-energizing facilities.",
-      ],
-      clientsTitle: "Our Energy Clients",
-      clients: [
-        "Private power producers",
-        "Government offices",
-        "Infrastructure companies",
-        "Industrial organizations",
-      ],
-    },
+  pageTag: "Electricity Division",
+  name: "Yehiel Amir Cohen",
+  role:
+    "Senior electrical engineer, consultant and project manager specializing in high-energy systems, with a focus on substations and power evacuation facilities.",
+  lead: "Head of the Electricity & Energy Division",
+
+  experienceTitle: "Experience & Expertise",
+  experienceP1:
+    "Over 30 years of experience managing high-energy projects and developing complex systems across diverse methodologies and technologies, working with power producers, government offices, and business organizations.",
+
+  // ✅ New - paragraph between existing ones
+  experienceP2:
+    "Extensive experience in designing test frameworks and commissioning-to-operation processes for high-energy projects.",
+
+  // (previous P2)
+  experienceP3:
+    "Expertise in Gas-Insulated Switchgear (GIS) from multiple manufacturers, with deep familiarity with Israel’s power system. Former senior authorized professional at the national electric company, including fault support and energization/de-energization procedures.",
+
+  // ✅ New - final paragraph
+  experienceP4:
+    "Specialization in detailed engineering design for substations and power stations.",
+
+  expertiseTitle: "Core areas of expertise:",
+  expertise: [
+    "Initiating and leading integrative projects",
+    "Integrating high-energy systems into the power grid",
+    // ✅ Updated wording (more professional)
+    "Detailed engineering design of electrical facilities, from project initiation through final conductor connection",
+    "Developing and implementing operations & maintenance methodologies",
+    "Continuous focus on safety and facility protection",
+    "Real-time response to critical faults",
+  ],
+
+  servicesTitle: "Our Consulting Services",
+  services: [
+    "End-to-end guidance: from initiation and planning through full implementation, with operational and maintenance perspective.",
+    "Optimization: identifying solutions, evaluating alternatives, and assessing financial feasibility versus investment.",
+    "Regulation: guidance with the national electric company and Noga in system definition and market integration.",
+    "Safety & maintenance: ongoing safety support, including procedures for de-energizing facilities.",
+  ],
+
+  clientsTitle: "Our Energy Clients",
+  clients: ["Private power producers", "Government offices", "Infrastructure companies", "Industrial organizations"],
+},
 
     isPage: {
       hero: {

@@ -27,7 +27,13 @@ const App: React.FC = () => {
 
       <div className="flex flex-col min-h-screen">
         <Navbar />
-        <main className="flex-grow pt-24">
+
+        <main
+          id="main"
+          role="main"
+          tabIndex={-1}
+          className="flex-grow pt-24 focus:outline-none"
+        >
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -39,6 +45,7 @@ const App: React.FC = () => {
             <Route path="*" element={<Home />} />
           </Routes>
         </main>
+
         <Footer />
       </div>
     </HashRouter>

@@ -23,7 +23,9 @@ const InformationSystems: React.FC = () => {
 
               <p
                 className={`text-xl text-indigo-100 leading-relaxed font-light pr-6 ${
-                  lang === "he" ? "border-r-4 border-indigo-500" : "border-l-4 border-indigo-500 pl-6 pr-0"
+                  lang === "he"
+                    ? "border-r-4 border-indigo-500"
+                    : "border-l-4 border-indigo-500 pl-6 pr-0"
                 }`}
               >
                 {t("isPage.hero.subtitle")}
@@ -75,7 +77,12 @@ const InformationSystems: React.FC = () => {
 
               <h3 className="text-2xl font-bold mb-10 text-indigo-400 tech-font flex items-center gap-4">
                 <div className="p-2 bg-indigo-500/20 rounded-lg">
-                  <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    className="w-8 h-8"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -100,7 +107,9 @@ const InformationSystems: React.FC = () => {
                   <li
                     key={key}
                     className={`flex items-start gap-3 italic transition-colors hover:text-white ${
-                      lang === "he" ? "border-r border-indigo-500/30 pr-4" : "border-l border-indigo-500/30 pl-4"
+                      lang === "he"
+                        ? "border-r border-indigo-500/30 pr-4"
+                        : "border-l border-indigo-500/30 pl-4"
                     }`}
                   >
                     {t(key)}
@@ -116,22 +125,18 @@ const InformationSystems: React.FC = () => {
             </h2>
 
             <div className="grid grid-cols-1 gap-6">
-              {[
-                { title: "isPage.more.items.0.title", desc: "isPage.more.items.0.desc" },
-                { title: "isPage.more.items.1.title", desc: "isPage.more.items.1.desc" },
-                { title: "isPage.more.items.2.title", desc: "isPage.more.items.2.desc" },
-                { title: "isPage.more.items.3.title", desc: "isPage.more.items.3.desc" },
-                { title: "isPage.more.items.4.title", desc: "isPage.more.items.4.desc" },
-              ].map((item, idx) => (
+              {Array.from({ length: 5 }).map((_, idx) => (
                 <div
                   key={idx}
                   className="p-8 bg-slate-50 border border-slate-100 rounded-[2rem] hover:border-indigo-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group"
                 >
                   <h4 className="font-bold text-slate-900 text-lg mb-3 group-hover:text-indigo-600 transition-colors flex items-center gap-2">
                     <span className="text-indigo-400">#</span>
-                    {t(item.title)}
+                    {t(`isPage.more.items.${idx}.title`)}
                   </h4>
-                  <p className="text-slate-600 text-sm leading-relaxed">{t(item.desc)}</p>
+                  <p className="text-slate-600 text-sm leading-relaxed">
+                    {t(`isPage.more.items.${idx}.desc`)}
+                  </p>
                 </div>
               ))}
             </div>
@@ -143,9 +148,15 @@ const InformationSystems: React.FC = () => {
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
 
         <div className="max-w-5xl mx-auto px-6 text-center relative z-10">
-          <h2 className="text-4xl font-bold mb-16 tech-font">{t("isPage.why.title")}</h2>
+          <h2 className="text-4xl font-bold mb-16 tech-font">
+            {t("isPage.why.title")}
+          </h2>
 
-          <div className={`grid grid-cols-1 md:grid-cols-2 gap-12 ${lang === "he" ? "text-right" : "text-left"}`}>
+          <div
+            className={`grid grid-cols-1 md:grid-cols-2 gap-12 ${
+              lang === "he" ? "text-right" : "text-left"
+            }`}
+          >
             {["0", "1", "2", "3"].map((i) => (
               <div
                 key={i}

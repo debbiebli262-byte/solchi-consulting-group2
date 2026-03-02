@@ -10,7 +10,7 @@ const About: React.FC = () => {
   return (
     <div className="bg-white min-h-screen animate-fade-in">
       {/* Hero Section */}
-      <div className="bg-slate-50 py-20 relative overflow-hidden">
+      <div className="bg-blue-100 py-20 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-blue-100 rounded-full -mr-32 -mt-32 opacity-30"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-12">

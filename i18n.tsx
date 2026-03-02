@@ -120,7 +120,8 @@ export const copy = {
     },
 
     // ---------- ELECTRICITY PAGE ----------
-    electricity: {
+    // ---------- ELECTRICITY PAGE ----------
+electricity: {
   pageTag: "חטיבת החשמל",
   name: "יחיאל אמיר כהן",
   role:
@@ -130,16 +131,10 @@ export const copy = {
   experienceTitle: "ניסיון ומומחיות",
   experienceP1:
     "בעל מעל 30 שנות ניסיון בכל הקשור לניהול פרויקטים עתירי אנרגיה לפיתוח מערכות מורכבות במתודולוגיות שונות וטכנולוגיות מגוונות מול יצרני חשמל, משרדי ממשלה וארגונים עסקיים.",
-
-  // ✅ חדש - פסקה בין P1 ל-P2
   experienceP2:
     "ניסיון רב בתכנון מערכי בדיקה ותהליכי הכנסה לניצול של פרויקטים עתירי אנרגיה.",
-
-  // (הפסקה שהייתה קודם כ-P2)
   experienceP3:
     'התמחות במסדרים מבודדי גז (GIS) מיצרנים שונים, ובעל היכרות מעמיקה של מערכת החשמל בישראל. בעל ניסיון של "מורשה בכיר" בחברת החשמל, כולל ליווי בתקלות ושחרור מתקנים ממתח.',
-
-  // ✅ חדש - פסקה בסוף
   experienceP4:
     "התמחות בתכנון מפורט לתחנות השנאה ותחנות כח.",
 
@@ -147,7 +142,6 @@ export const copy = {
   expertise: [
     "התנעה והובלת פרויקטים אינטגרטיביים",
     "שילוב מערכות עתירות אנרגיה ברשת החשמל",
-    // ✅ תיקון ניסוח במקום 'פרטני'
     "ביצוע תכנון מפורט של המתקן החשמלי, משלב היזום עד חיבור הגיד האחרון",
     "פיתוח ויישום מתודולוגיות תפעול ותחזוקה",
     "שמירה בלתי פוסקת על בטיחות והגנה על מתקנים",
@@ -162,8 +156,29 @@ export const copy = {
     "בטיחות ותחזוקה: ליווי שוטף בהיבטי בטיחות לשחרור מתקן ממתח",
   ],
 
+  planningTitle: "שירותי התכנון שלנו",
+  planningIntro:
+    "ב-SOLCHI אנחנו לא רק מתכננים — אנחנו יוצרים פתרונות הנדסיים חכמים שמניעים פרויקטים קדימה. כל תהליך תכנון מבוסס על חשיבה מערכתית, חדשנות מקצועית וניסיון עשיר בליווי פרויקטים עתירי אנרגיה מהשלב הראשון ועד למסירה.",
+  planningItems: [
+    "תכנון עקרוני (Concept Design) המייצר תשתית מדויקת לפרויקט, כולל בחינת חלופות טכנו־כלכליות המובילות לקבלת החלטות מושכלת.",
+    "תכנון מפורט (Detail Design) לכל מערכות החשמל והעזר — חישובים, שרטוטים, מפרטים ותוצרים הנדסיים ברמת ביצוע.",
+    "הכנת מסמכי מכרז מלאים, המייצרים בהירות הנדסית ומבטיחים קבלת הצעות איכותיות ומדויקות מקבלנים.",
+    "ליווי הנדסי מלא משלב הייזום ועד המסירה, כולל תמיכה מקצועית בבדיקות FAT/SAT ו-Commissioning בשטח.",
+    "תיאום תכנון רב־תחומי, המבטיח אינטגרציה מלאה בין חשמל, מבנה, מכונות, בקרה, בטיחות וסביבה.",
+    "ביצוע חישובים הנדסיים מתקדמים, לרבות זרמים, קצר, הארקה, עומסים, סלקטיביות ואמינות — לשקט נפשי ולתכנון בטוח.",
+    "תכנון מערכות מתח על/עליון/גבוה/בינוני/נמוך, כולל לוחות, כבלים, ציוד הגנה ופתרונות בקרה מותאמים.",
+    "בקרת תכנון ותאימות לתקנים בינלאומיים ומקומיים (IEC, IEEE), המבטיחה עמידה מלאה בכל דרישות הפרויקט.",
+    "פתרונות מותאמים לפרויקטים מורכבים, בעלי מגבלות תשתית, צפיפות או דרישות אנרגיה גבוהות במיוחד.",
+    "אופטימיזציה של תכנון, לשיפור ביצועים, קיצור לוחות זמנים וצמצום עלויות — בלי להתפשר על איכות.",
+  ],
+
   clientsTitle: "הלקוחות שלנו בתחום האנרגיה",
-  clients: ["יצרני חשמל פרטיים", "משרדי ממשלה", "חברות תשתיות", "ארגונים תעשייתיים"],
+  clients: [
+    "יצרני חשמל פרטיים",
+    "משרדי ממשלה",
+    "חברות תשתיות",
+    "ארגונים תעשייתיים",
+  ],
 },
     
     // ---------- INFORMATION SYSTEMS PAGE ----------
@@ -445,24 +460,17 @@ export const copy = {
   experienceTitle: "Experience & Expertise",
   experienceP1:
     "Over 30 years of experience managing high-energy projects and developing complex systems across diverse methodologies and technologies, working with power producers, government offices, and business organizations.",
-
-  // ✅ New - paragraph between existing ones
   experienceP2:
-    "Extensive experience in designing test frameworks and commissioning-to-operation processes for high-energy projects.",
-
-  // (previous P2)
+    "Extensive experience in designing testing frameworks and commissioning-to-operation processes for high-energy projects.",
   experienceP3:
-    "Expertise in Gas-Insulated Switchgear (GIS) from multiple manufacturers, with deep familiarity with Israel’s power system. Former senior authorized professional at the national electric company, including fault support and energization/de-energization procedures.",
-
-  // ✅ New - final paragraph
+    "Expertise in Gas-Insulated Switchgear (GIS) from multiple manufacturers, with deep familiarity with Israel’s power system. Former senior authorized professional at the national electric company, including fault support and energization and de-energization procedures.",
   experienceP4:
     "Specialization in detailed engineering design for substations and power stations.",
 
-  expertiseTitle: "Core areas of expertise:",
+  expertiseTitle: "Core Areas of Expertise:",
   expertise: [
     "Initiating and leading integrative projects",
     "Integrating high-energy systems into the power grid",
-    // ✅ Updated wording (more professional)
     "Detailed engineering design of electrical facilities, from project initiation through final conductor connection",
     "Developing and implementing operations & maintenance methodologies",
     "Continuous focus on safety and facility protection",
@@ -473,12 +481,34 @@ export const copy = {
   services: [
     "End-to-end guidance: from initiation and planning through full implementation, with operational and maintenance perspective.",
     "Optimization: identifying solutions, evaluating alternatives, and assessing financial feasibility versus investment.",
-    "Regulation: guidance with the national electric company and Noga in system definition and market integration.",
+    "Regulatory support: guidance with the national electric company and Noga in system definition and market integration.",
     "Safety & maintenance: ongoing safety support, including procedures for de-energizing facilities.",
   ],
 
+  planningTitle: "Our Engineering Design Services",
+  planningIntro:
+    "At SOLCHI, we don’t just design — we create intelligent engineering solutions that drive projects forward. Every planning process is built on systems thinking, professional innovation, and extensive experience supporting high-energy projects from initial concept through final delivery.",
+
+  planningItems: [
+    "Concept Design that establishes a precise project foundation, including techno-economic alternative analysis to enable informed decision-making.",
+    "Detailed Design for all electrical and auxiliary systems — calculations, drawings, specifications, and execution-level engineering deliverables.",
+    "Preparation of full tender documentation to ensure engineering clarity and high-quality, accurate contractor proposals.",
+    "Comprehensive engineering support from project initiation through delivery, including professional support during FAT, SAT, and on-site commissioning.",
+    "Multidisciplinary design coordination ensuring full integration between electrical, structural, mechanical, control, safety, and environmental systems.",
+    "Advanced engineering calculations including load flow, short-circuit, grounding, load analysis, selectivity, and reliability — ensuring safe and robust design.",
+    "Design of extra-high, high, medium, and low voltage systems, including panels, cables, protection equipment, and customized control solutions.",
+    "Design review and compliance with international and local standards (IEC, IEEE), ensuring full adherence to project requirements.",
+    "Tailored solutions for complex projects with infrastructure constraints, density limitations, or exceptionally high energy demands.",
+    "Design optimization to improve performance, shorten timelines, and reduce costs — without compromising quality.",
+  ],
+
   clientsTitle: "Our Energy Clients",
-  clients: ["Private power producers", "Government offices", "Infrastructure companies", "Industrial organizations"],
+  clients: [
+    "Private power producers",
+    "Government offices",
+    "Infrastructure companies",
+    "Industrial organizations",
+  ],
 },
 
     isPage: {

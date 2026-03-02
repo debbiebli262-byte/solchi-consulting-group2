@@ -49,7 +49,67 @@ const Electricity: React.FC = () => {
       {/* Content */}
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-          <div className="lg:col-span-8">
+
+          {/* LEFT STICKY COLUMN */}
+          <div className="lg:col-span-4 order-2 lg:order-1">
+            <div className="sticky top-28 space-y-8">
+
+              {/* שירותי הייעוץ */}
+              <div className="bg-blue-600 p-8 rounded-[2.5rem] text-white shadow-xl shadow-blue-600/20">
+                <h3 className="text-xl font-bold mb-8 tech-font">
+                  {t("electricity.servicesTitle")}
+                </h3>
+
+                <ul className="space-y-6 text-sm">
+                  {[0, 1, 2, 3].map((i) => (
+                    <li
+                      key={i}
+                      className="border-b border-blue-400 pb-4 leading-relaxed flex gap-3"
+                    >
+                      <span className="font-bold text-blue-200">0{i + 1}</span>
+                      <p>{t(`electricity.services.${i}`)}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* שירותי התכנון */}
+              <a href="#planning-services">
+                <div className="bg-blue-600 p-8 rounded-[2.5rem] text-white shadow-xl shadow-blue-600/20 cursor-pointer hover:bg-blue-700 transition-colors">
+                  <h3 className="text-xl font-bold mb-8 tech-font">
+                    שירותי התכנון שלנו
+                  </h3>
+
+                  <ul className="space-y-6 text-sm">
+                    <li className="border-b border-blue-400 pb-4 flex gap-3">
+                      <span className="font-bold text-blue-200">01</span>
+                      <p>תכנון עקרוני (Concept Design) המייצר תשתית מדויקת לפרויקט, כולל בחינת חלופות טכנו־כלכליות המובילות לקבלת החלטות מושכלת.</p>
+                    </li>
+
+                    <li className="border-b border-blue-400 pb-4 flex gap-3">
+                      <span className="font-bold text-blue-200">02</span>
+                      <p>תכנון מפורט (Detail Design) לכל מערכות החשמל והעזר — חישובים, שרטוטים, מפרטים ותוצרים הנדסיים ברמת ביצוע.</p>
+                    </li>
+
+                    <li className="border-b border-blue-400 pb-4 flex gap-3">
+                      <span className="font-bold text-blue-200">03</span>
+                      <p>הכנת מסמכי מכרז מלאים, המייצרים בהירות הנדסית ומבטיחים קבלת הצעות איכותיות ומדויקות מקבלנים.</p>
+                    </li>
+
+                    <li className="flex gap-3">
+                      <span className="font-bold text-blue-200">04</span>
+                      <p>ליווי הנדסי מלא משלב הייזום ועד המסירה, כולל תמיכה מקצועית בבדיקות FAT/SAT ו-Commissioning בשטח.</p>
+                    </li>
+                  </ul>
+                </div>
+              </a>
+
+            </div>
+          </div>
+
+          {/* MAIN CONTENT */}
+          <div className="lg:col-span-8 order-1 lg:order-2">
+
             <h2 className="text-3xl font-bold text-slate-900 mb-8 tech-font border-b-2 border-blue-600 pb-2 inline-block">
               {t("electricity.experienceTitle")}
             </h2>
@@ -79,53 +139,33 @@ const Electricity: React.FC = () => {
               ))}
             </div>
 
-            {/* Planning / Design Services */}
-            <h3 className="text-2xl font-bold text-slate-900 mt-16 mb-8 tech-font">
-              {t("electricity.planningTitle")}
-            </h3>
+            {/* Planning Section Anchor */}
+            <section id="planning-services" className="mt-20">
+              <h3 className="text-2xl font-bold text-slate-900 mb-8 tech-font">
+                {t("electricity.planningTitle")}
+              </h3>
 
-            <div className="bg-slate-50 rounded-3xl border border-slate-100 p-8 md:p-10">
-              <p className="text-slate-700 text-lg leading-relaxed mb-8">
-                {t("electricity.planningIntro")}
-              </p>
+              <div className="bg-slate-50 rounded-3xl border border-slate-100 p-8 md:p-10">
+                <p className="text-slate-700 text-lg leading-relaxed mb-8">
+                  {t("electricity.planningIntro")}
+                </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => (
-                  <div
-                    key={i}
-                    className="flex gap-4 p-5 bg-white rounded-2xl border border-slate-100 hover:border-blue-200 transition-colors group"
-                  >
-                    <div className="mt-2 flex-shrink-0 w-2 h-2 rounded-full bg-blue-600 group-hover:scale-125 transition-transform"></div>
-                    <p className="text-slate-700 leading-relaxed">
-                      {t(`electricity.planningItems.${i}`)}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Right sticky card */}
-          <div className="lg:col-span-4">
-            <div className="sticky top-28">
-              <div className="bg-blue-600 p-8 rounded-[2.5rem] text-white shadow-xl shadow-blue-600/20">
-                <h3 className="text-xl font-bold mb-8 tech-font">
-                  {t("electricity.servicesTitle")}
-                </h3>
-
-                <ul className="space-y-6 text-sm">
-                  {[0, 1, 2, 3].map((i) => (
-                    <li
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => (
+                    <div
                       key={i}
-                      className="border-b border-blue-400 pb-4 leading-relaxed flex gap-3"
+                      className="flex gap-4 p-5 bg-white rounded-2xl border border-slate-100 hover:border-blue-200 transition-colors group"
                     >
-                      <span className="font-bold text-blue-200">0{i + 1}</span>
-                      <p>{t(`electricity.services.${i}`)}</p>
-                    </li>
+                      <div className="mt-2 flex-shrink-0 w-2 h-2 rounded-full bg-blue-600 group-hover:scale-125 transition-transform"></div>
+                      <p className="text-slate-700 leading-relaxed">
+                        {t(`electricity.planningItems.${i}`)}
+                      </p>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
-            </div>
+            </section>
+
           </div>
         </div>
       </section>

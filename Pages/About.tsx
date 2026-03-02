@@ -9,15 +9,15 @@ const About: React.FC = () => {
   return (
     <div className="bg-white min-h-screen animate-fade-in">
       {/* Hero Section */}
-      <div className="bg-blue-100 py-20 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-100 rounded-full -mr-32 -mt-32 opacity-30"></div>
+      <div className="bg-blue-50/70 py-20 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-200/40 rounded-full -mr-32 -mt-32"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-12">
           <div>
             <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 tech-font">
               {t("about.hero.title")}
             </h1>
-            <p className="text-xl text-blue-600 font-bold max-w-2xl">
+            <p className="text-xl text-blue-700 font-bold max-w-2xl">
               {t("about.hero.subtitle")}
             </p>
           </div>
@@ -26,7 +26,7 @@ const About: React.FC = () => {
             <img
               src={logoUrl}
               alt="Solchi Logo"
-              className="h-40 w-auto grayscale-0 brightness-100 object-contain"
+              className="h-40 w-auto object-contain"
             />
           </div>
         </div>
@@ -43,7 +43,7 @@ const About: React.FC = () => {
 
           {/* Vision Card */}
           <div className="bg-slate-900 p-10 rounded-3xl text-white shadow-xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600 rounded-full -mr-16 -mt-16 opacity-20"></div>
+            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/30 rounded-full -mr-16 -mt-16"></div>
 
             <h3 className="text-2xl font-bold mb-8 tech-font text-blue-400">
               {t("about.vision.title")}

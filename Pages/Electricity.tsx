@@ -52,7 +52,7 @@ const Electricity: React.FC = () => {
 
           {/* LEFT STICKY COLUMN */}
           <div className="lg:col-span-4 order-2 lg:order-1">
-            <div className="sticky top-28 space-y-8">
+            <div className="sticky top-28 space-y-16">
 
               {/* שירותי הייעוץ */}
               <div className="bg-blue-600 p-8 rounded-[2.5rem] text-white shadow-xl shadow-blue-600/20">

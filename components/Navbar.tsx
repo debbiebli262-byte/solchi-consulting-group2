@@ -7,17 +7,9 @@ const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
 
-  // סגירת תפריט כשמחליפים עמוד
   useEffect(() => {
     setOpen(false);
   }, [location.pathname]);
-
-  /**
-   * לפי הבקשה שלך:
-   * עברית: לוגו שמאל, תפריט/כפתורים ימין  => flex-row
-   * אנגלית: לוגו ימין, תפריט/כפתורים שמאל => flex-row-reverse
-   */
-  const headerDirClass = lang === "he" ? "flex-row" : "flex-row-reverse";
 
   const navItems = useMemo(
     () => [
@@ -32,45 +24,67 @@ const Navbar: React.FC = () => {
 
   const logoUrl = "/logo.png";
 
+  // Desktop: עברית -> כותרות ואז כפתור שפה (ימינה יותר)
+  //         אנגלית -> כפתור שפה ואז כותרות (שמאלה יותר)
+  const desktopNavOrderClass = lang === "he" ? "flex-row" : "flex-row-reverse";
+
+  // Header: בעברית הלוגו שמאל, הניווט בצד ימין
+  //         באנגלית הלוגו ימין, הניווט בצד שמאל
+  const headerJustify =
+    lang === "he" ? "flex-row" : "flex-row-reverse";
+
+  // מובייל: בעברית לוגו שמאל, סנדוויץ׳ ימין (ושפה לידו)
+  //         באנגלית לוגו ימין, סנדוויץ׳ שמאל (ושפה לידו)
+  const mobileControlsOrder = lang === "he" ? "flex-row" : "flex-row-reverse";
+
+  const dropdownAlign = lang === "he" ? "text-right" : "text-left";
+
   return (
     <>
       <header className="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
         <div
-          className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between ${headerDirClass}`}
+          className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center ${headerJustify}`}
         >
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
+          {/* Logo (צד שמאל בעברית, צד ימין באנגלית) */}
+          <Link to="/" className="flex items-center gap-3 shrink-0">
             <img src={logoUrl} alt="Solchi Logo" className="h-10 w-auto" />
           </Link>
 
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.to}
-                to={item.to}
-                className="text-slate-700 hover:text-blue-600 font-bold transition-colors"
-              >
-                {item.label}
-              </Link>
-            ))}
+          {/* Spacer */}
+          <div className="flex-1" />
 
-            {/* Language switch (globe + EN/HE) */}
-            <button
-              type="button"
-              onClick={toggleLang}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-all font-bold text-slate-800"
-              aria-label="Switch language"
-            >
-              <GlobeIcon className="w-5 h-5" />
-              <span className="tracking-wider">{lang === "he" ? "HE" : "EN"}</span>
-            </button>
+          {/* Desktop Nav block (צד ימין בעברית, צד שמאל באנגלית) */}
+          <nav className="hidden md:flex items-center">
+            <div className={`flex items-center gap-8 ${desktopNavOrderClass}`}>
+              {/* Titles */}
+              <div className="flex items-center gap-8">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.to}
+                    to={item.to}
+                    className="text-slate-700 hover:text-blue-600 font-bold transition-colors whitespace-nowrap"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+
+              {/* Language button (מימין לכותרות בעברית, משמאל לכותרות באנגלית) */}
+              <button
+                type="button"
+                onClick={toggleLang}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-all font-bold text-slate-800"
+                aria-label="Switch language"
+              >
+                <GlobeIcon className="w-5 h-5" />
+                <span className="tracking-wider">{lang === "he" ? "HE" : "EN"}</span>
+              </button>
+            </div>
           </nav>
 
-          {/* Mobile: burger + language */}
-          {/* לפי הבקשה: בעברית (לוגו שמאל) הכפתורים מימין | באנגלית (לוגו ימין) הכפתורים משמאל */}
-          <div className="md:hidden flex items-center gap-3">
-            {/* Burger */}
+          {/* Mobile controls */}
+          <div className={`md:hidden flex items-center gap-3 shrink-0 ${mobileControlsOrder}`}>
+            {/* Burger (בצד ימין בעברית, בצד שמאל באנגלית) */}
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}
@@ -81,7 +95,7 @@ const Navbar: React.FC = () => {
               {open ? <CloseIcon className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
             </button>
 
-            {/* Language switch */}
+            {/* Language (צמוד לבורגר, נשאר איתו באותו צד) */}
             <button
               type="button"
               onClick={toggleLang}
@@ -99,15 +113,12 @@ const Navbar: React.FC = () => {
       {open && (
         <div className="fixed top-20 inset-x-0 z-40 md:hidden">
           <div className="bg-white border-b border-slate-100 shadow-lg">
-            {/* יישור התפריט הנפתח לפי שפה (עברית לימין, אנגלית לשמאל) */}
-            <div className={`max-w-7xl mx-auto px-4 py-4 flex flex-col gap-2 ${lang === "he" ? "text-right" : "text-left"}`}>
+            <div className={`max-w-7xl mx-auto px-4 py-4 flex flex-col gap-2 ${dropdownAlign}`}>
               {navItems.map((item) => (
                 <Link
                   key={item.to}
                   to={item.to}
-                  className={`px-4 py-3 rounded-2xl font-bold text-slate-800 hover:bg-slate-50 transition-colors ${
-                    lang === "he" ? "text-right" : "text-left"
-                  }`}
+                  className={`px-4 py-3 rounded-2xl font-bold text-slate-800 hover:bg-slate-50 transition-colors ${dropdownAlign}`}
                 >
                   {item.label}
                 </Link>
@@ -146,12 +157,7 @@ const CloseIcon: React.FC<{ className?: string }> = ({ className }) => (
 
 const GlobeIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M12 21a9 9 0 100-18 9 9 0 000 18z"
-    />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 21a9 9 0 100-18 9 9 0 000 18z" />
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12h18" />
     <path
       strokeLinecap="round"

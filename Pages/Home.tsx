@@ -25,7 +25,8 @@ const Home: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="max-w-3xl">
+          {/* centered hero content */}
+          <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 tech-font tracking-tight leading-tight">
               {t("home.hero.titlePrefix")}{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">
@@ -34,11 +35,11 @@ const Home: React.FC = () => {
               {t("home.hero.titleSuffix")}
             </h1>
 
-            <p className="text-xl text-slate-300 mb-10 leading-relaxed max-w-2xl font-light">
+            <p className="text-xl text-slate-300 mb-10 leading-relaxed max-w-2xl mx-auto font-light">
               {t("home.hero.subtitle")}
             </p>
 
-            <div className="flex flex-wrap gap-5">
+            <div className="flex flex-wrap gap-5 justify-center">
               <Link
                 to="/contact"
                 className="bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-10 rounded-full text-center transition-all shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.6)]"

@@ -11,6 +11,7 @@ import Accessibility from "./Pages/Accessibility";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import AccessibilityWidget from "./components/AccessibilityWidget";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -47,6 +48,9 @@ const App: React.FC = () => {
         </main>
 
         <Footer />
+
+        {/* כפתור נגישות + פאנל נפתח */}
+        <AccessibilityWidget />
       </div>
     </HashRouter>
   );

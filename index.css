@@ -5,3 +5,8 @@ html {
 #planning-services {
   scroll-margin-top: 90px;
 }
+
+/* ניגודיות גבוהה */
+body.a11y-high-contrast {
+  filter: contrast(1.25);
+}

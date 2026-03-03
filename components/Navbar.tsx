@@ -40,8 +40,9 @@ const Navbar: React.FC = () => {
       </a>
 
       <header className="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
-        <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center ${headerDirection}`}>
-          
+        <div
+          className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center ${headerDirection}`}
+        >
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 shrink-0">
             <img src={logoUrl} alt="Solchi Logo" className="h-10 w-auto" />
@@ -52,7 +53,6 @@ const Navbar: React.FC = () => {
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center">
             <div className={`flex items-center gap-6 ${desktopGroupDirection}`}>
-              
               {/* Titles */}
               <div className="flex items-center gap-8">
                 {navItems.map((item) => (
@@ -76,18 +76,16 @@ const Navbar: React.FC = () => {
                 <GlobeIcon className="w-5 h-5" />
                 <span className="tracking-wider">{lang === "he" ? "HE" : "EN"}</span>
               </button>
-
             </div>
           </nav>
 
           {/* Mobile controls */}
           <div className={`md:hidden flex items-center gap-3 shrink-0 ${mobileControlsDirection}`}>
-            
             {/* Burger */}
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}
-              className="inline-flex items-center justify-center w-11 h-11 rounded-2xl border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-all"
+              className="inline-flex items-center justify-center w-11 h-11 rounded-2xl border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-all cursor-pointer touch-manipulation"
               aria-label="Open menu"
               aria-expanded={open}
             >
@@ -104,34 +102,35 @@ const Navbar: React.FC = () => {
               <GlobeIcon className="w-5 h-5" />
               <span className="tracking-wider">{lang === "he" ? "HE" : "EN"}</span>
             </button>
-
           </div>
         </div>
       </header>
 
       {/* Mobile dropdown */}
       {open && (
-        <div className="fixed top-20 inset-x-0 z-[60] md:hidden">    
-          <div className="bg-white border-b border-slate-100 shadow-lg">
+        <div className="fixed top-20 inset-x-0 z-[60] md:hidden">
+          {/* overlay - מאחורי התפריט */}
+          <button
+            type="button"
+            className="fixed inset-0 top-20 bg-black/20 z-[60]"
+            onClick={() => setOpen(false)}
+            aria-label="Close menu overlay"
+          />
+
+          {/* menu - מעל האוברליי */}
+          <div className="relative z-[61] bg-white border-b border-slate-100 shadow-lg">
             <div className={`max-w-7xl mx-auto px-4 py-4 flex flex-col gap-3 ${dropdownAlign}`}>
               {navItems.map((item) => (
                 <Link
                   key={item.to}
                   to={item.to}
-                  className={`px-4 py-3 rounded-2xl font-bold text-slate-800 hover:bg-slate-50 transition-colors ${dropdownAlign}`}
+                  className={`px-4 py-3 rounded-2xl font-bold text-slate-800 hover:bg-slate-50 transition-colors ${dropdownAlign} cursor-pointer`}
                 >
                   {item.label}
                 </Link>
               ))}
             </div>
           </div>
-
-          <button
-            type="button"
-            className="fixed inset-0 top-20 bg-black/20 z-[59]"
-            onClick={() => setOpen(false)}
-            aria-label="Close menu overlay"
-          />
         </div>
       )}
     </>
@@ -143,19 +142,19 @@ export default Navbar;
 /* Icons */
 
 const MenuIcon: React.FC<{ className?: string }> = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor">
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
   </svg>
 );
 
 const CloseIcon: React.FC<{ className?: string }> = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor">
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
   </svg>
 );
 
 const GlobeIcon: React.FC<{ className?: string }> = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor">
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 21a9 9 0 100-18 9 9 0 000 18z" />
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12h18" />
   </svg>

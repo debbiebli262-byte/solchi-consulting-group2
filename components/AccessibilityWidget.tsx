@@ -12,10 +12,9 @@ const clamp = (n: number, min: number, max: number) =>
 const AccessibilityWidget: React.FC = () => {
   const [open, setOpen] = useState(false);
 
-  // מאפשר למשתמש "להסתיר" את הווידג'ט
+  // המשתמש יכול להסתיר את הווידג׳ט
   const [hidden, setHidden] = useState<boolean>(() => {
-    const saved = localStorage.getItem(HIDE_KEY);
-    return saved === "1";
+    return localStorage.getItem(HIDE_KEY) === "1";
   });
 
   const [fontScale, setFontScale] = useState<number>(() => {
@@ -24,8 +23,7 @@ const AccessibilityWidget: React.FC = () => {
   });
 
   const [contrast, setContrast] = useState<ContrastMode>(() => {
-    const saved = localStorage.getItem(CONTRAST_KEY);
-    return saved === "high" ? "high" : "normal";
+    return localStorage.getItem(CONTRAST_KEY) === "high" ? "high" : "normal";
   });
 
   useEffect(() => {
@@ -39,18 +37,17 @@ const AccessibilityWidget: React.FC = () => {
   }, [contrast]);
 
   useEffect(() => {
-    // ESC סוגר את הפאנל
+    localStorage.setItem(HIDE_KEY, hidden ? "1" : "0");
+    if (hidden) setOpen(false);
+  }, [hidden]);
+
+  useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") setOpen(false);
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
   }, []);
-
-  useEffect(() => {
-    localStorage.setItem(HIDE_KEY, hidden ? "1" : "0");
-    if (hidden) setOpen(false);
-  }, [hidden]);
 
   const reset = () => {
     setFontScale(1);
@@ -65,7 +62,7 @@ const AccessibilityWidget: React.FC = () => {
 
   return (
     <>
-      {/* כפתור נגישות - נשאר תמיד fixed */}
+      {/* הכפתור תמיד בתחתית המסך */}
       <div className="fixed bottom-6 left-6 z-[9999]">
         <div className="relative">
           <button
@@ -78,11 +75,11 @@ const AccessibilityWidget: React.FC = () => {
             <AccessibilityIcon className="w-7 h-7" />
           </button>
 
-          {/* X קטן לסגירה/הסתרה */}
+          {/* X קטן להסתרה */}
           <button
             type="button"
             onClick={() => setHidden(true)}
-            aria-label="הסתר נגישות"
+            aria-label="הסתר כפתור נגישות"
             title="הסתר"
             className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-white border border-slate-200 text-slate-700 shadow hover:bg-slate-50 flex items-center justify-center"
           >
@@ -91,7 +88,7 @@ const AccessibilityWidget: React.FC = () => {
         </div>
       </div>
 
-      {/* פאנל נגישות - גם fixed, כדי שלא “יזוז” */}
+      {/* הפאנל גם fixed ונפתח מעל הכפתור */}
       <div
         className={`fixed bottom-24 left-6 z-[9998] w-72 rounded-2xl bg-white border border-slate-200 shadow-2xl p-4 transition-all duration-300 ${
           open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3 pointer-events-none"
@@ -154,9 +151,8 @@ const AccessibilityWidget: React.FC = () => {
           Reset
         </button>
 
-        {/* החזרה אחרי הסתרה: המשתמש יכול תמיד לעשות Reset */}
         <div className="mt-3 text-xs text-slate-500 leading-relaxed">
-          ניתן להסתיר את הכפתור עם ה-X. כדי להחזיר אותו — לחצי Reset.
+          להסתרה: לחצי על ה-X ליד הכפתור. כדי להחזיר — Reset.
         </div>
       </div>
     </>
@@ -165,7 +161,7 @@ const AccessibilityWidget: React.FC = () => {
 
 export default AccessibilityWidget;
 
-/* ---------- Icons (SVG) ---------- */
+/* ---------- Icons ---------- */
 
 const AccessibilityIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg
@@ -176,13 +172,9 @@ const AccessibilityIcon: React.FC<{ className?: string }> = ({ className }) => (
     strokeWidth="2"
     aria-hidden="true"
   >
-    {/* head */}
     <circle cx="12" cy="4.5" r="1.6" />
-    {/* body */}
     <path strokeLinecap="round" strokeLinejoin="round" d="M12 7v4" />
-    {/* arms */}
     <path strokeLinecap="round" strokeLinejoin="round" d="M6 9.5c3 1.6 9 1.6 12 0" />
-    {/* legs */}
     <path strokeLinecap="round" strokeLinejoin="round" d="M10.2 21l1.8-6 1.8 6" />
     <path strokeLinecap="round" strokeLinejoin="round" d="M9.5 15h5" />
   </svg>

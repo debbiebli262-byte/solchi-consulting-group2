@@ -190,26 +190,43 @@ const Electricity: React.FC = () => {
       </section>
 
       {/* Clients */}
-      <section className="py-24 bg-slate-50 border-t border-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-16 tech-font">
-            {t("electricity.clientsTitle")}
-          </h2>
+<section className="py-24 bg-slate-50 border-t border-slate-100">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 className="text-3xl font-bold text-center mb-16 tech-font">
+      {t("electricity.clientsTitle")}
+    </h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[0, 1, 2, 3].map((i) => (
-              <div
-                key={i}
-                className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-center font-bold text-slate-600 hover:text-blue-600 transition-colors flex items-center justify-center min-h-[120px]"
-              >
-                {t(`electricity.clients.${i}`)}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+
+      <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center">
+        <img
+          src="/logos/iec.png"
+          alt="חברת החשמל לישראל"
+          className="max-h-16 object-contain grayscale hover:grayscale-0 hover:scale-105 transition duration-300"
+        />
+      </div>
+
+      <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center">
+        <img
+          src="/logos/noga.png"
+          alt="נגה ניהול מערכת חשמל"
+          className="max-h-16 object-contain grayscale hover:grayscale-0 hover:scale-105 transition duration-300"
+        />
+      </div>
+
+      <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center">
+        <img
+          src="/logos/dalia.png"
+          alt="דליה אנרגיות"
+          className="max-h-16 object-contain grayscale hover:grayscale-0 hover:scale-105 transition duration-300"
+        />
+      </div>
+
     </div>
-  );
+  </div>
+</section>
+</div>
+);
 };
 
 export default Electricity;

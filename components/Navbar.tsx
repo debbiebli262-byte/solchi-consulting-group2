@@ -111,7 +111,7 @@ const Navbar: React.FC = () => {
 
       {/* Mobile dropdown */}
       {open && (
-        <div className="fixed top-20 inset-x-0 z-40 md:hidden">
+        <div className="fixed top-20 inset-x-0 z-[60] md:hidden">    
           <div className="bg-white border-b border-slate-100 shadow-lg">
             <div className={`max-w-7xl mx-auto px-4 py-4 flex flex-col gap-3 ${dropdownAlign}`}>
               {navItems.map((item) => (
@@ -128,7 +128,7 @@ const Navbar: React.FC = () => {
 
           <button
             type="button"
-            className="fixed inset-0 top-20 bg-black/20"
+            className="fixed inset-0 top-20 bg-black/20 z-[59]"
             onClick={() => setOpen(false)}
             aria-label="Close menu overlay"
           />

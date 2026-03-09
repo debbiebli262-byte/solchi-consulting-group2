@@ -72,37 +72,39 @@ const Electricity: React.FC = () => {
               </div>
 
               {/* שירותי התכנון */}
-<div
-  onClick={() => {
-    const section = document.getElementById("planning-services");
-    section?.scrollIntoView({ behavior: "smooth" });
-  }}
-  className="bg-blue-600 p-8 rounded-[2.5rem] text-white shadow-xl shadow-blue-600/20 cursor-pointer hover:bg-blue-700 transition-colors"
-  role="button"
-  tabIndex={0}
-  onKeyDown={(e) => {
-    if (e.key === "Enter" || e.key === " ") {
-      const section = document.getElementById("planning-services");
-      section?.scrollIntoView({ behavior: "smooth" });
-    }
-  }}
->
-  <h3 className="text-xl font-bold mb-8 tech-font">
-    {t("electricity.planningServicesTitle")}
-  </h3>
+              <div
+                onClick={() => {
+                  const section = document.getElementById("planning-services");
+                  section?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="bg-blue-600 p-8 rounded-[2.5rem] text-white shadow-xl shadow-blue-600/20 cursor-pointer hover:bg-blue-700 transition-colors"
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    const section = document.getElementById("planning-services");
+                    section?.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+              >
+                <h3 className="text-xl font-bold mb-8 tech-font">
+                  {t("electricity.planningServicesTitle")}
+                </h3>
 
-  <ul className="space-y-6 text-sm">
-    {[0, 1, 2, 3].map((i) => (
-      <li
-        key={i}
-        className="border-b border-blue-400 pb-4 flex gap-3 leading-relaxed"
-      >
-        <span className="font-bold text-blue-200">0{i + 1}</span>
-        <p>{t(`electricity.planningServices.${i}`)}</p>
-      </li>
-    ))}
-  </ul>
-</div>
+                <ul className="space-y-6 text-sm">
+                  {[0, 1, 2, 3].map((i) => (
+                    <li
+                      key={i}
+                      className="border-b border-blue-400 pb-4 flex gap-3 leading-relaxed"
+                    >
+                      <span className="font-bold text-blue-200">0{i + 1}</span>
+                      <p>{t(`electricity.planningServices.${i}`)}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
 
           {/* MAIN CONTENT */}
           <div className="lg:col-span-8 order-1 lg:order-2">
@@ -166,43 +168,41 @@ const Electricity: React.FC = () => {
       </section>
 
       {/* Clients */}
-<section className="py-24 bg-slate-50 border-t border-slate-100">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 className="text-3xl font-bold text-center mb-16 tech-font">
-      {t("electricity.clientsTitle")}
-    </h2>
+      <section className="py-24 bg-slate-50 border-t border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-16 tech-font">
+            {t("electricity.clientsTitle")}
+          </h2>
 
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center">
+              <img
+                src="/logos/iec.png"
+                alt="חברת החשמל לישראל"
+                className="max-h-20 object-contain grayscale hover:grayscale-0 hover:scale-105 transition duration-300"
+              />
+            </div>
 
-      <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center">
-        <img
-          src="/logos/iec.png"
-          alt="חברת החשמל לישראל"
-          className="max-h-20 object-contain grayscale hover:grayscale-0 hover:scale-105 transition duration-300"
-        />
-      </div>
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center">
+              <img
+                src="/logos/noga.png"
+                alt="נגה ניהול מערכת חשמל"
+                className="max-h-16 object-contain grayscale hover:grayscale-0 hover:scale-105 transition duration-300"
+              />
+            </div>
 
-      <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center">
-        <img
-          src="/logos/noga.png"
-          alt="נגה ניהול מערכת חשמל"
-          className="max-h-16 object-contain grayscale hover:grayscale-0 hover:scale-105 transition duration-300"
-        />
-      </div>
-
-      <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center">
-        <img
-          src="/logos/dalia.png"
-          alt="דליה אנרגיות"
-          className="max-h-16 object-contain grayscale hover:grayscale-0 hover:scale-105 transition duration-300"
-        />
-      </div>
-
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center">
+              <img
+                src="/logos/dalia.png"
+                alt="דליה אנרגיות"
+                className="max-h-16 object-contain grayscale hover:grayscale-0 hover:scale-105 transition duration-300"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-  </div>
-</section>
-</div>
-);
+  );
 };
 
 export default Electricity;

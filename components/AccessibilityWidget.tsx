@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from "react";
+import { useI18n } from "../i18n";
 
 type ContrastMode = "normal" | "high";
 
 const FONT_KEY = "a11y_font_scale";
 const CONTRAST_KEY = "a11y_contrast";
 
+const MIN_SCALE = 0.9;
+const MAX_SCALE = 1.25;
+
 const clamp = (n: number, min: number, max: number) =>
   Math.min(max, Math.max(min, n));
 
 const AccessibilityWidget: React.FC = () => {
-  const [open, setOpen] = useState(false);
+  const { lang } = useI18n();
 
-  // ההסתרה תקפה רק לביקור הנוכחי
+  const [open, setOpen] = useState(false);
   const [hidden, setHidden] = useState<boolean>(false);
 
   const [fontScale, setFontScale] = useState<number>(() => {
@@ -24,7 +28,7 @@ const AccessibilityWidget: React.FC = () => {
   });
 
   useEffect(() => {
-    document.documentElement.style.fontSize = `${clamp(fontScale, 0.9, 1.25) * 100}%`;
+    document.documentElement.style.fontSize = `${clamp(fontScale, MIN_SCALE, MAX_SCALE) * 100}%`;
     localStorage.setItem(FONT_KEY, String(fontScale));
   }, [fontScale]);
 
@@ -53,29 +57,67 @@ const AccessibilityWidget: React.FC = () => {
     localStorage.removeItem(CONTRAST_KEY);
   };
 
+  const isMin = fontScale <= MIN_SCALE;
+  const isMax = fontScale >= MAX_SCALE;
+
+  const labels =
+    lang === "he"
+      ? {
+          button: "נגישות",
+          panelTitle: "נגישות",
+          close: "סגור",
+          hide: "הסתר",
+          textSize: "גודל טקסט",
+          contrast: "ניגודיות גבוהה",
+          on: "פעיל",
+          off: "כבוי",
+          reset: "איפוס",
+          hiddenHint:
+            "להסתרה: לחצי על ה-X ליד הכפתור. ברענון או כניסה מחדש לאתר הכפתור יחזור.",
+          minReached: "הגעת להקטנה המקסימלית",
+          maxReached: "הגעת להגדלה המקסימלית",
+        }
+      : {
+          button: "Accessibility",
+          panelTitle: "Accessibility",
+          close: "Close",
+          hide: "Hide",
+          textSize: "Text Size",
+          contrast: "High Contrast",
+          on: "ON",
+          off: "OFF",
+          reset: "Reset",
+          hiddenHint:
+            "To hide, click the X next to the button. The widget will return when you refresh or reopen the site.",
+          minReached: "Minimum text size reached",
+          maxReached: "Maximum text size reached",
+        };
+
   if (hidden) return null;
 
   return (
     <>
-      {/* הכפתור תמיד בתחתית המסך */}
       <div className="fixed bottom-6 left-6 z-[9999]">
         <div className="relative">
+          {/* glow */}
+          <div className="absolute inset-0 rounded-full bg-blue-500/30 blur-xl scale-125 animate-pulse pointer-events-none" />
+
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="w-14 h-14 rounded-full bg-blue-600 text-white shadow-xl shadow-blue-600/30 hover:bg-blue-700 transition-all duration-300 flex items-center justify-center hover:scale-105"
-            aria-label="נגישות"
+            className="relative w-14 h-14 rounded-full bg-blue-600 text-white shadow-xl shadow-blue-600/30 hover:bg-blue-700 transition-all duration-300 flex items-center justify-center hover:scale-105"
+            aria-label={labels.button}
             aria-expanded={open}
+            title={labels.button}
           >
             <AccessibilityIcon className="w-7 h-7" />
           </button>
 
-          {/* X קטן להסתרה */}
           <button
             type="button"
             onClick={() => setHidden(true)}
-            aria-label="הסתר כפתור נגישות"
-            title="הסתר"
+            aria-label={labels.hide}
+            title={labels.hide}
             className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-white border border-slate-200 text-slate-700 shadow hover:bg-slate-50 flex items-center justify-center"
           >
             <XIcon className="w-3.5 h-3.5" />
@@ -83,52 +125,71 @@ const AccessibilityWidget: React.FC = () => {
         </div>
       </div>
 
-      {/* הפאנל גם fixed ונפתח מעל הכפתור */}
       <div
         className={`fixed bottom-24 left-6 z-[9998] w-72 rounded-2xl bg-white border border-slate-200 shadow-2xl p-4 transition-all duration-300 ${
           open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3 pointer-events-none"
         }`}
         role="dialog"
-        aria-label="אפשרויות נגישות"
+        aria-label={labels.panelTitle}
+        dir={lang === "he" ? "rtl" : "ltr"}
       >
         <div className="flex items-center justify-between mb-4">
-          <div className="font-bold text-slate-800 text-lg">נגישות</div>
+          <div className="font-bold text-slate-800 text-lg">{labels.panelTitle}</div>
           <button
             type="button"
             onClick={() => setOpen(false)}
-            aria-label="סגור"
+            aria-label={labels.close}
             className="text-slate-500 hover:text-slate-800"
           >
             <XIcon className="w-5 h-5" />
           </button>
         </div>
 
-        {/* גודל טקסט */}
         <div className="mb-4">
-          <div className="text-sm font-semibold text-slate-700 mb-2">גודל טקסט</div>
+          <div className="text-sm font-semibold text-slate-700 mb-2">{labels.textSize}</div>
           <div className="flex gap-2">
             <button
               type="button"
+              disabled={isMin}
               onClick={() =>
-                setFontScale((s) => clamp(Number((s - 0.05).toFixed(2)), 0.9, 1.25))
+                setFontScale((s) => clamp(Number((s - 0.05).toFixed(2)), MIN_SCALE, MAX_SCALE))
               }
-              className="flex-1 rounded-xl border border-slate-200 px-3 py-2 hover:bg-slate-50"
+              className={`flex-1 rounded-xl border px-3 py-2 transition ${
+                isMin
+                  ? "border-slate-200 bg-slate-100 text-slate-400 cursor-not-allowed"
+                  : "border-slate-200 hover:bg-slate-50 text-slate-800"
+              }`}
             >
               A-
             </button>
+
             <button
               type="button"
+              disabled={isMax}
               onClick={() =>
-                setFontScale((s) => clamp(Number((s + 0.05).toFixed(2)), 0.9, 1.25))
+                setFontScale((s) => clamp(Number((s + 0.05).toFixed(2)), MIN_SCALE, MAX_SCALE))
               }
-              className="flex-1 rounded-xl border border-slate-200 px-3 py-2 hover:bg-slate-50"
+              className={`flex-1 rounded-xl border px-3 py-2 transition ${
+                isMax
+                  ? "border-slate-200 bg-slate-100 text-slate-400 cursor-not-allowed"
+                  : "border-slate-200 hover:bg-slate-50 text-slate-800"
+              }`}
             >
               A+
             </button>
           </div>
+
+          <div className="mt-2 text-xs text-slate-500">
+            {Math.round(fontScale * 100)}%
+          </div>
+
+          {(isMin || isMax) && (
+            <div className="mt-2 text-xs font-medium text-amber-600">
+              {isMin ? labels.minReached : labels.maxReached}
+            </div>
+          )}
         </div>
 
-        {/* ניגודיות */}
         <div className="mb-4">
           <button
             type="button"
@@ -136,22 +197,23 @@ const AccessibilityWidget: React.FC = () => {
             className="w-full rounded-xl border border-slate-200 px-3 py-2 hover:bg-slate-50 flex items-center justify-between"
             aria-pressed={contrast === "high"}
           >
-            <span className="text-slate-800">ניגודיות גבוהה</span>
-            <span className="text-slate-500">{contrast === "high" ? "ON" : "OFF"}</span>
+            <span className="text-slate-800">{labels.contrast}</span>
+            <span className="text-slate-500">
+              {contrast === "high" ? labels.on : labels.off}
+            </span>
           </button>
         </div>
 
-        {/* Reset */}
         <button
           type="button"
           onClick={reset}
           className="w-full rounded-xl bg-slate-900 text-white px-3 py-2 hover:bg-slate-800 transition-colors"
         >
-          Reset
+          {labels.reset}
         </button>
 
         <div className="mt-3 text-xs text-slate-500 leading-relaxed">
-          להסתרה: לחצי על ה-X ליד הכפתור. ברענון או כניסה מחדש לאתר הכפתור יחזור.
+          {labels.hiddenHint}
         </div>
       </div>
     </>

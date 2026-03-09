@@ -88,7 +88,7 @@ const Electricity: React.FC = () => {
                 }}
               >
                 <h3 className="text-xl font-bold mb-8 tech-font">
-                  {t("electricity.planningServicesTitle")}
+                  {t("electricity.planningTitle")}
                 </h3>
 
                 <ul className="space-y-6 text-sm">
@@ -98,7 +98,7 @@ const Electricity: React.FC = () => {
                       className="border-b border-blue-400 pb-4 flex gap-3 leading-relaxed"
                     >
                       <span className="font-bold text-blue-200">0{i + 1}</span>
-                      <p>{t(`electricity.planningServices.${i}`)}</p>
+                      <p>{t(`electricity.planningItems.${i}`)}</p>
                     </li>
                   ))}
                 </ul>

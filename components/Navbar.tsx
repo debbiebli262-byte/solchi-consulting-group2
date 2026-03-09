@@ -41,6 +41,7 @@ const Navbar: React.FC = () => {
       </a>
 
       <header className="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
+        {/* Desktop */}
         <div
           dir={lang === "he" ? "rtl" : "ltr"}
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 hidden md:flex items-center gap-8"
@@ -77,10 +78,19 @@ const Navbar: React.FC = () => {
             title={lang === "he" ? "Switch to English" : "לעבור לעברית"}
           >
             <GlobeIcon className="w-5 h-5" />
-            <span className="text-lg leading-none" aria-hidden="true">
-              {lang === "he" ? "🇮🇱" : "🇺🇸"}
-            </span>
+            {lang === "he" ? (
+              <IsraelFlag className="w-5 h-5 rounded-sm overflow-hidden" />
+            ) : (
+              <UsaFlag className="w-5 h-5 rounded-sm overflow-hidden" />
+            )}
           </button>
+        </div>
+
+        {/* Mobile */}
+        <div
+          dir={lang === "he" ? "rtl" : "ltr"}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 md:hidden flex items-center justify-between"
+        >
           {/* Logo */}
           <Link
             to="/"
@@ -90,16 +100,21 @@ const Navbar: React.FC = () => {
             <img src={logoUrl} alt="Solchi Logo" className="h-10 w-auto" />
           </Link>
 
-          {/* Right/left controls */}
+          {/* Controls */}
           <div className="flex items-center gap-3 shrink-0">
             <button
               type="button"
               onClick={toggleLang}
               className="inline-flex items-center gap-2 px-3 py-2 rounded-full border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-all font-bold text-slate-800"
               aria-label="Switch language"
+              title={lang === "he" ? "Switch to English" : "לעבור לעברית"}
             >
               <GlobeIcon className="w-5 h-5" />
-              <span className="tracking-wider">{lang === "he" ? "HE" : "EN"}</span>
+              {lang === "he" ? (
+                <IsraelFlag className="w-5 h-5 rounded-sm overflow-hidden" />
+              ) : (
+                <UsaFlag className="w-5 h-5 rounded-sm overflow-hidden" />
+              )}
             </button>
 
             <button
@@ -168,5 +183,43 @@ const GlobeIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 21a9 9 0 100-18 9 9 0 000 18z" />
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12h18" />
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M12 3c2.5 2.7 4 5.8 4 9s-1.5 6.3-4 9c-2.5-2.7-4-5.8-4-9s1.5-6.3 4-9z"
+    />
+  </svg>
+);
+
+const IsraelFlag: React.FC<{ className?: string }> = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" aria-hidden="true">
+    <rect width="24" height="24" fill="#fff" />
+    <rect y="3" width="24" height="3" fill="#1d4ed8" />
+    <rect y="18" width="24" height="3" fill="#1d4ed8" />
+    <path d="M12 8l3.2 5.5H8.8L12 8z" fill="none" stroke="#1d4ed8" strokeWidth="1.3" />
+    <path d="M12 16l-3.2-5.5h6.4L12 16z" fill="none" stroke="#1d4ed8" strokeWidth="1.3" />
+  </svg>
+);
+
+const UsaFlag: React.FC<{ className?: string }> = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" aria-hidden="true">
+    <rect width="24" height="24" fill="#fff" />
+    <rect width="24" height="2" y="0" fill="#b91c1c" />
+    <rect width="24" height="2" y="4" fill="#b91c1c" />
+    <rect width="24" height="2" y="8" fill="#b91c1c" />
+    <rect width="24" height="2" y="12" fill="#b91c1c" />
+    <rect width="24" height="2" y="16" fill="#b91c1c" />
+    <rect width="24" height="2" y="20" fill="#b91c1c" />
+    <rect width="10" height="10" fill="#1e3a8a" />
+    <circle cx="2.5" cy="2.5" r="0.6" fill="#fff" />
+    <circle cx="5" cy="2.5" r="0.6" fill="#fff" />
+    <circle cx="7.5" cy="2.5" r="0.6" fill="#fff" />
+    <circle cx="2.5" cy="5" r="0.6" fill="#fff" />
+    <circle cx="5" cy="5" r="0.6" fill="#fff" />
+    <circle cx="7.5" cy="5" r="0.6" fill="#fff" />
+    <circle cx="2.5" cy="7.5" r="0.6" fill="#fff" />
+    <circle cx="5" cy="7.5" r="0.6" fill="#fff" />
+    <circle cx="7.5" cy="7.5" r="0.6" fill="#fff" />
   </svg>
 );

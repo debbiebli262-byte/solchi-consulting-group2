@@ -29,10 +29,6 @@ const Navbar: React.FC = () => {
   };
 
   const logoUrl = "/logo.png";
-
-  const headerDirection = lang === "he" ? "flex-row" : "flex-row-reverse";
-  const desktopGroupDirection = lang === "he" ? "flex-row" : "flex-row-reverse";
-  const mobileControlsDirection = lang === "he" ? "flex-row" : "flex-row-reverse";
   const dropdownAlign = lang === "he" ? "text-right" : "text-left";
 
   return (
@@ -46,56 +42,60 @@ const Navbar: React.FC = () => {
 
       <header className="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
         <div
-          className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center ${headerDirection}`}
+          dir={lang === "he" ? "rtl" : "ltr"}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 hidden md:flex items-center gap-8"
         >
+          {/* Logo */}
           <Link
             to="/"
-            className="flex items-center gap-3 shrink-0"
+            className="flex items-center shrink-0"
             onClick={() => handleNavClick("/")}
           >
             <img src={logoUrl} alt="Solchi Logo" className="h-10 w-auto" />
           </Link>
 
-          <div className="flex-1" />
-
-          <nav className="hidden md:flex items-center">
-            <div className={`flex items-center gap-6 ${desktopGroupDirection}`}>
-              <div className="flex items-center gap-8">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.to}
-                    to={item.to}
-                    onClick={() => handleNavClick(item.to)}
-                    className="text-slate-700 hover:text-blue-600 font-bold transition-colors whitespace-nowrap"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-
-              <button
-                type="button"
-                onClick={toggleLang}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-all font-bold text-slate-800"
-                aria-label="Switch language"
+          {/* Page titles */}
+          <nav className="flex items-center gap-8">
+            {navItems.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                onClick={() => handleNavClick(item.to)}
+                className="text-slate-700 hover:text-blue-600 font-bold transition-colors whitespace-nowrap"
               >
-                <GlobeIcon className="w-5 h-5" />
-                <span className="tracking-wider">{lang === "he" ? "HE" : "EN"}</span>
-              </button>
-            </div>
+                {item.label}
+              </Link>
+            ))}
           </nav>
 
-          <div className={`md:hidden flex items-center gap-3 shrink-0 ${mobileControlsDirection}`}>
-            <button
-              type="button"
-              onClick={() => setOpen((v) => !v)}
-              className="inline-flex items-center justify-center w-11 h-11 rounded-2xl border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-all cursor-pointer touch-manipulation"
-              aria-label="Open menu"
-              aria-expanded={open}
-            >
-              {open ? <CloseIcon className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
-            </button>
+          {/* Language */}
+          <button
+            type="button"
+            onClick={toggleLang}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-all font-bold text-slate-800 shrink-0"
+            aria-label="Switch language"
+          >
+            <GlobeIcon className="w-5 h-5" />
+            <span className="tracking-wider">{lang === "he" ? "HE" : "EN"}</span>
+          </button>
+        </div>
 
+        {/* Mobile navbar */}
+        <div
+          dir={lang === "he" ? "rtl" : "ltr"}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 md:hidden flex items-center justify-between"
+        >
+          {/* Logo */}
+          <Link
+            to="/"
+            className="flex items-center shrink-0"
+            onClick={() => handleNavClick("/")}
+          >
+            <img src={logoUrl} alt="Solchi Logo" className="h-10 w-auto" />
+          </Link>
+
+          {/* Right/left controls */}
+          <div className="flex items-center gap-3 shrink-0">
             <button
               type="button"
               onClick={toggleLang}
@@ -105,10 +105,21 @@ const Navbar: React.FC = () => {
               <GlobeIcon className="w-5 h-5" />
               <span className="tracking-wider">{lang === "he" ? "HE" : "EN"}</span>
             </button>
+
+            <button
+              type="button"
+              onClick={() => setOpen((v) => !v)}
+              className="inline-flex items-center justify-center w-11 h-11 rounded-2xl border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-all cursor-pointer touch-manipulation"
+              aria-label="Open menu"
+              aria-expanded={open}
+            >
+              {open ? <CloseIcon className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
+            </button>
           </div>
         </div>
       </header>
 
+      {/* Mobile dropdown */}
       {open && (
         <div className="fixed top-20 inset-x-0 z-[60] md:hidden">
           <button
@@ -119,7 +130,10 @@ const Navbar: React.FC = () => {
           />
 
           <div className="relative z-[61] bg-white border-b border-slate-100 shadow-lg">
-            <div className={`max-w-7xl mx-auto px-4 py-4 flex flex-col gap-3 ${dropdownAlign}`}>
+            <div
+              dir={lang === "he" ? "rtl" : "ltr"}
+              className={`max-w-7xl mx-auto px-4 py-4 flex flex-col gap-3 ${dropdownAlign}`}
+            >
               {navItems.map((item) => (
                 <Link
                   key={item.to}

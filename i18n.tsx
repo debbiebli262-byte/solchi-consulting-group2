@@ -543,22 +543,20 @@ electricity: {
       more: {
         title: "Additional Expertise",
         items: [
-          { title: "Strategic Roadmap", desc: "IT planning & KPI tracking" },
-          { title: "Salesforce", desc: "Core platform development" },
-          { title: "Delivery", desc: "End-to-end project leadership" },
-
-          // swapped order: feasibility before RFPs
-          { title: "Feasibility", desc: "Cost-benefit analysis" },
-          { title: "RFPs", desc: "Professional tender management" },
+          { title: "Strategic Roadmap", desc: "Building a comprehensive IT roadmap for the organization, defining KPIs, and monitoring them throughout the lifecycle of the project." },
+          { title: "Salesforce", desc: "Designing and developing core systems on the Salesforce platform and leading complex Salesforce implementation projects." },
+          { title: "Delivery", desc: "Leading internal and outsourced development projects from initial concept and planning through full implementation." },
+          { title: "Feasibility", desc: "Evaluating implementation alternatives, including cost, effectiveness, and financial and operational feasibility." },
+          { title: "RFPs", desc: "Identifying and selecting suitable solutions and infrastructures, including the preparation and professional management of tenders." },
         ],
       },
       why: {
         title: "Why Solchi?",
         items: [
-          "Financial & tech expertise",
-          "Proven banking systems experience",
+          "Deep Financial Understanding Combined with Strong Technological Expertise",
+          "Proven Experience in Credit and Banking Systems",
           "Cross-organizational leadership",
-          "Long-term systems vision",
+          "Long-Term Systems Thinking Aligned with Regulatory Requirements",
         ],
       },
     },

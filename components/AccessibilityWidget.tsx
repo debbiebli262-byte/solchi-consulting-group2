@@ -97,15 +97,17 @@ const AccessibilityWidget: React.FC = () => {
 
   return (
     <>
-      <div className="fixed bottom-6 left-6 z-[9999]">
+      {/* Accessibility floating button */}
+      <div className="fixed bottom-6 left-6 z-[9999] pointer-events-auto">
         <div className="relative">
-          {/* glow */}
-          <div className="absolute inset-0 rounded-full bg-blue-500/30 blur-xl scale-125 animate-pulse pointer-events-none" />
+
+          {/* subtle glow */}
+          <div className="absolute inset-0 rounded-full bg-blue-500/20 blur-xl scale-110 animate-pulse pointer-events-none" />
 
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="relative w-14 h-14 rounded-full bg-blue-600 text-white shadow-xl shadow-blue-600/30 hover:bg-blue-700 transition-all duration-300 flex items-center justify-center hover:scale-105"
+            className="relative w-14 h-14 rounded-full bg-blue-600 text-white shadow-lg shadow-blue-600/40 hover:bg-blue-700 transition-all duration-300 flex items-center justify-center hover:scale-105"
             aria-label={labels.button}
             aria-expanded={open}
             title={labels.button}
@@ -113,6 +115,7 @@ const AccessibilityWidget: React.FC = () => {
             <AccessibilityIcon className="w-7 h-7" />
           </button>
 
+          {/* hide button */}
           <button
             type="button"
             onClick={() => setHidden(true)}
@@ -125,6 +128,7 @@ const AccessibilityWidget: React.FC = () => {
         </div>
       </div>
 
+      {/* Accessibility panel */}
       <div
         className={`fixed bottom-24 left-6 z-[9998] w-72 rounded-2xl bg-white border border-slate-200 shadow-2xl p-4 transition-all duration-300 ${
           open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3 pointer-events-none"
@@ -145,8 +149,10 @@ const AccessibilityWidget: React.FC = () => {
           </button>
         </div>
 
+        {/* text size */}
         <div className="mb-4">
           <div className="text-sm font-semibold text-slate-700 mb-2">{labels.textSize}</div>
+
           <div className="flex gap-2">
             <button
               type="button"
@@ -190,6 +196,7 @@ const AccessibilityWidget: React.FC = () => {
           )}
         </div>
 
+        {/* contrast */}
         <div className="mb-4">
           <button
             type="button"
@@ -204,6 +211,7 @@ const AccessibilityWidget: React.FC = () => {
           </button>
         </div>
 
+        {/* reset */}
         <button
           type="button"
           onClick={reset}

@@ -74,17 +74,13 @@ const Navbar: React.FC = () => {
             onClick={toggleLang}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-all font-bold text-slate-800 shrink-0"
             aria-label="Switch language"
+            title={lang === "he" ? "Switch to English" : "לעבור לעברית"}
           >
             <GlobeIcon className="w-5 h-5" />
-            <span className="tracking-wider">{lang === "he" ? "HE" : "EN"}</span>
+            <span className="text-lg leading-none" aria-hidden="true">
+              {lang === "he" ? "🇮🇱" : "🇺🇸"}
+            </span>
           </button>
-        </div>
-
-        {/* Mobile navbar */}
-        <div
-          dir={lang === "he" ? "rtl" : "ltr"}
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 md:hidden flex items-center justify-between"
-        >
           {/* Logo */}
           <Link
             to="/"

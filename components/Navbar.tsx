@@ -56,7 +56,7 @@ const Navbar: React.FC = () => {
           </Link>
 
           {/* Page titles */}
-          <nav className="flex items-center gap-8">
+          <nav className="flex items-center gap-8 flex-1">
             {navItems.map((item) => (
               <Link
                 key={item.to}

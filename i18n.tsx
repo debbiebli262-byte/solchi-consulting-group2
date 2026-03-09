@@ -385,12 +385,12 @@ electricity: {
         energy: {
           title: "High-Energy Systems",
           desc:
-            "Consulting, planning, and technical coordination for establishing private power generation, transmission, and supply solutions for producers and private consumers.",
+            "Consulting, planning, and technical coordination for establishing private power generation, transmission, and supply solutions for producers and private consumers",
         },
         is: {
           title: "Information Systems",
           desc:
-            "We specialize in information systems and their connection to organizational workflows—designing the right solution and supporting you end-to-end.",
+            "We specialize in information systems and their connection to organizational workflows—designing the right solution and supporting you end-to-end",
         },
       },
       electricity: {
@@ -479,10 +479,10 @@ electricity: {
 
   servicesTitle: "Our Consulting Services",
   services: [
-    "End-to-end guidance: from initiation and planning through full implementation, with operational and maintenance perspective.",
-    "Optimization: identifying solutions, evaluating alternatives, and assessing financial feasibility versus investment.",
-    "Regulatory support: guidance with the national electric company and Noga in system definition and market integration.",
-    "Safety & maintenance: ongoing safety support, including procedures for de-energizing facilities.",
+    "End-to-end guidance: from initiation and planning through full implementation, with operational and maintenance perspective",
+    "Optimization: identifying solutions, evaluating alternatives, and assessing financial feasibility versus investment",
+    "Regulatory support: guidance with the national electric company and Noga in system definition and market integration",
+    "Safety & maintenance: ongoing safety support, including procedures for de-energizing facilities",
   ],
 
   planningTitle: "Our Engineering Design Services",
@@ -490,16 +490,16 @@ electricity: {
     "At SOLCHI, we don’t just design — we create intelligent engineering solutions that drive projects forward. Every planning process is built on systems thinking, professional innovation, and extensive experience supporting high-energy projects from initial concept through final delivery.",
 
   planningItems: [
-    "Concept Design that establishes a precise project foundation, including techno-economic alternative analysis to enable informed decision-making.",
-    "Detailed Design for all electrical and auxiliary systems — calculations, drawings, specifications, and execution-level engineering deliverables.",
-    "Preparation of full tender documentation to ensure engineering clarity and high-quality, accurate contractor proposals.",
-    "Comprehensive engineering support from project initiation through delivery, including professional support during FAT, SAT, and on-site commissioning.",
-    "Multidisciplinary design coordination ensuring full integration between electrical, structural, mechanical, control, safety, and environmental systems.",
-    "Advanced engineering calculations including load flow, short-circuit, grounding, load analysis, selectivity, and reliability — ensuring safe and robust design.",
-    "Design of extra-high, high, medium, and low voltage systems, including panels, cables, protection equipment, and customized control solutions.",
-    "Design review and compliance with international and local standards (IEC, IEEE), ensuring full adherence to project requirements.",
-    "Tailored solutions for complex projects with infrastructure constraints, density limitations, or exceptionally high energy demands.",
-    "Design optimization to improve performance, shorten timelines, and reduce costs — without compromising quality.",
+    "Concept Design that establishes a precise project foundation, including techno-economic alternative analysis to enable informed decision-making",
+    "Detailed Design for all electrical and auxiliary systems — calculations, drawings, specifications, and execution-level engineering deliverables",
+    "Preparation of full tender documentation to ensure engineering clarity and high-quality, accurate contractor proposals",
+    "Comprehensive engineering support from project initiation through delivery, including professional support during FAT, SAT, and on-site commissioning",
+    "Multidisciplinary design coordination ensuring full integration between electrical, structural, mechanical, control, safety, and environmental systems",
+    "Advanced engineering calculations including load flow, short-circuit, grounding, load analysis, selectivity, and reliability — ensuring safe and robust design",
+    "Design of extra-high, high, medium, and low voltage systems, including panels, cables, protection equipment, and customized control solutions",
+    "Design review and compliance with international and local standards (IEC, IEEE), ensuring full adherence to project requirements",
+    "Tailored solutions for complex projects with infrastructure constraints, density limitations, or exceptionally high energy demands",
+    "Design optimization to improve performance, shorten timelines, and reduce costs — without compromising quality",
   ],
 
   clientsTitle: "Our Energy Clients",

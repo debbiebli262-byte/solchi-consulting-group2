@@ -202,7 +202,7 @@ const Electricity: React.FC = () => {
         <img
           src="/logos/iec.png"
           alt="חברת החשמל לישראל"
-          className="max-h-16 object-contain grayscale hover:grayscale-0 hover:scale-105 transition duration-300"
+          className="max-h-20 object-contain grayscale hover:grayscale-0 hover:scale-105 transition duration-300"
         />
       </div>
 

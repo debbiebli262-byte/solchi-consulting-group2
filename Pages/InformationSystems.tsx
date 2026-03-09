@@ -35,11 +35,12 @@ const InformationSystems: React.FC = () => {
                 <div className="bg-indigo-500/10 backdrop-blur-md border border-indigo-500/30 px-4 py-2 rounded-lg text-indigo-200 text-sm font-bold">
                   {t("isPage.hero.badges.salesforce")}
                 </div>
-              
+
                 <div className="bg-indigo-500/10 backdrop-blur-md border border-indigo-500/30 px-4 py-2 rounded-lg text-indigo-200 text-sm font-bold">
                   {t("isPage.hero.badges.fintech")}
                 </div>
               </div>
+            </div>
 
             <div className="md:w-1/2 flex justify-center">
               <div className="relative group">
@@ -94,7 +95,6 @@ const InformationSystems: React.FC = () => {
                 {t("isPage.credit.title")}
               </h3>
 
-              {/* bullets */}
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 text-slate-300">
                 {[
                   "isPage.credit.items.0",

@@ -4,7 +4,6 @@ type ContrastMode = "normal" | "high";
 
 const FONT_KEY = "a11y_font_scale";
 const CONTRAST_KEY = "a11y_contrast";
-const HIDE_KEY = "a11y_widget_hidden";
 
 const clamp = (n: number, min: number, max: number) =>
   Math.min(max, Math.max(min, n));
@@ -12,10 +11,8 @@ const clamp = (n: number, min: number, max: number) =>
 const AccessibilityWidget: React.FC = () => {
   const [open, setOpen] = useState(false);
 
-  // המשתמש יכול להסתיר את הווידג׳ט
-  const [hidden, setHidden] = useState<boolean>(() => {
-    return localStorage.getItem(HIDE_KEY) === "1";
-  });
+  // ההסתרה תקפה רק לביקור הנוכחי
+  const [hidden, setHidden] = useState<boolean>(false);
 
   const [fontScale, setFontScale] = useState<number>(() => {
     const saved = Number(localStorage.getItem(FONT_KEY));
@@ -37,7 +34,6 @@ const AccessibilityWidget: React.FC = () => {
   }, [contrast]);
 
   useEffect(() => {
-    localStorage.setItem(HIDE_KEY, hidden ? "1" : "0");
     if (hidden) setOpen(false);
   }, [hidden]);
 
@@ -55,7 +51,6 @@ const AccessibilityWidget: React.FC = () => {
     setHidden(false);
     localStorage.removeItem(FONT_KEY);
     localStorage.removeItem(CONTRAST_KEY);
-    localStorage.removeItem(HIDE_KEY);
   };
 
   if (hidden) return null;
@@ -114,14 +109,18 @@ const AccessibilityWidget: React.FC = () => {
           <div className="flex gap-2">
             <button
               type="button"
-              onClick={() => setFontScale((s) => clamp(Number((s - 0.05).toFixed(2)), 0.9, 1.25))}
+              onClick={() =>
+                setFontScale((s) => clamp(Number((s - 0.05).toFixed(2)), 0.9, 1.25))
+              }
               className="flex-1 rounded-xl border border-slate-200 px-3 py-2 hover:bg-slate-50"
             >
               A-
             </button>
             <button
               type="button"
-              onClick={() => setFontScale((s) => clamp(Number((s + 0.05).toFixed(2)), 0.9, 1.25))}
+              onClick={() =>
+                setFontScale((s) => clamp(Number((s + 0.05).toFixed(2)), 0.9, 1.25))
+              }
               className="flex-1 rounded-xl border border-slate-200 px-3 py-2 hover:bg-slate-50"
             >
               A+
@@ -152,7 +151,7 @@ const AccessibilityWidget: React.FC = () => {
         </button>
 
         <div className="mt-3 text-xs text-slate-500 leading-relaxed">
-          להסתרה: לחצי על ה-X ליד הכפתור. כדי להחזיר — Reset.
+          להסתרה: לחצי על ה-X ליד הכפתור. ברענון או כניסה מחדש לאתר הכפתור יחזור.
         </div>
       </div>
     </>
@@ -181,7 +180,14 @@ const AccessibilityIcon: React.FC<{ className?: string }> = ({ className }) => (
 );
 
 const XIcon: React.FC<{ className?: string }> = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    aria-hidden="true"
+  >
     <path strokeLinecap="round" strokeLinejoin="round" d="M6 6l12 12M18 6L6 18" />
   </svg>
 );

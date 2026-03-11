@@ -187,7 +187,7 @@ electricity: {
         tag: "חטיבת מערכות מידע",
         name: "הילה כהן",
         subtitle:
-          "מנכלית החברה ומובילת פעילות מערכות המידע. מומחית בליווי, ניהול ויישום פרויקטי מערכות מידע מורכבים עבור ארגונים פיננסיים.",
+          "מנכלית החברה ומובילת פעילות מערכות המידע. מומחית בליווי, ניהול ויישום פרויקטי מערכות מידע מורכבים עבור ארגונים.",
         badges: {
           salesforce: "Salesforce Specialist",
           fintech: "Fintech Expert",
@@ -516,7 +516,7 @@ electricity: {
         tag: "Information Systems Division",
         name: "Hila Cohen",
         subtitle:
-          "Head of the Information Systems practice. Expert in leading, managing, and delivering complex information systems projects for financial institutions.",
+          "Head of the Information Systems practice. Expert in leading, managing, and delivering complex information systems projects for organizations.",
         badges: {
           salesforce: "Salesforce Specialist",
           fintech: "Fintech Expert",

@@ -13,7 +13,6 @@ const Footer: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
-
           <div className="md:col-span-5">
             <div className="bg-white/5 p-6 rounded-3xl backdrop-blur-sm border border-white/10 inline-block mb-8 transition-transform hover:scale-105 duration-300">
               <img
@@ -34,11 +33,21 @@ const Footer: React.FC = () => {
             </h4>
 
             <ul className="space-y-4 text-slate-400">
-              <li><Link to="/">{t("footer.nav.home")}</Link></li>
-              <li><Link to="/about">{t("footer.nav.about")}</Link></li>
-              <li><Link to="/electricity">{t("footer.nav.electricity")}</Link></li>
-              <li><Link to="/is">{t("footer.nav.is")}</Link></li>
-              <li><Link to="/contact">{t("footer.nav.contact")}</Link></li>
+              <li>
+                <Link to="/">{t("footer.nav.home")}</Link>
+              </li>
+              <li>
+                <Link to="/about">{t("footer.nav.about")}</Link>
+              </li>
+              <li>
+                <Link to="/electricity">{t("footer.nav.electricity")}</Link>
+              </li>
+              <li>
+                <Link to="/is">{t("footer.nav.is")}</Link>
+              </li>
+              <li>
+                <Link to="/contact">{t("footer.nav.contact")}</Link>
+              </li>
             </ul>
           </div>
 
@@ -47,32 +56,34 @@ const Footer: React.FC = () => {
               {t("footer.contactTitle")}
             </h4>
 
-           <address className="not-italic text-slate-400 space-y-4">
-              <a href={googleMapsUrl} target="_blank" rel="noopener noreferrer">
+            <address className="not-italic text-slate-400 space-y-4">
+              <a href={googleMapsUrl} target="_blank" rel="noopener noreferrer" className="block">
                 {t("footer.address")}
               </a>
-            
-              <div>
-                <a href="mailto:hila@solchi.co.il">
-                  hila@solchi.co.il
-                </a>
-              </div>
-            
-              <div>
-                <a href="mailto:yehiel@solchi.co.il">
-                  yehiel@solchi.co.il
-                </a>
-              </div>
+
+              <a
+                href="mailto:hila@solchi.co.il"
+                className="block hover:text-blue-400 transition-colors"
+              >
+                hila@solchi.co.il
+              </a>
+
+              <a
+                href="mailto:yehiel@solchi.co.il"
+                className="block hover:text-blue-400 transition-colors"
+              >
+                yehiel@solchi.co.il
+              </a>
             </address>
+          </div>
+        </div>
 
         <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500 gap-6">
           <p>
             © {new Date().getFullYear()} Solchi Consulting Group. {t("footer.rights")}
           </p>
           <div>
-            <Link to="/accessibility">
-              {t("footer.accessibility")}
-            </Link>
+            <Link to="/accessibility">{t("footer.accessibility")}</Link>
           </div>
         </div>
       </div>

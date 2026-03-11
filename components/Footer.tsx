@@ -62,18 +62,24 @@ const Footer: React.FC = () => {
               </a>
 
               <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=hila@solchi.co.il"
-                className="block hover:text-blue-400 transition-colors"
-              >
-                hila@solchi.co.il
-              </a>
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=hila@solchi.co.il"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-600 hover:text-blue-600 text-lg"
+            >
+              hila@solchi.co.il
+            </a>
+
 
               <a
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=yehiel@solchi.co.il"
-                className="block hover:text-blue-400 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-600 hover:text-blue-600 text-lg"
               >
                 yehiel@solchi.co.il
-              </a>
+            </a>
+
             </address>
           </div>
         </div>

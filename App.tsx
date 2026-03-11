@@ -15,9 +15,11 @@ import AccessibilityWidget from "./components/AccessibilityWidget";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
+
   React.useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }, [pathname]);
+
   return null;
 };
 
@@ -48,8 +50,6 @@ const App: React.FC = () => {
         </main>
 
         <Footer />
-
-        {/* כפתור נגישות + פאנל נפתח */}
         <AccessibilityWidget />
       </div>
     </HashRouter>

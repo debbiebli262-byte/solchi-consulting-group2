@@ -57,29 +57,34 @@ const Footer: React.FC = () => {
             </h4>
 
             <address className="not-italic text-slate-400 space-y-4">
-              <a href={googleMapsUrl} target="_blank" rel="noopener noreferrer" className="block">
+              <a
+                href={googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block hover:text-white transition-colors"
+              >
                 {t("footer.address")}
               </a>
 
-              <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=hila@solchi.co.il"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-slate-600 hover:text-blue-600 text-lg"
-            >
-              hila@solchi.co.il
-            </a>
+              <div className="flex flex-col gap-1">
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=hila@solchi.co.il"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-400 hover:text-blue-400 text-lg transition-colors"
+                >
+                  hila@solchi.co.il
+                </a>
 
-
-              <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=yehiel@solchi.co.il"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-600 hover:text-blue-600 text-lg"
-              >
-                yehiel@solchi.co.il
-            </a>
-
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=yehiel@solchi.co.il"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-400 hover:text-blue-400 text-lg transition-colors"
+                >
+                  yehiel@solchi.co.il
+                </a>
+              </div>
             </address>
           </div>
         </div>

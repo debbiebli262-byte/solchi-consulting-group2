@@ -47,18 +47,23 @@ const Footer: React.FC = () => {
               {t("footer.contactTitle")}
             </h4>
 
-            <address className="not-italic text-slate-400 space-y-4">
+           <address className="not-italic text-slate-400 space-y-4">
               <a href={googleMapsUrl} target="_blank" rel="noopener noreferrer">
                 {t("footer.address")}
               </a>
+            
               <div>
                 <a href="mailto:hila@solchi.co.il">
                   hila@solchi.co.il
                 </a>
               </div>
+            
+              <div>
+                <a href="mailto:yehiel@solchi.co.il">
+                  yehiel@solchi.co.il
+                </a>
+              </div>
             </address>
-          </div>
-        </div>
 
         <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500 gap-6">
           <p>

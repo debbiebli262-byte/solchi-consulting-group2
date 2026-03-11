@@ -6,7 +6,12 @@ import { useI18n } from "../i18n";
 const Contact: React.FC = () => {
   const { t, lang } = useI18n();
 
-  const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
 
@@ -54,7 +59,6 @@ const Contact: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {/* Contact Details Card */}
           <div className="bg-white p-12 rounded-[2.5rem] shadow-sm border border-slate-100 flex flex-col justify-between h-full">
             <div>
               <h2 className="text-2xl font-bold mb-10 tech-font text-blue-600">
@@ -113,41 +117,40 @@ const Contact: React.FC = () => {
                     </h4>
                     <a
                       href="mailto:hila@solchi.co.il"
-                      className="text-slate-600 hover:text-blue-600 text-lg"
+                      className="block text-slate-600 hover:text-blue-600 text-lg"
                     >
                       hila@solchi.co.il
                     </a>
                     <a
-                      href="mailto:info@solchi.co.il"
-                      className="text-slate-600 hover:text-blue-600 text-lg"
+                      href="mailto:yehiel@solchi.co.il"
+                      className="block text-slate-600 hover:text-blue-600 text-lg"
                     >
                       yehiel@solchi.co.il
                     </a>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div className="mt-16 pt-10 border-t border-slate-50">
-              <div className="flex items-center gap-3 text-slate-500 mb-2">
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-                <p className="font-bold text-sm uppercase tracking-wide">
-                  {t("contact.availabilityTitle")}
-                </p>
+              <div className="mt-16 pt-10 border-t border-slate-50">
+                <div className="flex items-center gap-3 text-slate-500 mb-2">
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  <p className="font-bold text-sm uppercase tracking-wide">
+                    {t("contact.availabilityTitle")}
+                  </p>
+                </div>
+
+                <p className="text-slate-800 font-medium">{t("contact.availabilityHours")}</p>
               </div>
-
-              <p className="text-slate-800 font-medium">{t("contact.availabilityHours")}</p>
             </div>
           </div>
 
-          {/* Form Card */}
           <div className="bg-white p-12 rounded-[2.5rem] shadow-2xl border border-blue-50 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-indigo-600"></div>
 

@@ -189,8 +189,10 @@ electricity: {
         subtitle:
           "מנכלית החברה ומובילת פעילות מערכות המידע. מומחית בליווי, ניהול ויישום פרויקטי מערכות מידע מורכבים עבור ארגונים.",
         badges: {
-          salesforce: "Salesforce Specialist",
-          fintech: "Fintech Expert",
+          salesforce: "מומחית Salesforce",
+          fintech: "מומחית פינטק",
+          processAutomation: "מיכון תהליכים",
+          
         },
       },
       expertise: {
@@ -520,6 +522,8 @@ electricity: {
         badges: {
           salesforce: "Salesforce Specialist",
           fintech: "Fintech Expert",
+          processAutomation: "Process Automation",
+
         },
       },
       expertise: {

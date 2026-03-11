@@ -116,6 +116,7 @@ const Contact: React.FC = () => {
                   </div>
                 </div>
 
+                {/* Email Section */}
                 <div className="flex items-start gap-5 group">
                   <div className="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0 transition-all duration-300">
                     <svg
@@ -133,29 +134,49 @@ const Contact: React.FC = () => {
                     </svg>
                   </div>
 
-                  <div>
-                    <h4 className="font-bold text-slate-900 text-lg mb-1">
+                  <div className="w-full">
+                    <h4 className="font-bold text-slate-900 text-lg mb-3">
                       {t("contact.emailTitle")}
                     </h4>
 
-                    <div className="flex flex-col gap-1">
-                      <a
-                        href="https://mail.google.com/mail/?view=cm&fs=1&to=hila@solchi.co.il"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-slate-600 hover:text-blue-600 text-lg"
-                      >
-                        hila@solchi.co.il
-                      </a>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4 hover:border-blue-200 transition">
+                        <p className="font-semibold text-slate-900 text-sm">
+                          הילה כהן
+                        </p>
 
-                      <a
-                        href="https://mail.google.com/mail/?view=cm&fs=1&to=yehiel@solchi.co.il"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-slate-600 hover:text-blue-600 text-lg"
-                      >
-                        yehiel@solchi.co.il
-                      </a>
+                        <p className="text-xs text-slate-500 mb-2">
+                          אחראית מערכות מידע
+                        </p>
+
+                        <a
+                          href="https://mail.google.com/mail/?view=cm&fs=1&to=hila@solchi.co.il"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-slate-600 hover:text-blue-600 text-sm"
+                        >
+                          hila@solchi.co.il
+                        </a>
+                      </div>
+
+                      <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4 hover:border-blue-200 transition">
+                        <p className="font-semibold text-slate-900 text-sm">
+                          יחיאל אמיר כהן
+                        </p>
+
+                        <p className="text-xs text-slate-500 mb-2">
+                          אחראי חטיבת החשמל
+                        </p>
+
+                        <a
+                          href="https://mail.google.com/mail/?view=cm&fs=1&to=yehiel@solchi.co.il"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-slate-600 hover:text-blue-600 text-sm"
+                        >
+                          yehiel@solchi.co.il
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>

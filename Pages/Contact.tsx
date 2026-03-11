@@ -117,6 +117,12 @@ const Contact: React.FC = () => {
                     >
                       hila@solchi.co.il
                     </a>
+                    <a
+                      href="mailto:info@solchi.co.il"
+                      className="text-slate-600 hover:text-blue-600 text-lg"
+                    >
+                      yehiel@solchi.co.il
+                    </a>
                   </div>
                 </div>
               </div>

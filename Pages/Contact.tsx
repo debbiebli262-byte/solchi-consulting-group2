@@ -28,7 +28,12 @@ const Contact: React.FC = () => {
     };
 
     emailjs
-      .send("service_39xntul", "template_nzaftq4", templateParams, "8mhKZKS_IYJ_5Ow2u")
+      .send(
+        "service_39xntul",
+        "template_nzaftq4",
+        templateParams,
+        "8mhKZKS_IYJ_5Ow2u"
+      )
       .then((response) => {
         console.log("SUCCESS!", response.status, response.text);
         navigate("/thank-you");
@@ -41,7 +46,10 @@ const Contact: React.FC = () => {
   };
 
   const openMap = () => {
-    window.open("https://www.google.com/maps/place/Ha-Vered+St+544,+Kidron,+Israel", "_blank");
+    window.open(
+      "https://www.google.com/maps/place/Ha-Vered+St+544,+Kidron,+Israel",
+      "_blank"
+    );
   };
 
   return (
@@ -59,6 +67,7 @@ const Contact: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          {/* Contact Details Card */}
           <div className="bg-white p-12 rounded-[2.5rem] shadow-sm border border-slate-100 flex flex-col justify-between h-full">
             <div>
               <h2 className="text-2xl font-bold mb-10 tech-font text-blue-600">
@@ -66,9 +75,17 @@ const Contact: React.FC = () => {
               </h2>
 
               <div className="space-y-10">
-                <div onClick={openMap} className="flex items-start gap-5 cursor-pointer group">
+                <div
+                  onClick={openMap}
+                  className="flex items-start gap-5 cursor-pointer group"
+                >
                   <div className="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-all transform group-hover:scale-110 duration-300">
-                    <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg
+                      className="w-7 h-7"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -101,7 +118,12 @@ const Contact: React.FC = () => {
 
                 <div className="flex items-start gap-5 group">
                   <div className="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0 transition-all duration-300">
-                    <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg
+                      className="w-7 h-7"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -115,6 +137,7 @@ const Contact: React.FC = () => {
                     <h4 className="font-bold text-slate-900 text-lg mb-1">
                       {t("contact.emailTitle")}
                     </h4>
+
                     <div className="flex flex-col gap-1">
                       <a
                         href="https://mail.google.com/mail/?view=cm&fs=1&to=hila@solchi.co.il"
@@ -124,7 +147,7 @@ const Contact: React.FC = () => {
                       >
                         hila@solchi.co.il
                       </a>
-                    
+
                       <a
                         href="https://mail.google.com/mail/?view=cm&fs=1&to=yehiel@solchi.co.il"
                         target="_blank"
@@ -134,31 +157,38 @@ const Contact: React.FC = () => {
                         yehiel@solchi.co.il
                       </a>
                     </div>
+                  </div>
                 </div>
+              </div>
+            </div>
 
-                  
+            <div className="mt-16 pt-10 border-t border-slate-50">
+              <div className="flex items-center gap-3 text-slate-500 mb-2">
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <p className="font-bold text-sm uppercase tracking-wide">
+                  {t("contact.availabilityTitle")}
+                </p>
               </div>
 
-              <div className="mt-16 pt-10 border-t border-slate-50">
-                <div className="flex items-center gap-3 text-slate-500 mb-2">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                  <p className="font-bold text-sm uppercase tracking-wide">
-                    {t("contact.availabilityTitle")}
-                  </p>
-                </div>
-
-                <p className="text-slate-800 font-medium">{t("contact.availabilityHours")}</p>
-              </div>
+              <p className="text-slate-800 font-medium">
+                {t("contact.availabilityHours")}
+              </p>
             </div>
           </div>
 
+          {/* Form Card */}
           <div className="bg-white p-12 rounded-[2.5rem] shadow-2xl border border-blue-50 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-indigo-600"></div>
 
@@ -175,7 +205,9 @@ const Contact: React.FC = () => {
                   type="text"
                   required
                   value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
                   className="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all bg-slate-50/50"
                   placeholder={t("contact.placeholders.fullName")}
                   dir={lang === "he" ? "rtl" : "ltr"}
@@ -191,7 +223,9 @@ const Contact: React.FC = () => {
                     type="email"
                     required
                     value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
                     className="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all bg-slate-50/50"
                     placeholder={t("contact.placeholders.email")}
                     dir="ltr"
@@ -205,7 +239,9 @@ const Contact: React.FC = () => {
                   <input
                     type="tel"
                     value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, phone: e.target.value })
+                    }
                     className="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all bg-slate-50/50"
                     placeholder={t("contact.placeholders.phone")}
                     dir="ltr"
@@ -221,7 +257,9 @@ const Contact: React.FC = () => {
                   rows={4}
                   required
                   value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, message: e.target.value })
+                  }
                   className="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all bg-slate-50/50"
                   placeholder={t("contact.placeholders.message")}
                   dir={lang === "he" ? "rtl" : "ltr"}
@@ -237,7 +275,11 @@ const Contact: React.FC = () => {
               >
                 {isSubmitting ? (
                   <>
-                    <svg className="animate-spin h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
+                    <svg
+                      className="animate-spin h-5 w-5 text-white"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
                       <circle
                         className="opacity-25"
                         cx="12"

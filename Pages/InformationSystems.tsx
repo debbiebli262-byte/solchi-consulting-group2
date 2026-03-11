@@ -31,15 +31,19 @@ const InformationSystems: React.FC = () => {
                 {t("isPage.hero.subtitle")}
               </p>
 
-              <div className="mt-10 flex gap-4">
-                <div className="bg-indigo-500/10 backdrop-blur-md border border-indigo-500/30 px-4 py-2 rounded-lg text-indigo-200 text-sm font-bold">
-                  {t("isPage.hero.badges.salesforce")}
-                </div>
-
-                <div className="bg-indigo-500/10 backdrop-blur-md border border-indigo-500/30 px-4 py-2 rounded-lg text-indigo-200 text-sm font-bold">
-                  {t("isPage.hero.badges.fintech")}
-                </div>
+             <div className="mt-10 flex flex-wrap gap-4">
+              <div className="bg-indigo-500/10 backdrop-blur-md border border-indigo-500/30 px-4 py-2 rounded-lg text-indigo-200 text-sm font-bold">
+                {t("isPage.hero.badges.salesforce")}
               </div>
+            
+              <div className="bg-indigo-500/10 backdrop-blur-md border border-indigo-500/30 px-4 py-2 rounded-lg text-indigo-200 text-sm font-bold">
+                {t("isPage.hero.badges.fintech")}
+              </div>
+            
+              <div className="bg-indigo-500/10 backdrop-blur-md border border-indigo-500/30 px-4 py-2 rounded-lg text-indigo-200 text-sm font-bold">
+                {t("isPage.hero.badges.processAutomation")}
+              </div>
+            </div>
             </div>
 
             <div className="md:w-1/2 flex justify-center">

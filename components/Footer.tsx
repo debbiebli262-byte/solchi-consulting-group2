@@ -73,51 +73,51 @@ const Footer: React.FC = () => {
               </a>
 
               <div className="space-y-4">
-
+              
                 {/* Hila */}
                 <div>
-                  <p className="text-white font-semibold text-sm">
+                  <p className="text-white font-semibold text-base">
                     {lang === "he" ? "הילה כהן" : "Hila Cohen"}
                   </p>
-
-                  <p className="text-xs text-slate-500 mb-1">
+              
+                  <p className="text-sm text-slate-400 mb-1">
                     {lang === "he"
                       ? "אחראית מערכות מידע"
                       : "Information Systems Manager"}
                   </p>
-
+              
                   <a
                     href="https://mail.google.com/mail/?view=cm&fs=1&to=hila@solchi.co.il"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-slate-400 hover:text-blue-400 text-sm transition-colors"
+                    className="text-slate-300 hover:text-blue-400 text-base transition-colors"
                   >
                     hila@solchi.co.il
                   </a>
                 </div>
-
+              
                 {/* Yehiel */}
                 <div>
-                  <p className="text-white font-semibold text-sm">
+                  <p className="text-white font-semibold text-base">
                     {lang === "he" ? "יחיאל אמיר כהן" : "Yehiel Amir Cohen"}
                   </p>
-
-                  <p className="text-xs text-slate-500 mb-1">
+              
+                  <p className="text-sm text-slate-400 mb-1">
                     {lang === "he"
                       ? "אחראי חטיבת החשמל"
                       : "Head of Electrical Division"}
                   </p>
-
+              
                   <a
                     href="https://mail.google.com/mail/?view=cm&fs=1&to=yehiel@solchi.co.il"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-slate-400 hover:text-blue-400 text-sm transition-colors"
+                    className="text-slate-300 hover:text-blue-400 text-base transition-colors"
                   >
                     yehiel@solchi.co.il
                   </a>
                 </div>
-
+              
               </div>
             </address>
           </div>

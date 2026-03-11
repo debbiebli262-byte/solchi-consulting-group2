@@ -115,26 +115,28 @@ const Contact: React.FC = () => {
                     <h4 className="font-bold text-slate-900 text-lg mb-1">
                       {t("contact.emailTitle")}
                     </h4>
-                    <a
-                      href="https://mail.google.com/mail/?view=cm&fs=1&to=hila@solchi.co.il"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-slate-600 hover:text-blue-600 text-lg"
-                    >
-                      hila@solchi.co.il
-                    </a>
-
-                    <a
-                      href="https://mail.google.com/mail/?view=cm&fs=1&to=yehiel@solchi.co.il"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-slate-600 hover:text-blue-600 text-lg"
-                    >
-                      yehiel@solchi.co.il
-                    </a>
-
-                  </div>
+                    <div className="flex flex-col gap-1">
+                      <a
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=hila@solchi.co.il"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-slate-600 hover:text-blue-600 text-lg"
+                      >
+                        hila@solchi.co.il
+                      </a>
+                    
+                      <a
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=yehiel@solchi.co.il"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-slate-600 hover:text-blue-600 text-lg"
+                      >
+                        yehiel@solchi.co.il
+                      </a>
+                    </div>
                 </div>
+
+                  
               </div>
 
               <div className="mt-16 pt-10 border-t border-slate-50">

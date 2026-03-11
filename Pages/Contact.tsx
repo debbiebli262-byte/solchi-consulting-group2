@@ -117,16 +117,22 @@ const Contact: React.FC = () => {
                     </h4>
                     <a
                       href="https://mail.google.com/mail/?view=cm&fs=1&to=hila@solchi.co.il"
-                      className="block text-slate-600 hover:text-blue-600 text-lg"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-slate-600 hover:text-blue-600 text-lg"
                     >
                       hila@solchi.co.il
                     </a>
+
                     <a
-                      href="https://mail.google.com/mail/?view=cm&fs=1&to=yehiel@solchi.co.il"
-                      className="block text-slate-600 hover:text-blue-600 text-lg"
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=hila@solchi.co.il"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-slate-600 hover:text-blue-600 text-lg"
                     >
-                      yehiel@solchi.co.il
+                      hila@solchi.co.il
                     </a>
+
                   </div>
                 </div>
               </div>

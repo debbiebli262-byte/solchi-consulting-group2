@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useId, useState } from "react";
 import { useI18n } from "../i18n";
 
 type ContrastMode = "normal" | "high";
@@ -14,6 +14,8 @@ const clamp = (n: number, min: number, max: number) =>
 
 const AccessibilityWidget: React.FC = () => {
   const { lang } = useI18n();
+  const panelId = useId();
+  const titleId = useId();
 
   const [open, setOpen] = useState(false);
   const [hidden, setHidden] = useState<boolean>(false);
@@ -76,6 +78,8 @@ const AccessibilityWidget: React.FC = () => {
             "להסתרה: לחצי על ה-X ליד הכפתור. ברענון או כניסה מחדש לאתר הכפתור יחזור.",
           minReached: "הגעת להקטנה המקסימלית",
           maxReached: "הגעת להגדלה המקסימלית",
+          smaller: "הקטנת טקסט",
+          bigger: "הגדלת טקסט",
         }
       : {
           button: "Accessibility",
@@ -91,17 +95,16 @@ const AccessibilityWidget: React.FC = () => {
             "To hide, click the X next to the button. The widget will return when you refresh or reopen the site.",
           minReached: "Minimum text size reached",
           maxReached: "Maximum text size reached",
+          smaller: "Decrease text size",
+          bigger: "Increase text size",
         };
 
   if (hidden) return null;
 
   return (
     <>
-      {/* Accessibility floating button */}
       <div className="fixed bottom-6 left-6 z-[9999] pointer-events-auto">
         <div className="relative">
-
-          {/* subtle glow */}
           <div className="absolute inset-0 rounded-full bg-blue-500/20 blur-xl scale-110 animate-pulse pointer-events-none" />
 
           <button
@@ -110,12 +113,12 @@ const AccessibilityWidget: React.FC = () => {
             className="relative w-14 h-14 rounded-full bg-blue-600 text-white shadow-lg shadow-blue-600/40 hover:bg-blue-700 transition-all duration-300 flex items-center justify-center hover:scale-105"
             aria-label={labels.button}
             aria-expanded={open}
+            aria-controls={panelId}
             title={labels.button}
           >
             <AccessibilityIcon className="w-7 h-7" />
           </button>
 
-          {/* hide button */}
           <button
             type="button"
             onClick={() => setHidden(true)}
@@ -128,17 +131,20 @@ const AccessibilityWidget: React.FC = () => {
         </div>
       </div>
 
-      {/* Accessibility panel */}
       <div
+        id={panelId}
         className={`fixed bottom-24 left-6 z-[9998] w-72 rounded-2xl bg-white border border-slate-200 shadow-2xl p-4 transition-all duration-300 ${
           open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3 pointer-events-none"
         }`}
         role="dialog"
-        aria-label={labels.panelTitle}
+        aria-labelledby={titleId}
+        aria-hidden={!open}
         dir={lang === "he" ? "rtl" : "ltr"}
       >
         <div className="flex items-center justify-between mb-4">
-          <div className="font-bold text-slate-800 text-lg">{labels.panelTitle}</div>
+          <div id={titleId} className="font-bold text-slate-800 text-lg">
+            {labels.panelTitle}
+          </div>
           <button
             type="button"
             onClick={() => setOpen(false)}
@@ -149,7 +155,6 @@ const AccessibilityWidget: React.FC = () => {
           </button>
         </div>
 
-        {/* text size */}
         <div className="mb-4">
           <div className="text-sm font-semibold text-slate-700 mb-2">{labels.textSize}</div>
 
@@ -157,6 +162,7 @@ const AccessibilityWidget: React.FC = () => {
             <button
               type="button"
               disabled={isMin}
+              aria-label={labels.smaller}
               onClick={() =>
                 setFontScale((s) => clamp(Number((s - 0.05).toFixed(2)), MIN_SCALE, MAX_SCALE))
               }
@@ -172,6 +178,7 @@ const AccessibilityWidget: React.FC = () => {
             <button
               type="button"
               disabled={isMax}
+              aria-label={labels.bigger}
               onClick={() =>
                 setFontScale((s) => clamp(Number((s + 0.05).toFixed(2)), MIN_SCALE, MAX_SCALE))
               }
@@ -190,13 +197,12 @@ const AccessibilityWidget: React.FC = () => {
           </div>
 
           {(isMin || isMax) && (
-            <div className="mt-2 text-xs font-medium text-amber-600">
+            <div className="mt-2 text-xs font-medium text-amber-600" aria-live="polite">
               {isMin ? labels.minReached : labels.maxReached}
             </div>
           )}
         </div>
 
-        {/* contrast */}
         <div className="mb-4">
           <button
             type="button"
@@ -211,7 +217,6 @@ const AccessibilityWidget: React.FC = () => {
           </button>
         </div>
 
-        {/* reset */}
         <button
           type="button"
           onClick={reset}

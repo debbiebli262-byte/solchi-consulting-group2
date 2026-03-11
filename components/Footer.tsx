@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useI18n } from "../i18n";
 
 const Footer: React.FC = () => {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
   const logoUrl = "/logo.png";
   const googleMapsUrl = "https://maps.google.com/?q=Ha-Vered+544+Kidron";
 
@@ -13,6 +13,8 @@ const Footer: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+          
+          {/* Logo + Description */}
           <div className="md:col-span-5">
             <div className="bg-white/5 p-6 rounded-3xl backdrop-blur-sm border border-white/10 inline-block mb-8 transition-transform hover:scale-105 duration-300">
               <img
@@ -22,11 +24,13 @@ const Footer: React.FC = () => {
                 loading="lazy"
               />
             </div>
+
             <p className="text-slate-400 text-lg leading-relaxed max-w-md">
               {t("footer.description")}
             </p>
           </div>
 
+          {/* Navigation */}
           <div className="md:col-span-3">
             <h4 className="text-xl font-bold mb-8 tech-font text-blue-400">
               {t("footer.quickNav")}
@@ -51,12 +55,14 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
+          {/* Contact */}
           <div className="md:col-span-4">
             <h4 className="text-xl font-bold mb-8 tech-font text-blue-400">
               {t("footer.contactTitle")}
             </h4>
 
-            <address className="not-italic text-slate-400 space-y-4">
+            <address className="not-italic text-slate-400 space-y-6">
+
               <a
                 href={googleMapsUrl}
                 target="_blank"
@@ -66,24 +72,52 @@ const Footer: React.FC = () => {
                 {t("footer.address")}
               </a>
 
-              <div className="flex flex-col gap-1">
-                <a
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=hila@solchi.co.il"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-slate-400 hover:text-blue-400 text-lg transition-colors"
-                >
-                  hila@solchi.co.il
-                </a>
+              <div className="space-y-4">
 
-                <a
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=yehiel@solchi.co.il"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-slate-400 hover:text-blue-400 text-lg transition-colors"
-                >
-                  yehiel@solchi.co.il
-                </a>
+                {/* Hila */}
+                <div>
+                  <p className="text-white font-semibold text-sm">
+                    {lang === "he" ? "הילה כהן" : "Hila Cohen"}
+                  </p>
+
+                  <p className="text-xs text-slate-500 mb-1">
+                    {lang === "he"
+                      ? "אחראית מערכות מידע"
+                      : "Information Systems Manager"}
+                  </p>
+
+                  <a
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=hila@solchi.co.il"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-slate-400 hover:text-blue-400 text-sm transition-colors"
+                  >
+                    hila@solchi.co.il
+                  </a>
+                </div>
+
+                {/* Yehiel */}
+                <div>
+                  <p className="text-white font-semibold text-sm">
+                    {lang === "he" ? "יחיאל אמיר כהן" : "Yehiel Amir Cohen"}
+                  </p>
+
+                  <p className="text-xs text-slate-500 mb-1">
+                    {lang === "he"
+                      ? "אחראי חטיבת החשמל"
+                      : "Head of Electrical Division"}
+                  </p>
+
+                  <a
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=yehiel@solchi.co.il"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-slate-400 hover:text-blue-400 text-sm transition-colors"
+                  >
+                    yehiel@solchi.co.il
+                  </a>
+                </div>
+
               </div>
             </address>
           </div>
@@ -93,6 +127,7 @@ const Footer: React.FC = () => {
           <p>
             © {new Date().getFullYear()} Solchi Consulting Group. {t("footer.rights")}
           </p>
+
           <div>
             <Link to="/accessibility">{t("footer.accessibility")}</Link>
           </div>

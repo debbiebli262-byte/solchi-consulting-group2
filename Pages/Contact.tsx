@@ -116,13 +116,13 @@ const Contact: React.FC = () => {
                       {t("contact.emailTitle")}
                     </h4>
                     <a
-                      href="mailto:hila@solchi.co.il"
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=hila@solchi.co.il"
                       className="block text-slate-600 hover:text-blue-600 text-lg"
                     >
                       hila@solchi.co.il
                     </a>
                     <a
-                      href="mailto:yehiel@solchi.co.il"
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=yehiel@solchi.co.il"
                       className="block text-slate-600 hover:text-blue-600 text-lg"
                     >
                       yehiel@solchi.co.il

@@ -167,42 +167,41 @@ const Electricity: React.FC = () => {
         </div>
       </section>
 
-      {/* Clients */}
-      <section className="py-24 bg-slate-50 border-t border-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-16 tech-font">
-            {t("electricity.clientsTitle")}
-          </h2>
+{/* Clients */}
+<section className="py-24 bg-slate-50 border-t border-slate-100">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 className="text-3xl font-bold text-center mb-16 tech-font">
+      {t("electricity.clientsTitle")}
+    </h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center">
-              <img
-                src="/logos/iec.png"
-                alt="חברת החשמל לישראל"
-                className="max-h-28 w-auto object-contain grayscale hover:grayscale-0 hover:scale-105 transition duration-300"
-/>
-            </div>
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+      
+      <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center">
+        <img
+          src="/logos/iec.png"
+          alt="חברת החשמל לישראל"
+          className="max-h-28 w-auto object-contain hover:scale-105 transition duration-300"
+        />
+      </div>
 
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center">
-              <img
-                src="/logos/noga.png"
-                alt="נגה ניהול מערכת חשמל"
-                className="max-h-16 object-contain grayscale hover:grayscale-0 hover:scale-105 transition duration-300"
-              />
-            </div>
+      <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center">
+        <img
+          src="/logos/noga.png"
+          alt="נגה ניהול מערכת חשמל"
+          className="max-h-16 w-auto object-contain hover:scale-105 transition duration-300"
+        />
+      </div>
 
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center">
-              <img
-                src="/logos/dalia.png"
-                alt="דליה אנרגיות"
-                className="max-h-16 object-contain grayscale hover:grayscale-0 hover:scale-105 transition duration-300"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center">
+        <img
+          src="/logos/dalia.png"
+          alt="דליה אנרגיות"
+          className="max-h-16 w-auto object-contain hover:scale-105 transition duration-300"
+        />
+      </div>
+
     </div>
-  );
-};
-
+  </div>
+</section>
+      
 export default Electricity;

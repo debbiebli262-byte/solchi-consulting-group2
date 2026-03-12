@@ -10,8 +10,10 @@ const Contact: React.FC = () => {
     name: "",
     email: "",
     phone: "",
+    subject: "",
     message: "",
   });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
 
@@ -19,11 +21,23 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    let toEmail = "";
+
+    if (formData.subject === t("contact.subjectOptions.electricalDivision")) {
+      toEmail = "yehiel@solchi.co.il";
+    } else if (
+      formData.subject === t("contact.subjectOptions.informationSystems")
+    ) {
+      toEmail = "hila@solchi.co.il";
+    }
+
     const templateParams = {
       to_name: "Debbie",
+      to_email: toEmail,
       from_name: formData.name,
       from_email: formData.email,
       phone: formData.phone,
+      subject: formData.subject,
       message: formData.message,
     };
 
@@ -67,7 +81,6 @@ const Contact: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {/* Contact Details Card */}
           <div className="bg-white p-12 rounded-[2.5rem] shadow-sm border border-slate-100 flex flex-col justify-between h-full">
             <div>
               <h2 className="text-2xl font-bold mb-10 tech-font text-blue-600">
@@ -116,7 +129,6 @@ const Contact: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Email Section */}
                 <div className="flex items-start gap-5 group">
                   <div className="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0 transition-all duration-300">
                     <svg
@@ -209,7 +221,6 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
-          {/* Form Card */}
           <div className="bg-white p-12 rounded-[2.5rem] shadow-2xl border border-blue-50 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-indigo-600"></div>
 
@@ -233,6 +244,31 @@ const Contact: React.FC = () => {
                   placeholder={t("contact.placeholders.fullName")}
                   dir={lang === "he" ? "rtl" : "ltr"}
                 />
+              </div>
+
+              <div className="space-y-2">
+                <label className="block text-sm font-bold text-slate-700">
+                  {t("contact.fields.subject")}
+                </label>
+                <select
+                  required
+                  value={formData.subject}
+                  onChange={(e) =>
+                    setFormData({ ...formData, subject: e.target.value })
+                  }
+                  className="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all bg-slate-50/50 text-slate-700"
+                  dir={lang === "he" ? "rtl" : "ltr"}
+                >
+                  <option value="" disabled>
+                    {t("contact.placeholders.subject")}
+                  </option>
+                  <option value={t("contact.subjectOptions.electricalDivision")}>
+                    {t("contact.subjectOptions.electricalDivision")}
+                  </option>
+                  <option value={t("contact.subjectOptions.informationSystems")}>
+                    {t("contact.subjectOptions.informationSystems")}
+                  </option>
+                </select>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -312,7 +348,7 @@ const Contact: React.FC = () => {
                       <path
                         className="opacity-75"
                         fill="currentColor"
-                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                       ></path>
                     </svg>
                     {t("contact.sending")}

@@ -22,13 +22,18 @@ const Contact: React.FC = () => {
     setIsSubmitting(true);
 
     let toEmail = "";
+    let subjectLabel = "";
 
-    if (formData.subject === t("contact.subjectOptions.electricalDivision")) {
+    if (formData.subject === "electrical") {
       toEmail = "yehiel@solchi.co.il";
-    } else if (
-      formData.subject === t("contact.subjectOptions.informationSystems")
-    ) {
+      subjectLabel = t("contact.subjectOptions.electricalDivision");
+    } else if (formData.subject === "information_systems") {
       toEmail = "hila@solchi.co.il";
+      subjectLabel = t("contact.subjectOptions.informationSystems");
+    } else {
+      alert(t("contact.alertSendFailed"));
+      setIsSubmitting(false);
+      return;
     }
 
     const templateParams = {
@@ -37,7 +42,7 @@ const Contact: React.FC = () => {
       from_name: formData.name,
       from_email: formData.email,
       phone: formData.phone,
-      subject: formData.subject,
+      subject: subjectLabel,
       message: formData.message,
     };
 
@@ -262,10 +267,12 @@ const Contact: React.FC = () => {
                   <option value="" disabled>
                     {t("contact.placeholders.subject")}
                   </option>
-                  <option value={t("contact.subjectOptions.electricalDivision")}>
+
+                  <option value="electrical">
                     {t("contact.subjectOptions.electricalDivision")}
                   </option>
-                  <option value={t("contact.subjectOptions.informationSystems")}>
+
+                  <option value="information_systems">
                     {t("contact.subjectOptions.informationSystems")}
                   </option>
                 </select>
@@ -348,7 +355,7 @@ const Contact: React.FC = () => {
                       <path
                         className="opacity-75"
                         fill="currentColor"
-                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                       ></path>
                     </svg>
                     {t("contact.sending")}

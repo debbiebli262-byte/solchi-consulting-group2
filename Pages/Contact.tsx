@@ -21,24 +21,23 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    let toEmail = "";
+    let templateId = "";
     let subjectLabel = "";
 
     if (formData.subject === "electrical") {
-      toEmail = "yehiel@solchi.co.il";
+      templateId = "template_ss0di8q"; // יחיאל - חטיבת החשמל
       subjectLabel = t("contact.subjectOptions.electricalDivision");
     } else if (formData.subject === "information_systems") {
-      toEmail = "hila@solchi.co.il";
+      templateId = "template_nzaftq4"; // הילה - מערכות מידע
       subjectLabel = t("contact.subjectOptions.informationSystems");
     } else {
-      alert(t("contact.alertSendFailed"));
+      alert("אנא בחרו נושא פנייה");
       setIsSubmitting(false);
       return;
     }
 
     const templateParams = {
       to_name: "Debbie",
-      to_email: toEmail,
       from_name: formData.name,
       from_email: formData.email,
       phone: formData.phone,
@@ -49,7 +48,7 @@ const Contact: React.FC = () => {
     emailjs
       .send(
         "service_39xntul",
-        "template_nzaftq4",
+        templateId,
         templateParams,
         "8mhKZKS_IYJ_5Ow2u"
       )

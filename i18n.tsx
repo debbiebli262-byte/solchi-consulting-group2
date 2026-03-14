@@ -528,7 +528,7 @@ contact: {
         tag: "Information Systems Division",
         name: "Hila Cohen",
         subtitle:
-          "Head of the Information Systems practice. Expert in leading, managing, and delivering complex information systems projects for organizations.",
+          "CEO and head of the Information Systems division. Expert in leading, managing, and delivering complex information systems projects for organizations.",
         badges: {
           salesforce: "Salesforce",
           fintech: "Fintech",

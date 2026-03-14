@@ -272,7 +272,7 @@ contact: {
 
   fields: {
     fullName: "שם מלא",
-    subject: "נושא הפנייה",   // 👈 הוספנו
+    subject: "נושא הפנייה",
     email: 'דוא"ל',
     phone: "טלפון",
     message: "הודעה",
@@ -280,15 +280,26 @@ contact: {
 
   placeholders: {
     fullName: "ישראל ישראלי",
-    subject: "בחרו נושא",   // 👈 הוספנו
+    subject: "בחרו נושא",
     email: "name@company.com",
     phone: "05X-XXXXXXX",
     message: "תארו בקצרה את הצורך שלכם...",
   },
 
-  subjectOptions: {        // 👈 אובייקט חדש
+  subjectOptions: {
     electricalDivision: "חטיבת החשמל",
     informationSystems: "מערכות מידע",
+  },
+
+  people: {                     // 👈 להוסיף את זה
+    hila: {
+      name: "הילה כהן",
+      role: "מנהלת מערכות מידע"
+    },
+    yehiel: {
+      name: "יחיאל אמיר כהן",
+      role: "מנהל חטיבת החשמל"
+    }
   },
 
   sending: "שולח פניה...",
@@ -590,7 +601,7 @@ contact: {
 
   fields: {
     fullName: "Full Name",
-    subject: "Inquiry Subject",   // 👈 חדש
+    subject: "Inquiry Subject",
     email: "Email",
     phone: "Phone",
     message: "Message",
@@ -598,15 +609,26 @@ contact: {
 
   placeholders: {
     fullName: "John Doe",
-    subject: "Select a subject",   // 👈 חדש
+    subject: "Select a subject",
     email: "name@company.com",
     phone: "+972-5X-XXXXXXX",
     message: "Briefly describe what you need...",
   },
 
-  subjectOptions: {   // 👈 חדש
+  subjectOptions: {
     electricalDivision: "Electrical Division",
     informationSystems: "Information Systems",
+  },
+
+  people: {
+    hila: {
+      name: "Hila Cohen",
+      role: "Information Systems Manager"
+    },
+    yehiel: {
+      name: "Yehiel Amir Cohen",
+      role: "Electrical Division Manager"
+    }
   },
 
   sending: "Sending...",

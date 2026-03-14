@@ -162,7 +162,7 @@ const Contact: React.FC = () => {
                         </p>
 
                         <p className="text-xs text-slate-500 mb-2">
-                          אחראית מערכות מידע
+                          מנהלת מערכות מידע
                         </p>
 
                         <a
@@ -181,7 +181,7 @@ const Contact: React.FC = () => {
                         </p>
 
                         <p className="text-xs text-slate-500 mb-2">
-                          אחראי חטיבת החשמל
+                          מנהל חטיבת החשמל
                         </p>
 
                         <a

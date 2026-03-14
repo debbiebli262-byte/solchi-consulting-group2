@@ -158,11 +158,11 @@ const Contact: React.FC = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4 hover:border-blue-200 transition">
                         <p className="font-semibold text-slate-900 text-sm">
-                          הילה כהן
+                          {t("contact.people.hila.name")}
                         </p>
 
                         <p className="text-xs text-slate-500 mb-2">
-                          מנהלת מערכות מידע
+                          {t("contact.people.hila.role")}
                         </p>
 
                         <a
@@ -177,11 +177,11 @@ const Contact: React.FC = () => {
 
                       <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4 hover:border-blue-200 transition">
                         <p className="font-semibold text-slate-900 text-sm">
-                          יחיאל אמיר כהן
+                          {t("contact.people.yehiel.name")}
                         </p>
 
                         <p className="text-xs text-slate-500 mb-2">
-                          מנהל חטיבת החשמל
+                          {t("contact.people.yehiel.role")}
                         </p>
 
                         <a

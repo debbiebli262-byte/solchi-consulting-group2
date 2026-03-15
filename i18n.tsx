@@ -21,10 +21,8 @@ export const copy = {
       language: "שפה",
     },
 
-    // הכפתור/טוגל בשפה
     switchTo: "English",
 
-    // ---------- HOME ----------
     home: {
       hero: {
         titlePrefix: "We Make",
@@ -94,7 +92,6 @@ export const copy = {
       },
     },
 
-    // ---------- ABOUT ----------
     about: {
       hero: {
         title: "קצת עלינו",
@@ -119,69 +116,66 @@ export const copy = {
       },
     },
 
-    // ---------- ELECTRICITY PAGE ----------
-    // ---------- ELECTRICITY PAGE ----------
-electricity: {
-  pageTag: "חטיבת החשמל",
-  name: "יחיאל אמיר כהן",
-  role:
-    "מהנדס חשמל בכיר, יועץ ומנהל פרויקטים בתחום מערכות עתירות אנרגיה בכלל ותחנות השנאה/הוצאת אנרגיה בפרט.",
-  lead: "מוביל הפעילות בחטיבת החשמל והאנרגיה",
+    electricity: {
+      pageTag: "חטיבת החשמל",
+      name: "יחיאל אמיר כהן",
+      role:
+        "מהנדס חשמל בכיר, יועץ ומנהל פרויקטים בתחום מערכות עתירות אנרגיה בכלל ותחנות השנאה/הוצאת אנרגיה בפרט.",
+      lead: "מוביל הפעילות בחטיבת החשמל והאנרגיה",
 
-  experienceTitle: "ניסיון ומומחיות",
-  experienceP1:
-    "בעל מעל 30 שנות ניסיון בכל הקשור לניהול פרויקטים עתירי אנרגיה לפיתוח מערכות מורכבות במתודולוגיות שונות וטכנולוגיות מגוונות מול יצרני חשמל, משרדי ממשלה וארגונים עסקיים.",
-  experienceP2:
-    "ניסיון רב בתכנון מערכי בדיקה ותהליכי הכנסה לניצול של פרויקטים עתירי אנרגיה.",
-  experienceP3:
-    'התמחות במסדרים מבודדי גז (GIS) מיצרנים שונים, ובעל היכרות מעמיקה של מערכת החשמל בישראל. בעל ניסיון של "מורשה בכיר" בחברת החשמל, כולל ליווי בתקלות ושחרור מתקנים ממתח.',
-  experienceP4:
-    "התמחות בתכנון מפורט לתחנות השנאה ותחנות כח.",
+      experienceTitle: "ניסיון ומומחיות",
+      experienceP1:
+        "בעל מעל 30 שנות ניסיון בכל הקשור לניהול פרויקטים עתירי אנרגיה לפיתוח מערכות מורכבות במתודולוגיות שונות וטכנולוגיות מגוונות מול יצרני חשמל, משרדי ממשלה וארגונים עסקיים.",
+      experienceP2:
+        "ניסיון רב בתכנון מערכי בדיקה ותהליכי הכנסה לניצול של פרויקטים עתירי אנרגיה.",
+      experienceP3:
+        'התמחות במסדרים מבודדי גז (GIS) מיצרנים שונים, ובעל היכרות מעמיקה של מערכת החשמל בישראל. בעל ניסיון של "מורשה בכיר" בחברת החשמל, כולל ליווי בתקלות ושחרור מתקנים ממתח.',
+      experienceP4:
+        "התמחות בתכנון מפורט לתחנות השנאה ותחנות כח.",
 
-  expertiseTitle: "תחומי התמחות מרכזיים:",
-  expertise: [
-    "התנעה והובלת פרויקטים אינטגרטיביים",
-    "שילוב מערכות עתירות אנרגיה ברשת החשמל",
-    "ביצוע תכנון מפורט של המתקן החשמלי, משלב היזום עד חיבור הגיד האחרון",
-    "פיתוח ויישום מתודולוגיות תפעול ותחזוקה",
-    "שמירה בלתי פוסקת על בטיחות והגנה על מתקנים",
-    "מתן מענה לתקלות קריטיות בזמן אמת",
-  ],
+      expertiseTitle: "תחומי התמחות מרכזיים:",
+      expertise: [
+        "התנעה והובלת פרויקטים אינטגרטיביים",
+        "שילוב מערכות עתירות אנרגיה ברשת החשמל",
+        "ביצוע תכנון מפורט של המתקן החשמלי, משלב היזום עד חיבור הגיד האחרון",
+        "פיתוח ויישום מתודולוגיות תפעול ותחזוקה",
+        "שמירה בלתי פוסקת על בטיחות והגנה על מתקנים",
+        "מתן מענה לתקלות קריטיות בזמן אמת",
+      ],
 
-  servicesTitle: "שירותי הייעוץ שלנו",
-  services: [
-    "ליווי מקצה לקצה: משלב הייזום והתכנון ועד ליישום מלא בראיה תפעולית ותחזוקתית",
-    "אופטימיזציה: איתור פתרונות, בחינת חלופות וכדאיות פיננסית אל מול השקעה",
-    'רגולציה: ליווי מול חברת החשמל ו-"נגה" באפיון המערכת ושילובה במשק',
-    "בטיחות ותחזוקה: ליווי שוטף בהיבטי בטיחות לשחרור מתקן ממתח",
-  ],
+      servicesTitle: "שירותי הייעוץ שלנו",
+      services: [
+        "ליווי מקצה לקצה: משלב הייזום והתכנון ועד ליישום מלא בראיה תפעולית ותחזוקתית",
+        "אופטימיזציה: איתור פתרונות, בחינת חלופות וכדאיות פיננסית אל מול השקעה",
+        'רגולציה: ליווי מול חברת החשמל ו-"נגה" באפיון המערכת ושילובה במשק',
+        "בטיחות ותחזוקה: ליווי שוטף בהיבטי בטיחות לשחרור מתקן ממתח",
+      ],
 
-  planningTitle: "שירותי התכנון שלנו",
-  planningIntro:
-    "ב-SOLCHI אנחנו לא רק מתכננים — אנחנו יוצרים פתרונות הנדסיים חכמים שמניעים פרויקטים קדימה. כל תהליך תכנון מבוסס על חשיבה מערכתית, חדשנות מקצועית וניסיון עשיר בליווי פרויקטים עתירי אנרגיה מהשלב הראשון ועד למסירה.",
-  planningItems: [
-    "תכנון עקרוני (Concept Design) המייצר תשתית מדויקת לפרויקט, כולל בחינת חלופות טכנו־כלכליות המובילות לקבלת החלטות מושכלת",
-    "תכנון מפורט (Detail Design) לכל מערכות החשמל והעזר — חישובים, שרטוטים, מפרטים ותוצרים הנדסיים ברמת ביצוע",
-    "הכנת מסמכי מכרז מלאים, המייצרים בהירות הנדסית ומבטיחים קבלת הצעות איכותיות ומדויקות מקבלנים",
-    "ליווי הנדסי מלא משלב הייזום ועד המסירה, כולל תמיכה מקצועית בבדיקות FAT/SAT ו-Commissioning בשטח",
-    "תיאום תכנון רב־תחומי, המבטיח אינטגרציה מלאה בין חשמל, מבנה, מכונות, בקרה, בטיחות וסביבה",
-    "ביצוע חישובים הנדסיים מתקדמים, לרבות זרמים, קצר, הארקה, עומסים, סלקטיביות ואמינות — לשקט נפשי ולתכנון בטוח",
-    "תכנון מערכות מתח על/עליון/גבוה/בינוני/נמוך, כולל לוחות, כבלים, ציוד הגנה ופתרונות בקרה מותאמים",
-    "בקרת תכנון ותאימות לתקנים בינלאומיים ומקומיים (IEC, IEEE), המבטיחה עמידה מלאה בכל דרישות הפרויקט",
-    "פתרונות מותאמים לפרויקטים מורכבים, בעלי מגבלות תשתית, צפיפות או דרישות אנרגיה גבוהות במיוחד",
-    "אופטימיזציה של תכנון, לשיפור ביצועים, קיצור לוחות זמנים וצמצום עלויות — בלי להתפשר על איכות",
-  ],
+      planningTitle: "שירותי התכנון שלנו",
+      planningIntro:
+        "ב-SOLCHI אנחנו לא רק מתכננים — אנחנו יוצרים פתרונות הנדסיים חכמים שמניעים פרויקטים קדימה. כל תהליך תכנון מבוסס על חשיבה מערכתית, חדשנות מקצועית וניסיון עשיר בליווי פרויקטים עתירי אנרגיה מהשלב הראשון ועד למסירה.",
+      planningItems: [
+        "תכנון עקרוני (Concept Design) המייצר תשתית מדויקת לפרויקט, כולל בחינת חלופות טכנו־כלכליות המובילות לקבלת החלטות מושכלת",
+        "תכנון מפורט (Detail Design) לכל מערכות החשמל והעזר — חישובים, שרטוטים, מפרטים ותוצרים הנדסיים ברמת ביצוע",
+        "הכנת מסמכי מכרז מלאים, המייצרים בהירות הנדסית ומבטיחים קבלת הצעות איכותיות ומדויקות מקבלנים",
+        "ליווי הנדסי מלא משלב הייזום ועד המסירה, כולל תמיכה מקצועית בבדיקות FAT/SAT ו-Commissioning בשטח",
+        "תיאום תכנון רב־תחומי, המבטיח אינטגרציה מלאה בין חשמל, מבנה, מכונות, בקרה, בטיחות וסביבה",
+        "ביצוע חישובים הנדסיים מתקדמים, לרבות זרמים, קצר, הארקה, עומסים, סלקטיביות ואמינות — לשקט נפשי ולתכנון בטוח",
+        "תכנון מערכות מתח על/עליון/גבוה/בינוני/נמוך, כולל לוחות, כבלים, ציוד הגנה ופתרונות בקרה מותאמים",
+        "בקרת תכנון ותאימות לתקנים בינלאומיים ומקומיים (IEC, IEEE), המבטיחה עמידה מלאה בכל דרישות הפרויקט",
+        "פתרונות מותאמים לפרויקטים מורכבים, בעלי מגבלות תשתית, צפיפות או דרישות אנרגיה גבוהות במיוחד",
+        "אופטימיזציה של תכנון, לשיפור ביצועים, קיצור לוחות זמנים וצמצום עלויות — בלי להתפשר על איכות",
+      ],
 
-  clientsTitle: "הלקוחות שלנו בתחום האנרגיה",
-  clients: [
-    "יצרני חשמל פרטיים",
-    "משרדי ממשלה",
-    "חברות תשתיות",
-    "ארגונים תעשייתיים",
-  ],
-},
-    
-    // ---------- INFORMATION SYSTEMS PAGE ----------
+      clientsTitle: "הלקוחות שלנו בתחום האנרגיה",
+      clients: [
+        "יצרני חשמל פרטיים",
+        "משרדי ממשלה",
+        "חברות תשתיות",
+        "ארגונים תעשייתיים",
+      ],
+    },
+
     isPage: {
       hero: {
         tag: "חטיבת מערכות מידע",
@@ -192,7 +186,6 @@ electricity: {
           salesforce: "Salesforce",
           fintech: "פינטק",
           processAutomation: "מיכון תהליכים",
-          
         },
       },
       expertise: {
@@ -231,8 +224,6 @@ electricity: {
             desc:
               "הובלת פרויקטי פיתוח פנימיים או במיקור חוץ משלב הייזום עד ליישום מלא",
           },
-
-          // --- swapped order: ניתוח כדאיות לפני כתיבת מכרזים ---
           {
             title: "ניתוח כדאיות",
             desc:
@@ -256,66 +247,48 @@ electricity: {
       },
     },
 
-    // ---------- CONTACT ----------
-contact: {
-  pageTitle: "צור קשר",
-  pageSubtitle:
-    "אנחנו כאן כדי לענות על כל שאלה ולתאם פגישת היכרות מקצועית.",
-  detailsTitle: "פרטי התקשרות",
-  addressTitle: "כתובתנו",
-  addressText: "הורד 544, מושב קידרון, ישראל",
-  addressHint: "לחצו לניווט במפות",
-  emailTitle: 'דוא"ל פניות',
-  availabilityTitle: "זמינות שירות",
-  availabilityHours: "ימי א' - ה' | בין השעות 08:30 - 18:00",
-  formTitle: "שלחו לנו הודעה",
+    contact: {
+      pageTitle: "צור קשר",
+      pageSubtitle:
+        "אנחנו כאן כדי לענות על כל שאלה ולתאם פגישת היכרות מקצועית.",
+      detailsTitle: "פרטי התקשרות",
+      addressTitle: "כתובתנו",
+      addressText: "הורד 544, מושב קידרון, ישראל",
+      addressHint: "לחצו לניווט במפות",
+      availabilityTitle: "זמינות שירות",
+      availabilityHours: "ימי א' - ה' | בין השעות 08:30 - 18:00",
+      formTitle: "שלחו לנו הודעה",
 
-  fields: {
-    fullName: "שם מלא",
-    subject: "נושא הפנייה",
-    email: 'דוא"ל',
-    phone: "טלפון",
-    message: "הודעה",
-  },
+      fields: {
+        fullName: "שם מלא",
+        subject: "נושא הפנייה",
+        email: 'דוא"ל',
+        phone: "טלפון",
+        message: "הודעה",
+      },
 
-  placeholders: {
-    fullName: "ישראל ישראלי",
-    subject: "בחרו נושא",
-    email: "name@company.com",
-    phone: "05X-XXXXXXX",
-    message: "תארו בקצרה את הצורך שלכם...",
-  },
+      placeholders: {
+        fullName: "ישראל ישראלי",
+        subject: "בחרו נושא",
+        email: "name@company.com",
+        phone: "05X-XXXXXXX",
+        message: "תארו בקצרה את הצורך שלכם...",
+      },
 
-  subjectOptions: {
-    electricalDivision: "חטיבת החשמל",
-    informationSystems: "מערכות מידע",
-  },
+      subjectOptions: {
+        electricalDivision: "חטיבת החשמל",
+        informationSystems: "מערכות מידע",
+      },
 
-  people: {                     // 👈 להוסיף את זה
-    hila: {
-      name: "הילה כהן",
-      role: "מנהלת מערכות מידע"
+      formUnavailable: "לא ניתן כרגע לשלוח פניות",
     },
-    yehiel: {
-      name: "יחיאל אמיר כהן",
-      role: "מנהל חטיבת החשמל"
-    }
-  },
 
-  sending: "שולח פניה...",
-  submit: "שלח פניה",
-  alertSendFailed:
-    "אירעה שגיאה בשליחת ההודעה. אנא בדקו את החיבור לאינטרנט או נסו שנית מאוחר יותר.",
-},
-
-    // ---------- THANK YOU ----------
     thankYou: {
       title: "הודעתכם התקבלה!",
       subtitle: "תודה שפניתם ל-Solchi. נציג מטעמנו יחזור אליכם בהקדם.",
       backHome: "חזרה לדף הבית",
     },
 
-    // ---------- FOOTER ----------
     footer: {
       description:
         "בוטיק הייעוץ Solchi מתמחה בייעוץ וליווי אסטרטגי, שילוב מערכות עתירות אנרגיה וטרנספורמציה דיגיטלית במגזר הפיננסי והתשתיתי.",
@@ -333,7 +306,6 @@ contact: {
       accessibility: "הצהרת נגישות",
     },
 
-    // ---------- ACCESSIBILITY ----------
     accessibility: {
       title: "הצהרת נגישות",
       updatedLine: "הצהרת נגישות אתר מעודכנת לתאריך 1.11.2023",
@@ -448,7 +420,6 @@ contact: {
       },
     },
 
-    // ABOUT (English)
     about: {
       hero: {
         title: "About Us",
@@ -474,65 +445,65 @@ contact: {
     },
 
     electricity: {
-  pageTag: "Electricity Division",
-  name: "Yehiel Amir Cohen",
-  role:
-    "Senior electrical engineer, consultant and project manager specializing in high-energy systems, with a focus on substations and power evacuation facilities.",
-  lead: "Head of the Electricity & Energy Division",
+      pageTag: "Electricity Division",
+      name: "Yehiel Amir Cohen",
+      role:
+        "Senior electrical engineer, consultant and project manager specializing in high-energy systems, with a focus on substations and power evacuation facilities.",
+      lead: "Head of the Electricity & Energy Division",
 
-  experienceTitle: "Experience & Expertise",
-  experienceP1:
-    "Over 30 years of experience managing high-energy projects and developing complex systems across diverse methodologies and technologies, working with power producers, government offices, and business organizations.",
-  experienceP2:
-    "Extensive experience in designing testing frameworks and commissioning-to-operation processes for high-energy projects.",
-  experienceP3:
-    "Expertise in Gas-Insulated Switchgear (GIS) from multiple manufacturers, with deep familiarity with Israel’s power system. Former senior authorized professional at the national electric company, including fault support and energization and de-energization procedures.",
-  experienceP4:
-    "Specialization in detailed engineering design for substations and power stations.",
+      experienceTitle: "Experience & Expertise",
+      experienceP1:
+        "Over 30 years of experience managing high-energy projects and developing complex systems across diverse methodologies and technologies, working with power producers, government offices, and business organizations.",
+      experienceP2:
+        "Extensive experience in designing testing frameworks and commissioning-to-operation processes for high-energy projects.",
+      experienceP3:
+        "Expertise in Gas-Insulated Switchgear (GIS) from multiple manufacturers, with deep familiarity with Israel’s power system. Former senior authorized professional at the national electric company, including fault support and energization and de-energization procedures.",
+      experienceP4:
+        "Specialization in detailed engineering design for substations and power stations.",
 
-  expertiseTitle: "Core Areas of Expertise:",
-  expertise: [
-    "Initiating and leading integrative projects",
-    "Integrating high-energy systems into the power grid",
-    "Detailed engineering design of electrical facilities, from project initiation through final conductor connection",
-    "Developing and implementing operations & maintenance methodologies",
-    "Continuous focus on safety and facility protection",
-    "Real-time response to critical faults",
-  ],
+      expertiseTitle: "Core Areas of Expertise:",
+      expertise: [
+        "Initiating and leading integrative projects",
+        "Integrating high-energy systems into the power grid",
+        "Detailed engineering design of electrical facilities, from project initiation through final conductor connection",
+        "Developing and implementing operations & maintenance methodologies",
+        "Continuous focus on safety and facility protection",
+        "Real-time response to critical faults",
+      ],
 
-  servicesTitle: "Our Consulting Services",
-  services: [
-    "End-to-end guidance: from initiation and planning through full implementation, with operational and maintenance perspective",
-    "Optimization: identifying solutions, evaluating alternatives, and assessing financial feasibility versus investment",
-    "Regulatory support: guidance with the national electric company and Noga in system definition and market integration",
-    "Safety & maintenance: ongoing safety support, including procedures for de-energizing facilities",
-  ],
+      servicesTitle: "Our Consulting Services",
+      services: [
+        "End-to-end guidance: from initiation and planning through full implementation, with operational and maintenance perspective",
+        "Optimization: identifying solutions, evaluating alternatives, and assessing financial feasibility versus investment",
+        "Regulatory support: guidance with the national electric company and Noga in system definition and market integration",
+        "Safety & maintenance: ongoing safety support, including procedures for de-energizing facilities",
+      ],
 
-  planningTitle: "Our Engineering Design Services",
-  planningIntro:
-    "At SOLCHI, we don’t just design — we create intelligent engineering solutions that drive projects forward. Every planning process is built on systems thinking, professional innovation, and extensive experience supporting high-energy projects from initial concept through final delivery.",
+      planningTitle: "Our Engineering Design Services",
+      planningIntro:
+        "At SOLCHI, we don’t just design — we create intelligent engineering solutions that drive projects forward. Every planning process is built on systems thinking, professional innovation, and extensive experience supporting high-energy projects from initial concept through final delivery.",
 
-  planningItems: [
-    "Concept Design that establishes a precise project foundation, including techno-economic alternative analysis to enable informed decision-making",
-    "Detailed Design for all electrical and auxiliary systems — calculations, drawings, specifications, and execution-level engineering deliverables",
-    "Preparation of full tender documentation to ensure engineering clarity and high-quality, accurate contractor proposals",
-    "Comprehensive engineering support from project initiation through delivery, including professional support during FAT, SAT, and on-site commissioning",
-    "Multidisciplinary design coordination ensuring full integration between electrical, structural, mechanical, control, safety, and environmental systems",
-    "Advanced engineering calculations including load flow, short-circuit, grounding, load analysis, selectivity, and reliability — ensuring safe and robust design",
-    "Design of extra-high, high, medium, and low voltage systems, including panels, cables, protection equipment, and customized control solutions",
-    "Design review and compliance with international and local standards (IEC, IEEE), ensuring full adherence to project requirements",
-    "Tailored solutions for complex projects with infrastructure constraints, density limitations, or exceptionally high energy demands",
-    "Design optimization to improve performance, shorten timelines, and reduce costs — without compromising quality",
-  ],
+      planningItems: [
+        "Concept Design that establishes a precise project foundation, including techno-economic alternative analysis to enable informed decision-making",
+        "Detailed Design for all electrical and auxiliary systems — calculations, drawings, specifications, and execution-level engineering deliverables",
+        "Preparation of full tender documentation to ensure engineering clarity and high-quality, accurate contractor proposals",
+        "Comprehensive engineering support from project initiation through delivery, including professional support during FAT, SAT, and on-site commissioning",
+        "Multidisciplinary design coordination ensuring full integration between electrical, structural, mechanical, control, safety, and environmental systems",
+        "Advanced engineering calculations including load flow, short-circuit, grounding, load analysis, selectivity, and reliability — ensuring safe and robust design",
+        "Design of extra-high, high, medium, and low voltage systems, including panels, cables, protection equipment, and customized control solutions",
+        "Design review and compliance with international and local standards (IEC, IEEE), ensuring full adherence to project requirements",
+        "Tailored solutions for complex projects with infrastructure constraints, density limitations, or exceptionally high energy demands",
+        "Design optimization to improve performance, shorten timelines, and reduce costs — without compromising quality",
+      ],
 
-  clientsTitle: "Our Energy Clients",
-  clients: [
-    "Private power producers",
-    "Government offices",
-    "Infrastructure companies",
-    "Industrial organizations",
-  ],
-},
+      clientsTitle: "Our Energy Clients",
+      clients: [
+        "Private power producers",
+        "Government offices",
+        "Infrastructure companies",
+        "Industrial organizations",
+      ],
+    },
 
     isPage: {
       hero: {
@@ -544,7 +515,6 @@ contact: {
           salesforce: "Salesforce",
           fintech: "Fintech",
           processAutomation: "Process Automation",
-
         },
       },
       expertise: {
@@ -568,11 +538,31 @@ contact: {
       more: {
         title: "Additional Expertise",
         items: [
-          { title: "Strategic Roadmap", desc: "Building a comprehensive IT roadmap for the organization, defining KPIs, and monitoring them throughout the lifecycle of the project." },
-          { title: "Salesforce", desc: "Designing and developing core systems on the Salesforce platform and leading complex Salesforce implementation projects." },
-          { title: "Delivery", desc: "Leading internal and outsourced development projects from initial concept and planning through full implementation." },
-          { title: "Feasibility", desc: "Evaluating implementation alternatives, including cost, effectiveness, and financial and operational feasibility." },
-          { title: "RFPs", desc: "Identifying and selecting suitable solutions and infrastructures, including the preparation and professional management of tenders." },
+          {
+            title: "Strategic Roadmap",
+            desc:
+              "Building a comprehensive IT roadmap for the organization, defining KPIs, and monitoring them throughout the lifecycle of the project.",
+          },
+          {
+            title: "Salesforce",
+            desc:
+              "Designing and developing core systems on the Salesforce platform and leading complex Salesforce implementation projects.",
+          },
+          {
+            title: "Delivery",
+            desc:
+              "Leading internal and outsourced development projects from initial concept and planning through full implementation.",
+          },
+          {
+            title: "Feasibility",
+            desc:
+              "Evaluating implementation alternatives, including cost, effectiveness, and financial and operational feasibility.",
+          },
+          {
+            title: "RFPs",
+            desc:
+              "Identifying and selecting suitable solutions and infrastructures, including the preparation and professional management of tenders.",
+          },
         ],
       },
       why: {
@@ -587,55 +577,40 @@ contact: {
     },
 
     contact: {
-  pageTitle: "Contact",
-  pageSubtitle:
-    "We’re here to answer any question and schedule a professional introductory meeting.",
-  detailsTitle: "Contact Details",
-  addressTitle: "Our Address",
-  addressText: "Ha-Vered 544, Kidron, Israel",
-  addressHint: "Click to open in Maps",
-  emailTitle: "Email",
-  availabilityTitle: "Service Availability",
-  availabilityHours: "Sunday–Thursday | 08:30–18:00",
-  formTitle: "Send Us a Message",
+      pageTitle: "Contact",
+      pageSubtitle:
+        "We’re here to answer any question and schedule a professional introductory meeting.",
+      detailsTitle: "Contact Details",
+      addressTitle: "Our Address",
+      addressText: "Ha-Vered 544, Kidron, Israel",
+      addressHint: "Click to open in Maps",
+      availabilityTitle: "Service Availability",
+      availabilityHours: "Sunday–Thursday | 08:30–18:00",
+      formTitle: "Send Us a Message",
 
-  fields: {
-    fullName: "Full Name",
-    subject: "Inquiry Subject",
-    email: "Email",
-    phone: "Phone",
-    message: "Message",
-  },
+      fields: {
+        fullName: "Full Name",
+        subject: "Inquiry Subject",
+        email: "Email",
+        phone: "Phone",
+        message: "Message",
+      },
 
-  placeholders: {
-    fullName: "John Doe",
-    subject: "Select a subject",
-    email: "name@company.com",
-    phone: "+972-5X-XXXXXXX",
-    message: "Briefly describe what you need...",
-  },
+      placeholders: {
+        fullName: "John Doe",
+        subject: "Select a subject",
+        email: "name@company.com",
+        phone: "+972-5X-XXXXXXX",
+        message: "Briefly describe what you need...",
+      },
 
-  subjectOptions: {
-    electricalDivision: "Electrical Division",
-    informationSystems: "Information Systems",
-  },
+      subjectOptions: {
+        electricalDivision: "Electrical Division",
+        informationSystems: "Information Systems",
+      },
 
-  people: {
-    hila: {
-      name: "Hila Cohen",
-      role: "Information Systems Manager"
+      formUnavailable: "It is currently not possible to send inquiries",
     },
-    yehiel: {
-      name: "Yehiel Amir Cohen",
-      role: "Electrical Division Manager"
-    }
-  },
-
-  sending: "Sending...",
-  submit: "Send Message",
-  alertSendFailed:
-    "There was an error sending your message. Please check your internet connection or try again later.",
-},
 
     thankYou: {
       title: "Message Received!",
@@ -712,7 +687,6 @@ function getDefaultLang(): Lang {
     localStorage.getItem(STORAGE_KEY)) as Lang | null;
   if (saved === "he" || saved === "en") return saved;
 
-  // ברירת מחדל: עברית
   return "he";
 }
 

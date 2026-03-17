@@ -4,6 +4,39 @@ import { useI18n } from "../i18n";
 const Electricity: React.FC = () => {
   const { t } = useI18n();
 
+  const clients = [
+    {
+      src: "/logos/dalia.png",
+      alt: "דליה Power Plants",
+      className: "max-h-16 w-auto object-contain hover:scale-105 transition duration-300",
+    },
+    {
+      src: "/logos/noga.png",
+      alt: "נגה ניהול מערכת החשמל",
+      className: "max-h-16 w-auto object-contain hover:scale-105 transition duration-300",
+    },
+    {
+      src: "/logos/EDF_Energy_logo.svg.png",
+      alt: "EDF Energy",
+      className: "max-h-16 w-auto object-contain hover:scale-105 transition duration-300",
+    },
+    {
+      src: "/logos/Weizmann_new_logo_2023.png",
+      alt: "מכון ויצמן למדע",
+      className: "max-h-16 w-auto object-contain hover:scale-105 transition duration-300",
+    },
+    {
+      src: "/logos/logo-חד-אסף.png",
+      alt: 'חד-אסף',
+      className: "max-h-16 w-auto object-contain hover:scale-105 transition duration-300",
+    },
+    {
+      src: "/logos/המסלול_של_נמל_אשדוד.svg.png",
+      alt: "נמל אשדוד",
+      className: "max-h-16 w-auto object-contain hover:scale-105 transition duration-300",
+    },
+  ];
+
   return (
     <div className="bg-white min-h-screen animate-fade-in">
       {/* Hero */}
@@ -174,30 +207,19 @@ const Electricity: React.FC = () => {
             {t("electricity.clientsTitle")}
           </h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center">
-              <img
-                src="/logos/iec.png"
-                alt="חברת החשמל לישראל"
-                className="max-h-28 w-auto object-contain hover:scale-105 transition duration-300"
-              />
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center">
-              <img
-                src="/logos/noga.png"
-                alt="נגה ניהול מערכת חשמל"
-                className="max-h-16 w-auto object-contain hover:scale-105 transition duration-300"
-              />
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center">
-              <img
-                src="/logos/dalia.png"
-                alt="דליה אנרגיות"
-                className="max-h-16 w-auto object-contain hover:scale-105 transition duration-300"
-              />
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {clients.map((client) => (
+              <div
+                key={client.src}
+                className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center min-h-[180px]"
+              >
+                <img
+                  src={client.src}
+                  alt={client.alt}
+                  className={client.className}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>

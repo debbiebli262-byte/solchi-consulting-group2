@@ -31,7 +31,7 @@ const Electricity: React.FC = () => {
       className: "max-h-16 w-auto object-contain hover:scale-105 transition duration-300",
     },
     {
-      src: "/logos/המסלול_של_נמל_אשדוד.svg.png",
+      src: "/logos/הסמליל_של_נמל_אשדוד.svg.png",
       alt: "נמל אשדוד",
       className: "max-h-16 w-auto object-contain hover:scale-105 transition duration-300",
     },

@@ -1,16 +1,32 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
+import { useNavigate } from "react-router-dom";
 import { useI18n } from "../i18n";
+
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+const CONTACT_EMAILS: Record<string, string> = {
+  electrical: "yehiel@solchi.co.il",
+  information_systems: "hila@solchi.co.il",
+};
 
 const Contact: React.FC = () => {
   const { t, lang } = useI18n();
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
+    division: "",
     subject: "",
     message: "",
   });
+
+  const [isSending, setIsSending] = useState(false);
+  const [error, setError] = useState("");
 
   const openMap = () => {
     window.open(
@@ -19,8 +35,73 @@ const Contact: React.FC = () => {
     );
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const getDivisionLabel = () => {
+    if (formData.division === "electrical") {
+      return t("contact.subjectOptions.electricalDivision");
+    }
+
+    if (formData.division === "information_systems") {
+      return t("contact.subjectOptions.informationSystems");
+    }
+
+    return "";
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError("");
+
+    const toEmail = CONTACT_EMAILS[formData.division];
+
+    if (!toEmail) {
+      setError(t("contact.errors.subjectRequired"));
+      return;
+    }
+
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+      setError(t("contact.errors.requiredFields"));
+      return;
+    }
+
+    if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+      setError(t("contact.errors.emailjsMissing"));
+      return;
+    }
+
+    try {
+      setIsSending(true);
+
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          to_email: toEmail,
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          division: getDivisionLabel(),
+          subject: formData.subject,
+          message: formData.message,
+        },
+        { publicKey: EMAILJS_PUBLIC_KEY }
+      );
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        division: "",
+        subject: "",
+        message: "",
+      });
+
+      navigate("/thank-you");
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      setError(t("contact.errors.sendFailed"));
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -85,6 +166,38 @@ const Contact: React.FC = () => {
                     </p>
                   </div>
                 </div>
+
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="font-bold text-slate-900 text-lg">
+                      {t("contact.people.hila.name")}
+                    </h4>
+                    <p className="text-slate-600">
+                      {t("contact.people.hila.role")}
+                    </p>
+                    <a
+                      href="mailto:hila@solchi.co.il"
+                      className="text-blue-600 hover:underline"
+                    >
+                      hila@solchi.co.il
+                    </a>
+                  </div>
+
+                  <div>
+                    <h4 className="font-bold text-slate-900 text-lg">
+                      {t("contact.people.yehiel.name")}
+                    </h4>
+                    <p className="text-slate-600">
+                      {t("contact.people.yehiel.role")}
+                    </p>
+                    <a
+                      href="mailto:yehiel@solchi.co.il"
+                      className="text-blue-600 hover:underline"
+                    >
+                      yehiel@solchi.co.il
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -128,6 +241,7 @@ const Contact: React.FC = () => {
                 </label>
                 <input
                   type="text"
+                  required
                   value={formData.name}
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
@@ -140,18 +254,19 @@ const Contact: React.FC = () => {
 
               <div className="space-y-2">
                 <label className="block text-sm font-bold text-slate-700">
-                  {t("contact.fields.subject")}
+                  {t("contact.fields.division")}
                 </label>
                 <select
-                  value={formData.subject}
+                  required
+                  value={formData.division}
                   onChange={(e) =>
-                    setFormData({ ...formData, subject: e.target.value })
+                    setFormData({ ...formData, division: e.target.value })
                   }
                   className="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all bg-slate-50/50 text-slate-700"
                   dir={lang === "he" ? "rtl" : "ltr"}
                 >
                   <option value="">
-                    {t("contact.placeholders.subject")}
+                    {t("contact.placeholders.division")}
                   </option>
 
                   <option value="electrical">
@@ -164,6 +279,23 @@ const Contact: React.FC = () => {
                 </select>
               </div>
 
+              <div className="space-y-2">
+                <label className="block text-sm font-bold text-slate-700">
+                  {t("contact.fields.subject")}
+                </label>
+                <input
+                  type="text"
+                  required
+                  value={formData.subject}
+                  onChange={(e) =>
+                    setFormData({ ...formData, subject: e.target.value })
+                  }
+                  className="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all bg-slate-50/50"
+                  placeholder={t("contact.placeholders.subject")}
+                  dir={lang === "he" ? "rtl" : "ltr"}
+                />
+              </div>
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="block text-sm font-bold text-slate-700">
@@ -171,6 +303,7 @@ const Contact: React.FC = () => {
                   </label>
                   <input
                     type="email"
+                    required
                     value={formData.email}
                     onChange={(e) =>
                       setFormData({ ...formData, email: e.target.value })
@@ -204,6 +337,7 @@ const Contact: React.FC = () => {
                 </label>
                 <textarea
                   rows={4}
+                  required
                   value={formData.message}
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
@@ -214,9 +348,17 @@ const Contact: React.FC = () => {
                 ></textarea>
               </div>
 
-              <div className="w-full bg-slate-200 text-slate-700 font-bold py-5 rounded-2xl flex items-center justify-center text-center px-4">
-                {t("contact.formUnavailable")}
-              </div>
+              {error && (
+                <p className="text-red-600 font-bold text-sm">{error}</p>
+              )}
+
+              <button
+                type="submit"
+                disabled={isSending}
+                className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-slate-400 text-white font-bold py-5 rounded-2xl flex items-center justify-center text-center px-4 transition-colors"
+              >
+                {isSending ? t("contact.sending") : t("contact.submit")}
+              </button>
             </form>
           </div>
         </div>

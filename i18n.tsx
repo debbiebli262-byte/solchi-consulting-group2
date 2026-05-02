@@ -6,12 +6,23 @@ import React, {
   useState,
 } from "react";
 
+/* =========================================================
+   הגדרות בסיס
+========================================================= */
+
 export type Lang = "he" | "en";
 
 const STORAGE_KEY = "site_lang";
 
+/* =========================================================
+   מאגר הטקסטים של האתר
+   - עברית
+   - אנגלית
+========================================================= */
+
 export const copy = {
   he: {
+    /* ===================== ניווט עליון ===================== */
     nav: {
       home: "דף הבית",
       about: "אודות",
@@ -21,9 +32,12 @@ export const copy = {
       language: "שפה",
     },
 
+    /* ===================== כפתור החלפת שפה ===================== */
     switchTo: "English",
 
+    /* ===================== דף הבית ===================== */
     home: {
+      /* ---------- הירו / פתיחה ---------- */
       hero: {
         titlePrefix: "We Make",
         titleHighlight: "IT",
@@ -33,11 +47,15 @@ export const copy = {
         ctaPrimary: "בואו נדבר",
         ctaSecondary: "מי אנחנו?",
       },
+
+      /* ---------- בלוק פתיחה ---------- */
       intro: {
         title: "אנחנו לא רק מייעצים, אנחנו פותרים.",
         subtitle:
           "הידע והמומחיות העמוקים שלנו בתעשייה מבטיחים שתקבל ייעוץ מותאם ותוצאות מוחשיות. נשמח להיות ה-Trusted Advisors שלך",
       },
+
+      /* ---------- בלוק עלינו ---------- */
       aboutBlock: {
         title: "עלינו",
         p1:
@@ -45,6 +63,8 @@ export const copy = {
         p2:
           "Solchi מתמחה בייעול תהליכים ושיפור ביצועים, התייעלות תפעולית וליווי ההנהלה. אנו מספקים מענה כולל לחברות וארגונים בתחומי הקמת מתקני ייצור, הולכה ואספקת חשמל פרטיים, מחשוב וטרנספורמציה דיגיטלית.",
       },
+
+      /* ---------- שירותים ---------- */
       services: {
         title: "שירותי הייעוץ שלנו",
         subtitle:
@@ -60,6 +80,8 @@ export const copy = {
             "מתמחים במערכות מידע ובחיבור שלהם לתהליכי העבודה בארגון. אנחנו מייצרים את הפתרון הנכון ומלווים אתכם מקצה לקצה",
         },
       },
+
+      /* ---------- תקציר חטיבת חשמל ---------- */
       electricity: {
         title: "מומחיות בהנדסת חשמל ומתקנים עתירי אנרגיה",
         subtitle:
@@ -72,6 +94,8 @@ export const copy = {
         ],
         readMore: "קראו עוד על חטיבת החשמל",
       },
+
+      /* ---------- תקציר מערכות מידע ---------- */
       is: {
         title: "מומחיות בניהול ויישום פרויקטי מערכות מידע",
         subtitle:
@@ -84,6 +108,8 @@ export const copy = {
         ],
         readMore: "קראו עוד על מערכות מידע",
       },
+
+      /* ---------- פילוסופיה ---------- */
       philosophy: {
         title: "הפילוסופיה שלנו",
         text:
@@ -92,12 +118,16 @@ export const copy = {
       },
     },
 
+    /* ===================== עמוד אודות ===================== */
     about: {
+      /* ---------- הירו ---------- */
       hero: {
         title: "קצת עלינו",
         subtitle:
           "בוטיק הייעוץ והתכנון Solchi מתמחה בייעוץ וליווי אסטרטגי ועוסק בשני תחומים מרכזיים המניעים את המשק המודרני.",
       },
+
+      /* ---------- תוכן ---------- */
       content: {
         p1:
           "Solchi מתמחה בייעול תהליכים ושיפור ביצועים, התייעלות תפעולית וליווי ההנהלה. אנו מספקים מענה כולל לחברות וארגונים בתחומי הקמת מתקני יצור, הולכה ואספקת חשמל פרטיים, מחשוב וטרנספורמציה דיגיטלית.",
@@ -106,6 +136,8 @@ export const copy = {
         p3:
           "אנחנו חושבים פשוט, נותנים שירות בגובה העיניים ומחויבים לספק פתרונות ושירותים אשר יאפשרו לכם לצמוח בסביבה הטכנולוגית המשתנה במהירות.",
       },
+
+      /* ---------- חזון ומשימה ---------- */
       vision: {
         title: "חזון ומשימה",
         items: [
@@ -116,13 +148,16 @@ export const copy = {
       },
     },
 
+    /* ===================== עמוד חטיבת חשמל ===================== */
     electricity: {
+      /* ---------- כותרת עליונה ---------- */
       pageTag: "חטיבת החשמל",
       name: "יחיאל אמיר כהן",
       role:
         "מהנדס חשמל בכיר, יועץ ומנהל פרויקטים בתחום מערכות עתירות אנרגיה בכלל ותחנות השנאה/הוצאת אנרגיה בפרט.",
       lead: "מוביל הפעילות בחטיבת החשמל והאנרגיה",
 
+      /* ---------- ניסיון ומומחיות ---------- */
       experienceTitle: "ניסיון ומומחיות",
       experienceP1:
         "בעל מעל 30 שנות ניסיון בכל הקשור לניהול פרויקטים עתירי אנרגיה לפיתוח מערכות מורכבות במתודולוגיות שונות וטכנולוגיות מגוונות מול יצרני חשמל, משרדי ממשלה וארגונים עסקיים.",
@@ -133,6 +168,7 @@ export const copy = {
       experienceP4:
         "התמחות בתכנון מפורט לתחנות השנאה ותחנות כח.",
 
+      /* ---------- תחומי התמחות ---------- */
       expertiseTitle: "תחומי התמחות מרכזיים:",
       expertise: [
         "התנעה והובלת פרויקטים אינטגרטיביים",
@@ -143,6 +179,7 @@ export const copy = {
         "מתן מענה לתקלות קריטיות בזמן אמת",
       ],
 
+      /* ---------- שירותי ייעוץ ---------- */
       servicesTitle: "שירותי הייעוץ שלנו",
       services: [
         "ליווי מקצה לקצה: משלב הייזום והתכנון ועד ליישום מלא בראיה תפעולית ותחזוקתית",
@@ -151,6 +188,7 @@ export const copy = {
         "בטיחות ותחזוקה: ליווי שוטף בהיבטי בטיחות לשחרור מתקן ממתח",
       ],
 
+      /* ---------- שירותי תכנון ---------- */
       planningTitle: "שירותי התכנון שלנו",
       planningIntro:
         "ב-SOLCHI אנחנו לא רק מתכננים — אנחנו יוצרים פתרונות הנדסיים חכמים שמניעים פרויקטים קדימה. כל תהליך תכנון מבוסס על חשיבה מערכתית, חדשנות מקצועית וניסיון עשיר בליווי פרויקטים עתירי אנרגיה מהשלב הראשון ועד למסירה.",
@@ -167,6 +205,7 @@ export const copy = {
         "אופטימיזציה של תכנון, לשיפור ביצועים, קיצור לוחות זמנים וצמצום עלויות — בלי להתפשר על איכות",
       ],
 
+      /* ---------- לקוחות ---------- */
       clientsTitle: "הלקוחות שלנו בתחום האנרגיה",
       clients: [
         "יצרני חשמל פרטיים",
@@ -176,7 +215,9 @@ export const copy = {
       ],
     },
 
+    /* ===================== עמוד מערכות מידע ===================== */
     isPage: {
+      /* ---------- הירו ---------- */
       hero: {
         tag: "חטיבת מערכות מידע",
         name: "הילה כהן",
@@ -188,6 +229,8 @@ export const copy = {
           processAutomation: "מיכון תהליכים",
         },
       },
+
+      /* ---------- מומחיות וערך ---------- */
       expertise: {
         title: "מומחיות וערך מוסף",
         p1:
@@ -195,6 +238,8 @@ export const copy = {
         p2:
           "ב-Solchi אנו מחויבים לצמצם מורכבות, לפשט תהליכים ולשפר את החוויה הארגונית והעסקית מקצה לקצה – משלב האפיון והייזום, דרך תכנון ויישום מלא של מערכות, ועד לניהול ספקים ובקרת ביצועים. אנו מתמקדים ביצירת תהליכים יעילים יותר, חיסכון במשאבים, שיפור מתמיד והתייעלות ארגונית שמייצרת ערך מדיד לאורך זמן.",
       },
+
+      /* ---------- מערכות אשראי ופיננסים ---------- */
       credit: {
         title: "מערכות אשראי ופיננסים",
         items: [
@@ -206,6 +251,8 @@ export const copy = {
           "אינטגרציה (ERP, CRM)",
         ],
       },
+
+      /* ---------- תחומי התמחות נוספים ---------- */
       more: {
         title: "תחומי התמחות נוספים",
         items: [
@@ -236,6 +283,8 @@ export const copy = {
           },
         ],
       },
+
+      /* ---------- למה לבחור ב-Solchi ---------- */
       why: {
         title: "למה Solchi למערכות מידע?",
         items: [
@@ -247,7 +296,9 @@ export const copy = {
       },
     },
 
+    /* ===================== עמוד צור קשר ===================== */
     contact: {
+      /* ---------- כותרות כלליות ---------- */
       pageTitle: "צור קשר",
       pageSubtitle:
         "אנחנו כאן כדי לענות על כל שאלה ולתאם פגישת היכרות מקצועית.",
@@ -258,37 +309,74 @@ export const copy = {
       availabilityTitle: "זמינות שירות",
       availabilityHours: "ימי א' - ה' | בין השעות 08:30 - 18:00",
       formTitle: "שלחו לנו הודעה",
+      submit: "שלח פניה",
+      sending: "שולח...",
 
+      /* ---------- אנשי קשר ---------- */
+      peopleTitle: "אנשי קשר",
+      people: {
+        hila: {
+          name: "הילה כהן",
+          role: "מנהלת מערכות מידע",
+          email: "hila@solchi.co.il",
+        },
+        yehiel: {
+          name: "יחיאל אמיר כהן",
+          role: "מנהל חטיבת החשמל",
+          email: "yehiel@solchi.co.il",
+        },
+      },
+
+      /* ---------- שדות טופס ---------- */
       fields: {
         fullName: "שם מלא",
+        division: "חטיבה רלוונטית",
         subject: "נושא הפנייה",
         email: 'דוא"ל',
         phone: "טלפון",
         message: "הודעה",
       },
 
+      /* ---------- placeholders ---------- */
       placeholders: {
         fullName: "ישראל ישראלי",
+        division: "בחרו חטיבה",
         subject: "בחרו נושא",
         email: "name@company.com",
         phone: "05X-XXXXXXX",
         message: "תארו בקצרה את הצורך שלכם...",
       },
 
+      /* ---------- אפשרויות נושא ---------- */
       subjectOptions: {
         electricalDivision: "חטיבת החשמל",
         informationSystems: "מערכות מידע",
       },
 
+      /* ---------- הודעות ולידציה ---------- */
+      validation: {
+        nameRequired: "יש להזין שם מלא",
+        nameLettersOnly: "השם יכול להכיל אותיות בלבד",
+        emailRequired: 'יש להזין כתובת דוא"ל',
+        emailInvalid: "יש להזין כתובת דוא״ל תקינה",
+        emailNoSpaces: "כתובת דוא״ל לא יכולה להכיל רווחים",
+        phoneRequired: "יש להזין מספר טלפון",
+        phoneInvalid: "יש להזין מספר טלפון תקין",
+        phoneInvalidIsrael: "בישראל מספר טלפון חייב להכיל 10 ספרות ולהתחיל ב-0",
+      },
+
+      /* ---------- הודעה במקרה שהטופס לא זמין ---------- */
       formUnavailable: "לא ניתן כרגע לשלוח פניות",
     },
 
+    /* ===================== עמוד תודה ===================== */
     thankYou: {
       title: "הודעתכם התקבלה!",
       subtitle: "תודה שפניתם ל-Solchi. נציג מטעמנו יחזור אליכם בהקדם.",
       backHome: "חזרה לדף הבית",
     },
 
+    /* ===================== פוטר ===================== */
     footer: {
       description:
         "בוטיק הייעוץ Solchi מתמחה בייעוץ וליווי אסטרטגי, שילוב מערכות עתירות אנרגיה וטרנספורמציה דיגיטלית במגזר הפיננסי והתשתיתי.",
@@ -306,6 +394,7 @@ export const copy = {
       accessibility: "הצהרת נגישות",
     },
 
+    /* ===================== הצהרת נגישות ===================== */
     accessibility: {
       title: "הצהרת נגישות",
       updatedLine: "הצהרת נגישות אתר מעודכנת לתאריך 1.11.2023",
@@ -340,6 +429,7 @@ export const copy = {
   },
 
   en: {
+    /* ===================== ניווט עליון ===================== */
     nav: {
       home: "Home",
       about: "About",
@@ -349,9 +439,12 @@ export const copy = {
       language: "Language",
     },
 
+    /* ===================== כפתור החלפת שפה ===================== */
     switchTo: "עברית",
 
+    /* ===================== דף הבית ===================== */
     home: {
+      /* ---------- הירו / פתיחה ---------- */
       hero: {
         titlePrefix: "We make",
         titleHighlight: "IT",
@@ -361,11 +454,15 @@ export const copy = {
         ctaPrimary: "Let’s Talk",
         ctaSecondary: "Who We Are",
       },
+
+      /* ---------- בלוק פתיחה ---------- */
       intro: {
         title: "We don’t just advise — we solve.",
         subtitle:
           "Our deep industry expertise ensures tailored guidance and measurable outcomes. We’d be happy to serve as your trusted advisors.",
       },
+
+      /* ---------- בלוק עלינו ---------- */
       aboutBlock: {
         title: "About Us",
         p1:
@@ -373,6 +470,8 @@ export const copy = {
         p2:
           "Solchi specializes in process optimization, performance improvement, operational efficiency, and executive support. We deliver comprehensive solutions for private power generation, transmission and supply projects, as well as IT and digital transformation initiatives.",
       },
+
+      /* ---------- שירותים ---------- */
       services: {
         title: "Our Consulting Services",
         subtitle:
@@ -388,6 +487,8 @@ export const copy = {
             "We specialize in information systems and their connection to organizational workflows—designing the right solution and supporting you end-to-end",
         },
       },
+
+      /* ---------- תקציר חטיבת חשמל ---------- */
       electricity: {
         title: "Expertise in Electrical Engineering & High-Energy Infrastructure",
         subtitle:
@@ -400,6 +501,8 @@ export const copy = {
         ],
         readMore: "Read more about the Electricity Division",
       },
+
+      /* ---------- תקציר מערכות מידע ---------- */
       is: {
         title: "Expertise in Managing & Implementing Information Systems Projects",
         subtitle:
@@ -412,6 +515,8 @@ export const copy = {
         ],
         readMore: "Read more about Information Systems",
       },
+
+      /* ---------- פילוסופיה ---------- */
       philosophy: {
         title: "Our Philosophy",
         text:
@@ -420,12 +525,16 @@ export const copy = {
       },
     },
 
+    /* ===================== עמוד אודות ===================== */
     about: {
+      /* ---------- הירו ---------- */
       hero: {
         title: "About Us",
         subtitle:
           "Solchi is a boutique consultancy specializing in strategic guidance and hands-on support across two core domains that drive the modern economy.",
       },
+
+      /* ---------- תוכן ---------- */
       content: {
         p1:
           "Solchi specializes in process optimization, performance improvement, operational efficiency, and executive support. We provide comprehensive solutions for organizations in private power generation, transmission and supply projects, as well as IT and digital transformation.",
@@ -434,6 +543,8 @@ export const copy = {
         p3:
           "We keep things simple, speak clearly and directly, and are committed to delivering solutions and services that help you grow in a rapidly changing technological environment.",
       },
+
+      /* ---------- חזון ומשימה ---------- */
       vision: {
         title: "Vision & Mission",
         items: [
@@ -444,13 +555,16 @@ export const copy = {
       },
     },
 
+    /* ===================== עמוד חטיבת חשמל ===================== */
     electricity: {
+      /* ---------- כותרת עליונה ---------- */
       pageTag: "Electricity Division",
       name: "Yehiel Amir Cohen",
       role:
         "Senior electrical engineer, consultant and project manager specializing in high-energy systems, with a focus on substations and power evacuation facilities.",
       lead: "Head of the Electricity & Energy Division",
 
+      /* ---------- ניסיון ומומחיות ---------- */
       experienceTitle: "Experience & Expertise",
       experienceP1:
         "Over 30 years of experience managing high-energy projects and developing complex systems across diverse methodologies and technologies, working with power producers, government offices, and business organizations.",
@@ -461,6 +575,7 @@ export const copy = {
       experienceP4:
         "Specialization in detailed engineering design for substations and power stations.",
 
+      /* ---------- תחומי התמחות ---------- */
       expertiseTitle: "Core Areas of Expertise:",
       expertise: [
         "Initiating and leading integrative projects",
@@ -471,6 +586,7 @@ export const copy = {
         "Real-time response to critical faults",
       ],
 
+      /* ---------- שירותי ייעוץ ---------- */
       servicesTitle: "Our Consulting Services",
       services: [
         "End-to-end guidance: from initiation and planning through full implementation, with operational and maintenance perspective",
@@ -479,6 +595,7 @@ export const copy = {
         "Safety & maintenance: ongoing safety support, including procedures for de-energizing facilities",
       ],
 
+      /* ---------- שירותי תכנון ---------- */
       planningTitle: "Our Engineering Design Services",
       planningIntro:
         "At SOLCHI, we don’t just design — we create intelligent engineering solutions that drive projects forward. Every planning process is built on systems thinking, professional innovation, and extensive experience supporting high-energy projects from initial concept through final delivery.",
@@ -496,6 +613,7 @@ export const copy = {
         "Design optimization to improve performance, shorten timelines, and reduce costs — without compromising quality",
       ],
 
+      /* ---------- לקוחות ---------- */
       clientsTitle: "Our Energy Clients",
       clients: [
         "Private power producers",
@@ -505,7 +623,9 @@ export const copy = {
       ],
     },
 
+    /* ===================== עמוד מערכות מידע ===================== */
     isPage: {
+      /* ---------- הירו ---------- */
       hero: {
         tag: "Information Systems Division",
         name: "Hila Cohen",
@@ -517,6 +637,8 @@ export const copy = {
           processAutomation: "Process Automation",
         },
       },
+
+      /* ---------- מומחיות וערך ---------- */
       expertise: {
         title: "Expertise & Value",
         p1:
@@ -524,6 +646,8 @@ export const copy = {
         p2:
           "At Solchi, we are committed to reducing complexity, streamlining processes, and enhancing the organizational and business experience from end to end — from initial analysis and initiation, through full system design and implementation, to vendor management and performance control. We focus on creating more efficient processes, optimizing resources, driving continuous improvement, and delivering measurable long-term value.",
       },
+
+      /* ---------- מערכות אשראי ופיננסים ---------- */
       credit: {
         title: "Credit & Finance Systems",
         items: [
@@ -535,6 +659,8 @@ export const copy = {
           "ERP/CRM integrations",
         ],
       },
+
+      /* ---------- תחומי התמחות נוספים ---------- */
       more: {
         title: "Additional Expertise",
         items: [
@@ -565,6 +691,8 @@ export const copy = {
           },
         ],
       },
+
+      /* ---------- למה לבחור ב-Solchi ---------- */
       why: {
         title: "Why Solchi?",
         items: [
@@ -576,7 +704,9 @@ export const copy = {
       },
     },
 
+    /* ===================== עמוד צור קשר ===================== */
     contact: {
+      /* ---------- כותרות כלליות ---------- */
       pageTitle: "Contact",
       pageSubtitle:
         "We’re here to answer any question and schedule a professional introductory meeting.",
@@ -587,31 +717,68 @@ export const copy = {
       availabilityTitle: "Service Availability",
       availabilityHours: "Sunday–Thursday | 08:30–18:00",
       formTitle: "Send Us a Message",
+      submit: "Send Inquiry",
+      sending: "Sending...",
 
+      /* ---------- אנשי קשר ---------- */
+      peopleTitle: "Contact People",
+      people: {
+        hila: {
+          name: "Hila Cohen",
+          role: "Information Systems Manager",
+          email: "hila@solchi.co.il",
+        },
+        yehiel: {
+          name: "Yehiel Amir Cohen",
+          role: "Electricity Division Manager",
+          email: "yehiel@solchi.co.il",
+        },
+      },
+
+      /* ---------- שדות טופס ---------- */
       fields: {
         fullName: "Full Name",
+        division: "Relevant Division",
         subject: "Inquiry Subject",
         email: "Email",
         phone: "Phone",
         message: "Message",
       },
 
+      /* ---------- placeholders ---------- */
       placeholders: {
         fullName: "John Doe",
+        division: "Select a division",
         subject: "Select a subject",
         email: "name@company.com",
-        phone: "+972-5X-XXXXXXX",
+        phone: "+972 5X XXX XXXX",
         message: "Briefly describe what you need...",
       },
 
+      /* ---------- אפשרויות נושא ---------- */
       subjectOptions: {
         electricalDivision: "Electrical Division",
         informationSystems: "Information Systems",
       },
 
+      /* ---------- הודעות ולידציה ---------- */
+      validation: {
+        nameRequired: "Full name is required",
+        nameLettersOnly: "Name can contain letters only",
+        emailRequired: "Email is required",
+        emailInvalid: "Please enter a valid email address",
+        emailNoSpaces: "Email cannot contain spaces",
+        phoneRequired: "Phone number is required",
+        phoneInvalid: "Please enter a valid phone number",
+        phoneInvalidIsrael:
+          "Israeli phone numbers must contain exactly 10 digits and start with 0",
+      },
+
+      /* ---------- הודעה במקרה שהטופס לא זמין ---------- */
       formUnavailable: "It is currently not possible to send inquiries",
     },
 
+    /* ===================== עמוד תודה ===================== */
     thankYou: {
       title: "Message Received!",
       subtitle:
@@ -619,6 +786,7 @@ export const copy = {
       backHome: "Back to Home",
     },
 
+    /* ===================== פוטר ===================== */
     footer: {
       description:
         "Solchi is a boutique consulting firm specializing in strategic advisory, high-energy systems integration, and digital transformation within financial and infrastructure sectors.",
@@ -636,6 +804,7 @@ export const copy = {
       accessibility: "Accessibility Statement",
     },
 
+    /* ===================== הצהרת נגישות ===================== */
     accessibility: {
       title: "Accessibility Statement",
       updatedLine: "Website accessibility statement updated on 01.11.2023",
@@ -671,6 +840,10 @@ export const copy = {
   },
 } as const;
 
+/* =========================================================
+   טיפוסים
+========================================================= */
+
 type Copy = typeof copy.he;
 
 type I18nContextValue = {
@@ -680,8 +853,17 @@ type I18nContextValue = {
   t: (key: string) => string;
 };
 
+/* =========================================================
+   יצירת Context
+========================================================= */
+
 const I18nContext = createContext<I18nContextValue | null>(null);
 
+/* =========================================================
+   פונקציות עזר
+========================================================= */
+
+/* ---------- שפת ברירת מחדל ---------- */
 function getDefaultLang(): Lang {
   const saved = (typeof window !== "undefined" &&
     localStorage.getItem(STORAGE_KEY)) as Lang | null;
@@ -690,12 +872,17 @@ function getDefaultLang(): Lang {
   return "he";
 }
 
+/* ---------- שליפת ערך מתוך אובייקט לפי path ---------- */
 function getValueByPath(obj: any, path: string): any {
   return path.split(".").reduce((acc, part) => {
     if (acc == null) return undefined;
     return acc[part];
   }, obj);
 }
+
+/* =========================================================
+   Provider של השפה
+========================================================= */
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
@@ -731,6 +918,10 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
 
   return React.createElement(I18nContext.Provider, { value }, children);
 };
+
+/* =========================================================
+   Hook לשימוש בתרגומים
+========================================================= */
 
 export function useI18n() {
   const ctx = useContext(I18nContext);

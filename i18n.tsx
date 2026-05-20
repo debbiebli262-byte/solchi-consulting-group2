@@ -39,11 +39,12 @@ export const copy = {
     home: {
       /* ---------- הירו / פתיחה ---------- */
       hero: {
-        titlePrefix: "We Make",
-        titleHighlight: "IT",
-        titleSuffix: "Work",
+        titlePrefix: "Electrical",
+        titleHighlight: "& IT",
+        titleSuffix: "Solutions",
+        focusLine: "הנדסת חשמל | תשתיות אנרגיה | מערכות מידע",
         subtitle:
-          "אנו ב-Solchi מבינים שאין שני עסקים זהים. נלווה אותך באופן אישי ליישום אסטרטגיות טכנולוגיות בהתאמה למטרות העסקיות הייחודיות ונבנה את התוכנית המתאימה ביותר לצורך הייחודי שלך.",
+         "ב-Solchi אנו משלבים מומחיות הנדסית עם חשיבה טכנולוגית מתקדמת, כדי לספק פתרונות חכמים, בטוחים ויעילים — משלב התכנון ועד ליישום מלא. המטרה שלנו: ליצור ערך אמיתי לעסק שלך, היום ובעתיד.",
         ctaPrimary: "בואו נדבר",
         ctaSecondary: "מי אנחנו?",
       },
@@ -446,11 +447,16 @@ export const copy = {
     home: {
       /* ---------- הירו / פתיחה ---------- */
       hero: {
-        titlePrefix: "We make",
-        titleHighlight: "IT",
-        titleSuffix: "work",
+        titlePrefix: "Electrical",
+        titleHighlight: "& IT",
+        titleSuffix: "Solutions",
+
+        focusLine:
+          "Electrical Engineering | Energy Infrastructure | Information Systems",
+
         subtitle:
-          "At Solchi, we understand that no two businesses are the same. We provide a personal, hands-on approach to implementing technology strategies aligned with your unique business goals—building the right plan for your specific needs.",
+          "Solchi provides strategic consulting, planning and project delivery services in electrical engineering, energy infrastructure and information systems for organizations with complex operational and technological needs.",
+
         ctaPrimary: "Let’s Talk",
         ctaSecondary: "Who We Are",
       },

@@ -10,46 +10,57 @@ const Home: React.FC = () => {
   return (
     <div className="animate-fade-in">
       {/* Hero Section */}
-      <section className="relative h-[85vh] flex items-center bg-slate-900 overflow-hidden">
+      <section className="relative min-h-screen flex items-center bg-slate-950 overflow-hidden py-24">
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/20 blur-[120px] rounded-full animate-pulse"></div>
-          <div className="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] bg-indigo-600/10 blur-[100px] rounded-full"></div>
-          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/grid-me.png')] opacity-10"></div>
           <img
-            src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=70&w=1600"
-            alt="High tech hardware background"
-            className="w-full h-full object-cover opacity-20"
+            src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1800"
+            alt="Technology and electrical systems background"
+            className="w-full h-full object-cover opacity-35"
             fetchPriority="high"
           />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          {/* centered hero content */}
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 tech-font tracking-tight leading-tight">
+          <div className="absolute inset-0 bg-slate-950/45"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/20 via-slate-950/35 to-slate-950"></div>
+          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/grid-me.png')] opacity-10"></div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-10">
+          <div className="max-w-6xl mx-auto text-center">
+            <img
+              src={logoUrl}
+              alt="Solchi Logo"
+              className="h-28 md:h-40 w-auto mx-auto mb-8 drop-shadow-[0_0_30px_rgba(37,99,235,0.35)]"
+            />
+
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-8 tech-font tracking-tight leading-tight">
               {t("home.hero.titlePrefix")}{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">
                 {t("home.hero.titleHighlight")}
               </span>{" "}
               {t("home.hero.titleSuffix")}
             </h1>
 
-            <p className="text-xl text-slate-300 mb-10 leading-relaxed max-w-2xl mx-auto font-light">
+            <div className="inline-flex items-center justify-center rounded-full border border-blue-500/70 bg-slate-950/45 backdrop-blur-md px-6 md:px-8 py-3 md:py-4 mb-10 shadow-[0_0_25px_rgba(37,99,235,0.25)]">
+              <span className="text-slate-100 text-sm md:text-lg font-semibold">
+                {t("home.hero.focusLine")}
+              </span>
+            </div>
+
+            <p className="text-lg md:text-2xl text-slate-200 mb-12 leading-relaxed max-w-4xl mx-auto font-light">
               {t("home.hero.subtitle")}
             </p>
 
-            <div className="flex flex-wrap gap-5 justify-center">
+            <div className="flex flex-wrap gap-6 justify-center">
               <Link
                 to="/contact"
-                className="bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-10 rounded-full text-center transition-all shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.6)]"
+                className="bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 md:py-5 px-10 md:px-14 rounded-full text-center text-lg md:text-xl transition-all shadow-[0_0_25px_rgba(37,99,235,0.45)] hover:shadow-[0_0_35px_rgba(37,99,235,0.65)]"
               >
                 {t("home.hero.ctaPrimary")}
               </Link>
 
               <Link
                 to="/about"
-                className="bg-white/5 hover:bg-white/10 text-white font-bold py-4 px-10 rounded-full text-center backdrop-blur-md border border-white/10 transition-all"
+                className="bg-white/5 hover:bg-white/10 text-white font-bold py-4 md:py-5 px-10 md:px-14 rounded-full text-center text-lg md:text-xl backdrop-blur-md border border-white/25 transition-all"
               >
                 {t("home.hero.ctaSecondary")}
               </Link>
@@ -86,6 +97,7 @@ const Home: React.FC = () => {
               <p className="text-lg text-slate-700 leading-relaxed">
                 {t("home.aboutBlock.p1")}
               </p>
+
               <p className="text-lg text-slate-700 leading-relaxed">
                 {t("home.aboutBlock.p2")}
               </p>
@@ -104,7 +116,9 @@ const Home: React.FC = () => {
                 <li className="flex gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-blue-600 mt-2.5 flex-shrink-0"></div>
                   <p className="text-slate-700">
-                    <span className="font-bold">{t("home.services.energy.title")}</span>{" "}
+                    <span className="font-bold">
+                      {t("home.services.energy.title")}
+                    </span>{" "}
                     - {t("home.services.energy.desc")}
                   </p>
                 </li>
@@ -112,7 +126,9 @@ const Home: React.FC = () => {
                 <li className="flex gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-blue-600 mt-2.5 flex-shrink-0"></div>
                   <p className="text-slate-700">
-                    <span className="font-bold">{t("home.services.is.title")}</span>{" "}
+                    <span className="font-bold">
+                      {t("home.services.is.title")}
+                    </span>{" "}
                     - {t("home.services.is.desc")}
                   </p>
                 </li>
@@ -125,6 +141,7 @@ const Home: React.FC = () => {
             {/* Electricity */}
             <div className="bg-slate-900 rounded-[3rem] p-12 md:p-16 text-white overflow-hidden relative transition-all duration-500 hover:shadow-[0_20px_50px_rgba(30,41,59,0.5)]">
               <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
+
               <div className="relative z-10 flex flex-col lg:flex-row gap-12">
                 <div className="lg:w-1/2">
                   <h3 className="text-3xl font-bold mb-8 tech-font text-blue-400">

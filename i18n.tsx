@@ -10,7 +10,7 @@ import React, {
    הגדרות בסיס
 ========================================================= */
 
-export type Lang = "he" | "en";
+export type Lang = "he" | "en" | "ja";
 
 const STORAGE_KEY = "site_lang";
 
@@ -125,7 +125,7 @@ export const copy = {
       hero: {
         title: "קצת עלינו",
         subtitle:
-          "בוטיק הייעוץ והתכנון Solchi מתמחה בייעוץ וליווי אסטרטגי ועוסק בשני תחומים מרכזיים המניעים את המשק המודרני.",
+          "בוטיק הייעוץ והתכנון Solchi מתמחה בייעוץ וליווי אסטרטגי ועוסק בשני תחומים מרכזיים המניעים את המשק המודרני",
       },
 
       /* ---------- תוכן ---------- */
@@ -136,6 +136,18 @@ export const copy = {
           "היועצים ב-Solchi בעלי ניסיון רב בתעשייה בארץ, המאפשר גיבוש אסטרטגיה עסקית, ליווי מקצה לקצה בפרויקטים מורכבים המשלבים התמודדות עם אתגרים, ניהול פיננסי, הגדרה ובקרת תוכניות עבודה, ניהול עובדים וספקים ועוד.",
         p3:
           "אנחנו חושבים פשוט, נותנים שירות בגובה העיניים ומחויבים לספק פתרונות ושירותים אשר יאפשרו לכם לצמוח בסביבה הטכנולוגית המשתנה במהירות.",
+      },
+
+      /* ---------- חטיבות---------- */
+      divisions: {
+        electricity: {
+          title: "חטיבת החשמל והאנרגיה",
+          desc: "תכנון מערכות חשמל, תשתיות אנרגיה, ליווי פרויקטים הנדסיים וניהול מערכות עתירות אנרגיה.",
+        },
+        informationSystems: {
+          title: "חטיבת מערכות המידע",
+          desc: "Salesforce, אוטומציה תפעולית, פתרונות Fintech ותכנון מערכות מידע לארגונים.",
+        },
       },
 
       /* ---------- חזון ומשימה ---------- */
@@ -155,8 +167,12 @@ export const copy = {
       pageTag: "חטיבת החשמל",
       name: "יחיאל אמיר כהן",
       role:
-        "מהנדס חשמל בכיר, יועץ ומנהל פרויקטים בתחום מערכות עתירות אנרגיה בכלל ותחנות השנאה/הוצאת אנרגיה בפרט.",
-      lead: "מוביל הפעילות בחטיבת החשמל והאנרגיה",
+  "מהנדס חשמל בכיר, יועץ ומנהל פרויקטים בתחום מערכות עתירות אנרגיה בכלל ותחנות השנאה/הוצאת אנרגיה בפרט. מוביל הפעילות בחטיבת החשמל והאנרגיה.",
+      badges: {
+        energy: "מערכות עתירות אנרגיה",
+        substations: "תחנות השנאה",
+        gis: "GIS",
+      },
 
       /* ---------- ניסיון ומומחיות ---------- */
       experienceTitle: "ניסיון ומומחיות",
@@ -193,6 +209,12 @@ export const copy = {
       planningTitle: "שירותי התכנון שלנו",
       planningIntro:
         "ב-SOLCHI אנחנו לא רק מתכננים — אנחנו יוצרים פתרונות הנדסיים חכמים שמניעים פרויקטים קדימה. כל תהליך תכנון מבוסס על חשיבה מערכתית, חדשנות מקצועית וניסיון עשיר בליווי פרויקטים עתירי אנרגיה מהשלב הראשון ועד למסירה.",
+      planningSummary: [
+        "תכנון הנדסי חכם משלב הקונספט ועד לתכנון מפורט ומוכן לביצוע",
+        "יצירת בסיס מקצועי למכרזים, החלטות ותיאום בין כל תחומי הפרויקט",
+        "התאמת פתרונות חשמל ובקרה לפרויקטים מורכבים, עתירי אנרגיה ותשתית",
+        "ליווי, בקרה ואופטימיזציה להבטחת איכות, בטיחות, עמידה בתקנים ויעילות ביצוע",
+      ],
       planningItems: [
         "תכנון עקרוני (Concept Design) המייצר תשתית מדויקת לפרויקט, כולל בחינת חלופות טכנו־כלכליות המובילות לקבלת החלטות מושכלת",
         "תכנון מפורט (Detail Design) לכל מערכות החשמל והעזר — חישובים, שרטוטים, מפרטים ותוצרים הנדסיים ברמת ביצוע",
@@ -230,7 +252,85 @@ export const copy = {
           processAutomation: "מיכון תהליכים",
         },
       },
+      popups: {
+        processAutomation: {
+          eyebrow: "Process Automation",
+          title: "פחות עבודה ידנית, יותר תוצאות",
+          subtitle:
+            "מיכון תהליכים ארגוניים שמצמצם טעויות, מקצר זמני עבודה ומייצר שקיפות ניהולית.",
+          cards: [
+            {
+              title: "מיפוי ואבחון",
+              desc: "ניתוח המצב הקיים ואיתור צווארי בקבוק תפעוליים.",
+            },
+            {
+              title: "ארכיטקטורת מידע",
+              desc: "בחירת הכלים הנכונים למיכון משימות ידניות ותהליכים חוזרים.",
+            },
+            {
+              title: "הטמעה וניהול שינוי",
+              desc: "ליווי הצוותים במעבר לעבודה ממוכנת, יעילה ומדידה.",
+            },
+          ],
+          result: {
+            title: "התוצאה",
+            desc:
+              "פחות טעויות, יותר שליטה, ודוחות בזמן אמת על ביצועי הארגון.",
+          },
+        },
 
+        fintech: {
+          eyebrow: "Fintech Solutions",
+          title: "הופכים מורכבות פיננסית למצוינות טכנולוגית",
+          subtitle:
+            "תכנון והקמת מערכות פיננסיות קריטיות שמשלבות רגולציה, תפעול וחוויית משתמש מתקדמת.",
+          cards: [
+            {
+              title: "מחזור חיי אשראי",
+              desc: "אפיון והקמת תהליכים מקצה לקצה — מבקשת הלקוח ועד לשחרור הכספים.",
+            },
+            {
+              title: "פיקדונות וחסכונות",
+              desc: "בניית לוגיקה עסקית מורכבת במערכות המידע הארגוניות.",
+            },
+            {
+              title: "דיגיטציה בנקאית",
+              desc: "התאמת מערכות Legacy לעידן הדיגיטלי והפתוח.",
+            },
+          ],
+          result: {
+            title: "הערך המוסף",
+            desc:
+              "חיבור מדויק בין דרישות עסקיות, חיתום, סיכונים ופיתוח טכנולוגי.",
+          },
+        },
+
+        salesforce: {
+          eyebrow: "Salesforce CRM",
+          title: "מערכת CRM לניהול עבודות ולקוחות",
+          subtitle:
+            "פתרון Salesforce מותאם לחברות חשמל, שירות ותשתיות — לניהול יעיל של קריאות, צוותים, לקוחות ותהליכים תפעוליים.",
+          cards: [
+            {
+              title: "התאמה אישית ב-Salesforce",
+              desc: "Custom Objects, Workflows ודוחות לפי מבנה הארגון.",
+            },
+            {
+              title: "אוטומציה תפעולית",
+              desc: "הפחתת עבודה ידנית באמצעות תהליכים חכמים, התראות ואישורים.",
+            },
+            {
+              title: "ניהול לקוחות וקריאות שירות",
+              desc: "מעקב אחר פניות, סטטוסים, תקלות והיסטוריית טיפול.",
+            },
+          ],
+          result: {
+            title: "התוצאה",
+            desc:
+              "מערכת שמרכזת מידע, משפרת זמני תגובה ומאפשרת קבלת החלטות מבוססת נתונים.",
+          },
+        },
+     },
       /* ---------- מומחיות וערך ---------- */
       expertise: {
         title: "מומחיות וערך מוסף",
@@ -498,7 +598,7 @@ export const copy = {
       electricity: {
         title: "Expertise in Electrical Engineering & High-Energy Infrastructure",
         subtitle:
-          "This domain is led by a senior electrical engineer with over 30 years of experience in planning, managing, and supporting complex projects for power producers, government offices, and business organizations.",
+          "Head of the Electricity & Energy Division. This domain is led by a senior electrical engineer with over 30 years of experience in planning, managing, and supporting complex projects for power producers, government offices, and business organizations.",
         bullets: [
           "Design of substations and power evacuation facilities",
           "Expertise in Gas-Insulated Switchgear (GIS)",
@@ -537,7 +637,7 @@ export const copy = {
       hero: {
         title: "About Us",
         subtitle:
-          "Solchi is a boutique consultancy specializing in strategic guidance and hands-on support across two core domains that drive the modern economy.",
+          "Solchi is a boutique consultancy specializing in strategic guidance and hands-on support across two core domains that drive the modern economy",
       },
 
       /* ---------- תוכן ---------- */
@@ -548,6 +648,18 @@ export const copy = {
           "Our consultants bring extensive industry experience, enabling the development of business strategy and end-to-end delivery of complex projects—combining challenge management, financial oversight, work-plan definition and control, and management of teams and vendors.",
         p3:
           "We keep things simple, speak clearly and directly, and are committed to delivering solutions and services that help you grow in a rapidly changing technological environment.",
+      },
+
+      /* ---------- חטיבות ---------- */
+      divisions: {
+        electricity: {
+          title: "Electricity & Energy Division",
+          desc: "Electrical systems design, energy infrastructure, engineering project support and management of high-energy systems.",
+        },
+        informationSystems: {
+          title: "Information Systems Division",
+          desc: "Salesforce, operational automation, Fintech solutions and information systems planning for organizations.",
+        },
       },
 
       /* ---------- חזון ומשימה ---------- */
@@ -568,7 +680,11 @@ export const copy = {
       name: "Yehiel Amir Cohen",
       role:
         "Senior electrical engineer, consultant and project manager specializing in high-energy systems, with a focus on substations and power evacuation facilities.",
-      lead: "Head of the Electricity & Energy Division",
+      badges: {
+        energy: "High-Energy Systems",
+        substations: "Substations",
+        gis: "GIS",
+      },
 
       /* ---------- ניסיון ומומחיות ---------- */
       experienceTitle: "Experience & Expertise",
@@ -606,6 +722,12 @@ export const copy = {
       planningIntro:
         "At SOLCHI, we don’t just design — we create intelligent engineering solutions that drive projects forward. Every planning process is built on systems thinking, professional innovation, and extensive experience supporting high-energy projects from initial concept through final delivery.",
 
+      planningSummary: [
+        "Smart engineering design from concept through execution-ready detailed planning",
+        "A professional foundation for tenders, decisions, and multidisciplinary coordination",
+        "Tailored electrical and control solutions for complex, high-energy infrastructure projects",
+        "Engineering support, review, and optimization to ensure quality, safety, compliance, and efficiency",
+      ],
       planningItems: [
         "Concept Design that establishes a precise project foundation, including techno-economic alternative analysis to enable informed decision-making",
         "Detailed Design for all electrical and auxiliary systems — calculations, drawings, specifications, and execution-level engineering deliverables",
@@ -641,6 +763,86 @@ export const copy = {
           salesforce: "Salesforce",
           fintech: "Fintech",
           processAutomation: "Process Automation",
+        },
+      },
+
+      popups: {
+        salesforce: {
+          eyebrow: "Salesforce CRM",
+          title: "CRM System for Managing Work Orders and Clients",
+          subtitle:
+            "A tailored Salesforce solution for energy, service, and infrastructure companies — enabling efficient management of service calls, teams, clients, and operational processes.",
+          cards: [
+            {
+              title: "Salesforce Customization",
+              desc: "Custom Objects, Workflows, and reports aligned with the organization’s structure.",
+            },
+            {
+              title: "Operational Automation",
+              desc: "Reducing manual work through smart processes, alerts, and approvals.",
+            },
+            {
+              title: "Client and Service Call Management",
+              desc: "Tracking inquiries, statuses, faults, and service history.",
+            },
+          ],
+          result: {
+            title: "The Result",
+            desc:
+              "A centralized system that improves response times and enables data-driven decision-making.",
+          },
+        },
+
+        processAutomation: {
+          eyebrow: "Process Automation",
+          title: "Less Manual Work, More Results",
+          subtitle:
+            "Automation of organizational processes that reduces errors, shortens work cycles, and creates managerial transparency.",
+          cards: [
+            {
+              title: "Mapping and Diagnosis",
+              desc: "Analyzing the current state and identifying operational bottlenecks.",
+            },
+            {
+              title: "Information Architecture",
+              desc: "Choosing the right tools to automate manual and repetitive tasks.",
+            },
+            {
+              title: "Implementation and Change Management",
+              desc: "Supporting teams in the transition to automated, efficient, and measurable work.",
+            },
+          ],
+          result: {
+            title: "The Result",
+            desc:
+              "Fewer errors, greater control, and real-time reporting on organizational performance.",
+          },
+        },
+
+        fintech: {
+          eyebrow: "Fintech Solutions",
+          title: "Turning Financial Complexity into Technological Excellence",
+          subtitle:
+            "Planning and implementing critical financial systems that combine regulation, operations, and advanced user experience.",
+          cards: [
+            {
+              title: "Credit Lifecycle",
+              desc: "Designing and implementing end-to-end processes — from customer request to fund release.",
+            },
+            {
+              title: "Deposits and Savings",
+              desc: "Building complex business logic within organizational information systems.",
+            },
+            {
+              title: "Banking Digitization",
+              desc: "Adapting legacy systems to the modern digital and open-banking era.",
+            },
+          ],
+          result: {
+            title: "Added Value",
+            desc:
+              "A precise connection between business requirements, underwriting, risk, and technological development.",
+          },
         },
       },
 
@@ -844,6 +1046,490 @@ export const copy = {
       ],
     },
   },
+
+ ja: {
+    /* ===================== ナビゲーション ===================== */
+    nav: {
+      home: "ホーム",
+      about: "会社概要",
+      electricity: "電力部門",
+      is: "情報システム",
+      contact: "お問い合わせ",
+      language: "言語",
+    },
+
+    /* ===================== 言語切替 ===================== */
+    switchTo: "עברית",
+
+    /* ===================== ホームページ ===================== */
+    home: {
+      hero: {
+        titlePrefix: "Electrical",
+        titleHighlight: "& IT",
+        titleSuffix: "Solutions",
+        focusLine: "電気工学 | エネルギーインフラ | 情報システム",
+        subtitle:
+          "Solchiは、エンジニアリングの専門性と先進的なテクノロジー思考を組み合わせ、企画・設計から実装まで、安全で効率的なソリューションを提供します。",
+        ctaPrimary: "お問い合わせ",
+        ctaSecondary: "会社概要",
+      },
+
+      intro: {
+        title: "私たちは助言するだけでなく、解決します。",
+        subtitle:
+          "豊富な業界知識と専門性により、お客様に最適なアドバイスと実用的な成果を提供します。信頼できるアドバイザーとして伴走します。",
+      },
+
+      aboutBlock: {
+        title: "Solchiについて",
+        p1:
+          "当社は、高エネルギー電気工学と複雑な情報システムプロジェクト管理という二つの専門領域を統合し、長年の経験、システム思考、実行力に基づく包括的なソリューションを提供します。",
+        p2:
+          "Solchiは、プロセス改善、業務効率化、経営支援、電力設備、IT、DX（デジタルトランスフォーメーション）分野における包括的な支援を専門としています。",
+      },
+
+      services: {
+        title: "コンサルティングサービス",
+        subtitle:
+          "Solchiは、主に二つの専門領域で戦略的なコンサルティングと実行支援を提供する専門特化型コンサルティング会社です。",
+        energy: {
+          title: "高エネルギーシステム",
+          desc:
+            "発電・送電・電力供給設備に関するコンサルティング、設計、技術調整を提供します",
+        },
+        is: {
+          title: "情報システム",
+          desc:
+            "業務プロセスに適した情報システムの設計・導入・運用支援を一貫して提供します",
+        },
+      },
+
+      electricity: {
+        title: "電気工学と高エネルギー設備における専門性",
+        subtitle:
+          "この分野は、発電事業者、政府機関、企業向けの複雑なプロジェクトで30年以上の経験を持つ上級電気技術者が担当しています。",
+        bullets: [
+          "変電所および電力送出設備の設計",
+          "ガス絶縁開閉装置（GIS）の専門知識",
+          "設備の電力系統への統合",
+          "電力会社での上級認定経験",
+        ],
+        readMore: "電力部門について詳しく見る",
+      },
+
+      is: {
+        title: "情報システムプロジェクトの管理・導入における専門性",
+        subtitle:
+          "この分野は、金融機関における複雑な情報システムプロジェクトの管理・導入経験を持つHila Cohenが担当しています。",
+        bullets: [
+          "情報システムプロジェクトの包括的な管理",
+          "信用プロセスに関する深い専門性",
+          "Salesforceプロジェクトの専門知識",
+          "戦略的ロードマップとKPIの構築",
+        ],
+        readMore: "情報システムについて詳しく見る",
+      },
+
+      philosophy: {
+        title: "私たちの理念",
+        text:
+          "Solchiのコンサルタントは、複雑なプロジェクトにおける事業戦略の策定と実行支援に豊富な経験を持っています。私たちはシンプルに考え、明確に伝え、変化の速い技術環境の中でお客様の成長を支援します。",
+        quote: "「私たちは助言するだけでなく、解決します」",
+      },
+    },
+
+    /* ===================== 会社概要ページ ===================== */
+    about: {
+      hero: {
+        title: "会社概要",
+        subtitle:
+          "Solchiは、現代経済を支える二つの主要領域で戦略的コンサルティングと実行支援を提供する専門特化型コンサルティング会社です",
+      },
+
+      content: {
+        p1:
+          "Solchiは、プロセス改善、業務効率化、経営支援を専門とし、民間発電、送電・電力供給、IT、DX（デジタルトランスフォーメーション）に関する包括的なソリューションを提供します。",
+        p2:
+          "当社のコンサルタントは豊富な業界経験を有し、複雑なプロジェクトにおける事業戦略の策定、課題管理、財務管理、作業計画の定義・管理、チームおよびベンダー管理まで包括的に支援します。",
+        p3:
+          "私たちはシンプルに考え、分かりやすく伝え、急速に変化する技術環境の中でお客様の成長を支えるソリューションとサービスを提供します。",
+      },
+
+      divisions: {
+        electricity: {
+          title: "電力・エネルギー部門",
+          desc: "電気システム設計、エネルギーインフラ、エンジニアリングプロジェクト支援、高エネルギーシステム管理を提供します。",
+        },
+        informationSystems: {
+          title: "情報システム部門",
+          desc: "Salesforce、業務自動化、Fintechソリューション、組織向け情報システム設計を支援します。",
+        },
+      },
+
+      vision: {
+        title: "ビジョンとミッション",
+        items: [
+          "テクノロジーと革新を通じて、組織を業務卓越性へ導くこと",
+          "安定的で持続可能な成長を実現するエンジニアリングおよびシステムソリューションを提供すること",
+          "複雑なインフラ系プロジェクトの戦略的パートナーとして選ばれること",
+        ],
+      },
+    },
+
+   /* ===================== 電力部門ページ ===================== */
+  electricity: {
+    pageTag: "電力部門",
+    name: "Yehiel Amir Cohen",
+    role:
+      "電力・エネルギー部門の責任者。発電事業者、政府機関、企業向けの複雑なプロジェクトにおいて、30年以上の計画・管理・プロジェクト支援経験を持つ上級電気技術者がこの分野を率いています。",
+
+    badges: {
+      energy: "高エネルギー設備",
+      substations: "変電設備",
+      gis: "GIS",
+    },
+
+    experienceTitle: "経験と専門性",
+    experienceP1:
+      "発電事業者、政府機関、企業を対象に、多様な手法と技術を用いた高エネルギープロジェクトおよび複雑システム開発を30年以上にわたり管理してきた経験があります。",
+    experienceP2:
+      "高エネルギープロジェクトにおける試験計画および運用開始プロセスの設計に豊富な経験を有しています。",
+    experienceP3:
+      "複数メーカーのガス絶縁開閉装置（GIS）に精通し、イスラエルの電力システムについて深い知見を有しています。電力会社における上級認定者として、障害対応や設備の通電・停電手順にも携わってきました。",
+    experienceP4:
+      "変電所および発電所における詳細設計を専門としています。",
+
+    expertiseTitle: "主な専門領域",
+    expertise: [
+      "統合型プロジェクトの立ち上げと推進",
+      "高エネルギーシステムの電力系統への統合",
+      "プロジェクト初期段階から最終接続までの電気設備詳細設計",
+      "運用・保守メソドロジーの開発と実装",
+      "安全性と設備保護への継続的な取り組み",
+      "重大障害へのリアルタイム対応",
+    ],
+
+    servicesTitle: "コンサルティングサービス",
+    services: [
+      "総合支援：企画・計画から実装まで、運用・保守の視点を含めて伴走します",
+      "最適化：解決策の特定、代替案の評価、投資に対する財務的妥当性の検討を行います",
+      "規制対応：電力会社およびNogaとの調整、システム定義、市場統合を支援します",
+      "安全・保守：設備の停電手順を含む安全面での継続的支援を行います",
+    ],
+
+    planningTitle: "設計サービス",
+    planningIntro:
+      "SOLCHIでは、単に設計するだけでなく、プロジェクトを前進させるインテリジェントなエンジニアリングソリューションを創出します。すべての設計プロセスは、システム思考、専門的な革新、そして高エネルギープロジェクトの初期構想から納入までの豊富な経験に基づいています。",
+    planningSummary: [
+      "コンセプト段階から実行可能な詳細設計まで、一貫したスマートなエンジニアリング設計",
+      "入札、意思決定、多分野調整のための専門的な基盤づくり",
+      "複雑で高エネルギーなインフラプロジェクトに適した電気・制御ソリューション",
+      "品質、安全性、規格適合、効率を確保する技術支援、レビュー、最適化",
+    ],
+    planningItems: [
+      "プロジェクトの基盤を明確にする概念設計（Concept Design）、技術・経済面での代替案分析を含む意思決定支援",
+      "すべての電気・補助システムに対する詳細設計（Detail Design）— 計算、図面、仕様書、実施設計成果物",
+      "明確な技術要件に基づく完全な入札資料の作成",
+      "企画段階から納入までの包括的な技術支援、FAT/SATおよび現地コミッショニング対応を含む",
+      "電気、建築、機械、制御、安全、環境の各分野を統合する多分野設計調整",
+      "潮流、短絡、接地、負荷、選択協調、信頼性などの高度な工学計算",
+      "特別高圧、高圧、中圧、低圧システムの設計、盤、ケーブル、保護機器、制御ソリューションを含む",
+      "IEC、IEEEなど国際・国内規格への適合確認と設計レビュー",
+      "インフラ制約、密集条件、高いエネルギー要求を持つ複雑プロジェクト向けのカスタムソリューション",
+      "性能向上、工程短縮、コスト削減を実現する設計最適化。ただし品質は妥協しません",
+    ],
+
+    clientsTitle: "エネルギー分野のお客様",
+    clients: [
+      "民間発電事業者",
+      "政府機関",
+      "インフラ企業",
+      "産業組織",
+    ],
+  },
+
+    /* ===================== 情報システムページ ===================== */
+    isPage: {
+      hero: {
+        tag: "情報システム部門",
+        name: "Hila Cohen",
+        subtitle:
+          "CEO兼情報システム部門責任者。組織向けの複雑な情報システムプロジェクトの推進、管理、導入を専門としています。",
+        badges: {
+          salesforce: "Salesforce",
+          fintech: "フィンテック",
+          processAutomation: "プロセス自動化",
+        },
+      },
+
+      popups: {
+        salesforce: {
+          eyebrow: "Salesforce CRM",
+          title: "作業・顧客管理のためのCRMシステム",
+          subtitle:
+            "電力、サービス、インフラ企業向けにカスタマイズされたSalesforceソリューション。問い合わせ、チーム、顧客、業務プロセスを効率的に管理します。",
+          cards: [
+            {
+              title: "Salesforceのカスタマイズ",
+              desc: "組織構造に合わせたCustom Objects、Workflows、レポートを構築します。",
+            },
+            {
+              title: "業務自動化",
+              desc: "スマートなプロセス、通知、承認フローにより手作業を削減します。",
+            },
+            {
+              title: "顧客・サービス対応管理",
+              desc: "問い合わせ、ステータス、障害、対応履歴を一元的に追跡します。",
+            },
+          ],
+          result: {
+            title: "成果",
+            desc:
+              "情報を集約し、対応時間を改善し、データに基づいた意思決定を可能にするシステムです。",
+          },
+        },
+
+        processAutomation: {
+          eyebrow: "Process Automation",
+          title: "手作業を減らし、成果を増やす",
+          subtitle:
+            "ミスを減らし、作業時間を短縮し、管理の透明性を高める業務プロセス自動化です。",
+          cards: [
+            {
+              title: "業務分析と診断",
+              desc: "現状を分析し、業務上のボトルネックを特定します。",
+            },
+            {
+              title: "情報アーキテクチャ",
+              desc: "手作業や反復作業を自動化するための適切なツールを選定します。",
+            },
+            {
+              title: "導入と変更管理",
+              desc: "チームが効率的で測定可能な自動化業務へ移行できるよう支援します。",
+            },
+          ],
+          result: {
+            title: "成果",
+            desc:
+              "ミスの削減、管理精度の向上、組織パフォーマンスのリアルタイム可視化を実現します。",
+          },
+        },
+
+        fintech: {
+          eyebrow: "Fintech Solutions",
+          title: "金融の複雑性を技術的な強みに変える",
+          subtitle:
+            "規制、業務、先進的なユーザー体験を組み合わせた重要な金融システムを設計・構築します。",
+          cards: [
+            {
+              title: "信用ライフサイクル",
+              desc: "「顧客の申請から資金実行まで、一貫したプロセスを設計・実装します。」",
+            },
+            {
+              title: "預金・貯蓄",
+              desc: "組織の情報システム内に複雑なビジネスロジックを構築します。",
+            },
+            {
+              title: "銀行業務のデジタル化",
+              desc: "Legacyシステムをデジタル時代に適応させます。",
+            },
+          ],
+          result: {
+            title: "付加価値",
+            desc:
+              "ビジネス要件、審査、リスク、技術開発を正確につなぎます。",
+          },
+        },
+      },
+
+      expertise: {
+        title: "専門性と付加価値",
+        p1:
+          "当社は、複雑なシステム導入と組織プロセス全体の管理における実務経験を活かし、幅広い業界の組織に大きな付加価値を提供します。複雑なビジネスニーズを安定的で正確かつ実行可能な技術ソリューションへ変換する力が、当社の活動の中核です。",
+        p2:
+          "Solchiは、複雑性の低減、プロセスの簡素化、組織およびビジネス体験の改善に取り組んでいます。初期分析・企画からシステム設計・実装、ベンダー管理、パフォーマンス管理まで一貫して支援します。",
+      },
+
+      credit: {
+        title: "信用・金融システム",
+        items: [
+          "審査申請と引受",
+          "申請審査とローン運用",
+          "管理・レポート",
+          "コンプライアンス対応",
+          "業務分析",
+          "ERP/CRM連携",
+        ],
+      },
+
+      more: {
+        title: "その他の専門領域",
+        items: [
+          {
+            title: "戦略ロードマップ",
+            desc:
+              "組織のITロードマップ構築、KPI定義、プロジェクトライフサイクル全体でのモニタリング",
+          },
+          {
+            title: "Salesforce",
+            desc:
+              "Salesforceプラットフォーム上での基幹システム設計・開発および複雑な導入プロジェクト管理",
+          },
+          {
+            title: "デリバリー管理",
+            desc:
+              "社内開発または外部委託プロジェクトを企画段階から完全実装まで推進",
+          },
+          {
+            title: "実現可能性分析",
+            desc:
+              "コスト、効果、財務・運用面での妥当性を含む導入代替案の評価",
+          },
+          {
+            title: "RFP・入札支援",
+            desc:
+              "適切なソリューションとインフラの選定、入札書類作成および専門的な入札管理",
+          },
+        ],
+      },
+
+      why: {
+        title: "情報システム領域でSolchiが選ばれる理由",
+        items: [
+          "金融領域への深い理解と高い技術専門性の両立",
+          "主要な信用・銀行システムでの実績",
+          "部門横断的なリーダーシップ",
+          "規制要件に対応した長期的なシステム思考",
+        ],
+      },
+    },
+
+    /* ===================== お問い合わせページ ===================== */
+    contact: {
+      pageTitle: "お問い合わせ",
+      pageSubtitle:
+        "ご質問への回答や初回相談の調整を承ります。",
+      detailsTitle: "連絡先情報",
+      addressTitle: "所在地",
+      addressText: "Ha-Vered 544, Kidron, Israel",
+      addressHint: "地図で開く",
+      availabilityTitle: "対応時間",
+      availabilityHours: "日曜〜木曜 | 08:30〜18:00",
+      formTitle: "お問い合わせフォーム",
+      submit: "送信",
+      sending: "送信中...",
+
+      peopleTitle: "担当者",
+      people: {
+        hila: {
+          name: "Hila Cohen",
+          role: "情報システム責任者",
+          email: "hila@solchi.co.il",
+        },
+        yehiel: {
+          name: "Yehiel Amir Cohen",
+          role: "電力部門責任者",
+          email: "yehiel@solchi.co.il",
+        },
+      },
+
+      fields: {
+        fullName: "氏名",
+        division: "関連部門",
+        subject: "お問い合わせ内容",
+        email: "メールアドレス",
+        phone: "電話番号",
+        message: "メッセージ",
+      },
+
+      placeholders: {
+        fullName: "山田 太郎",
+        division: "部門を選択",
+        subject: "件名を選択",
+        email: "name@company.com",
+        phone: "+972 5X XXX XXXX",
+        message: "ご相談内容を簡単にご記入ください...",
+      },
+
+      subjectOptions: {
+        electricalDivision: "電力部門",
+        informationSystems: "情報システム",
+      },
+
+      validation: {
+        nameRequired: "氏名を入力してください",
+        nameLettersOnly: "氏名には文字のみを入力してください",
+        emailRequired: "メールアドレスを入力してください",
+        emailInvalid: "有効なメールアドレスを入力してください",
+        emailNoSpaces: "メールアドレスにスペースは使用できません",
+        phoneRequired: "電話番号を入力してください",
+        phoneInvalid: "有効な電話番号を入力してください",
+        phoneInvalidIsrael:
+          "イスラエルの電話番号は10桁で、0から始まる必要があります",
+      },
+
+      formUnavailable: "現在、お問い合わせを送信できません",
+    },
+
+    /* ===================== サンクスページ ===================== */
+    thankYou: {
+      title: "メッセージを受け付けました！",
+      subtitle:
+        "Solchiへお問い合わせいただきありがとうございます。担当者より折り返しご連絡いたします。",
+      backHome: "ホームへ戻る",
+    },
+
+    /* ===================== フッター ===================== */
+    footer: {
+      description:
+        "Solchiは、戦略的コンサルティング、高エネルギーシステム統合、金融・インフラ分野におけるDX（デジタルトランスフォーメーション）を専門とする専門特化型コンサルティング会社です。",
+      quickNav: "クイックナビゲーション",
+      nav: {
+        home: "ホーム",
+        about: "会社概要",
+        electricity: "電力部門",
+        is: "情報システム",
+        contact: "お問い合わせ",
+      },
+      contactTitle: "お問い合わせ",
+      address: "Ha-Vered 544, Kidron, Israel",
+      rights: "All rights reserved.",
+      accessibility: "アクセシビリティ声明",
+    },
+
+    /* ===================== アクセシビリティ ===================== */
+    accessibility: {
+      title: "アクセシビリティ声明",
+      updatedLine: "ウェブサイトのアクセシビリティ声明 更新日：2023年11月1日",
+      intro:
+        "障がいのある方へのアクセシブルなサービス提供は、当社にとって非常に重要です。当社は可能な限りウェブサイトのアクセシビリティ向上に努めています。",
+      levelTitle: "ウェブサイトのアクセシビリティレベル：",
+      levelText:
+        "当社は、ウェブサイトがイスラエルのアクセシビリティ関連規則およびW3CのWCAG 2.0ガイドラインAAレベルに可能な限り準拠するよう努めています。",
+      adjustmentsTitle: "実施したアクセシビリティ対応：",
+      adjustments: [
+        "主要なブラウザ、PC、モバイル端末で閲覧できるよう最適化しています。",
+        "サイトのナビゲーションはシンプルで分かりやすく設計されています。",
+        "コンテンツは整理され、明確に記述されています。",
+        "さまざまな画面サイズと解像度に対応しています。",
+        "ページ構造はシンプルで利用しやすい設計です。",
+        "画像には代替テキスト（Alt Text）を設定しています。",
+        "Ctrlキーとマウスホイールで表示サイズを調整できます。",
+        "点滅するテキストや不明瞭な要素は使用していません。",
+        "色のコントラストは読みやすさを考慮しています。",
+      ],
+      issueTitle: "問題を見つけましたか？",
+      issueText:
+        "アクセシビリティ向上に努めていますが、一部が完全に対応できていない可能性があります。問題を見つけた場合は、サイトに記載されているメールアドレスまでご連絡ください。",
+      businessArrangementsTitle: "事業所のアクセシビリティ対応：",
+      businessArrangements: [
+        "アクセシブルなアクセスが可能です。",
+        "近隣および周辺道路に障がい者用駐車スペースがあります。",
+        "アクセシブルなトイレ設備があります。",
+        "識別および案内表示があります。",
+      ],
+    },
+  },
 } as const;
 
 /* =========================================================
@@ -873,7 +1559,7 @@ const I18nContext = createContext<I18nContextValue | null>(null);
 function getDefaultLang(): Lang {
   const saved = (typeof window !== "undefined" &&
     localStorage.getItem(STORAGE_KEY)) as Lang | null;
-  if (saved === "he" || saved === "en") return saved;
+  if (saved === "he" || saved === "en" || saved === "ja") return saved;
 
   return "he";
 }

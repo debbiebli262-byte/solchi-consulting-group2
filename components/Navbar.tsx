@@ -1,14 +1,22 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useI18n } from "../i18n";
+import { Lang, useI18n } from "../i18n";
+
+const languages: { code: Lang; label: string; flagSrc: string }[] = [
+  { code: "he", label: "עברית", flagSrc: "https://flagcdn.com/il.svg" },
+  { code: "en", label: "English", flagSrc: "https://flagcdn.com/us.svg" },
+  { code: "ja", label: "日本語", flagSrc: "https://flagcdn.com/jp.svg" },
+];
 
 const Navbar: React.FC = () => {
-  const { lang, toggleLang, t } = useI18n();
+  const { lang, setLang, t } = useI18n();
   const [open, setOpen] = useState(false);
+  const [languageOpen, setLanguageOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
     setOpen(false);
+    setLanguageOpen(false);
   }, [location.pathname]);
 
   const navItems = useMemo(
@@ -30,6 +38,9 @@ const Navbar: React.FC = () => {
     }
   };
 
+  const currentLanguage =
+    languages.find((item) => item.code === lang) ?? languages[0];
+
   const logoUrl = "/logo.png";
   const dropdownAlign = lang === "he" ? "text-right" : "text-left";
 
@@ -38,23 +49,95 @@ const Navbar: React.FC = () => {
       ? {
           skip: "דלגי לתוכן הראשי",
           nav: "ניווט ראשי",
-          switchLanguage: "החלפת שפה",
-          switchTo: "מעבר לאנגלית",
+          switchLanguage: "בחירת שפה",
           openMenu: "פתחי תפריט",
           closeMenu: "סגרי תפריט",
           logoAlt: "לוגו Solchi",
           overlay: "סגירת שכבת התפריט",
         }
+      : lang === "ja"
+      ? {
+          skip: "メインコンテンツへスキップ",
+          nav: "メインナビゲーション",
+          switchLanguage: "言語を選択",
+          openMenu: "メニューを開く",
+          closeMenu: "メニューを閉じる",
+          logoAlt: "Solchi ロゴ",
+          overlay: "メニューを閉じる",
+        }
       : {
           skip: "Skip to main content",
           nav: "Main navigation",
-          switchLanguage: "Switch language",
-          switchTo: "Switch to Hebrew",
+          switchLanguage: "Select language",
           openMenu: "Open menu",
           closeMenu: "Close menu",
           logoAlt: "Solchi logo",
           overlay: "Close menu overlay",
         };
+
+  const LanguageDropdown = () => (
+    <div className="relative">
+      <button
+        type="button"
+        onClick={() => setLanguageOpen((v) => !v)}
+        className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-all font-bold text-slate-800 shrink-0 min-h-[44px]"
+        aria-label={labels.switchLanguage}
+        aria-expanded={languageOpen}
+        dir="ltr"
+      >
+        <GlobeIcon className="w-5 h-5" />
+
+        <img
+          src={currentLanguage.flagSrc}
+          alt=""
+          className="w-5 h-4 object-cover rounded-sm"
+        />
+
+        <span dir="auto">{currentLanguage.label}</span>
+
+        <ChevronDownIcon
+          className={`w-4 h-4 transition-transform ${
+            languageOpen ? "rotate-180" : ""
+          }`}
+        />
+      </button>
+
+      {languageOpen && (
+        <div
+          className={`absolute top-full mt-2 min-w-36 rounded-2xl bg-white border border-slate-100 shadow-xl overflow-hidden z-[80] ${
+            lang === "he" ? "left-0" : "right-0"
+          }`}
+        >
+          {languages.map((item) => (
+            <button
+              key={item.code}
+              type="button"
+              onClick={() => {
+                setLang(item.code);
+                setLanguageOpen(false);
+              }}
+              className={`w-full px-4 py-3 text-sm font-bold text-left transition-colors ${
+                lang === item.code
+                  ? "bg-blue-50 text-blue-700"
+                  : "text-slate-700 hover:bg-slate-50"
+              }`}
+              dir="ltr"
+            >
+              <span className="flex items-center justify-start gap-3">
+                <img
+                  src={item.flagSrc}
+                  alt=""
+                  className="w-5 h-4 object-cover rounded-sm"
+                />
+
+                <span dir="auto">{item.label}</span>
+              </span>
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 
   return (
     <>
@@ -86,6 +169,7 @@ const Navbar: React.FC = () => {
           >
             {navItems.map((item) => {
               const isCurrent = location.pathname === item.to;
+
               return (
                 <Link
                   key={item.to}
@@ -104,20 +188,7 @@ const Navbar: React.FC = () => {
             })}
           </nav>
 
-          <button
-            type="button"
-            onClick={toggleLang}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-all font-bold text-slate-800 shrink-0 min-h-[44px]"
-            aria-label={labels.switchLanguage}
-            title={labels.switchTo}
-          >
-            <GlobeIcon className="w-5 h-5" />
-            {lang === "he" ? (
-              <IsraelFlag className="w-5 h-5 rounded-sm overflow-hidden" />
-            ) : (
-              <UsaFlag className="w-5 h-5 rounded-sm overflow-hidden" />
-            )}
-          </button>
+          <LanguageDropdown />
         </div>
 
         {/* Mobile */}
@@ -135,20 +206,7 @@ const Navbar: React.FC = () => {
           </Link>
 
           <div className="flex items-center gap-3 shrink-0">
-            <button
-              type="button"
-              onClick={toggleLang}
-              className="inline-flex items-center gap-2 px-3 py-2 rounded-full border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-all font-bold text-slate-800 min-h-[44px]"
-              aria-label={labels.switchLanguage}
-              title={labels.switchTo}
-            >
-              <GlobeIcon className="w-5 h-5" />
-              {lang === "he" ? (
-                <IsraelFlag className="w-5 h-5 rounded-sm overflow-hidden" />
-              ) : (
-                <UsaFlag className="w-5 h-5 rounded-sm overflow-hidden" />
-              )}
-            </button>
+            <LanguageDropdown />
 
             <button
               type="button"
@@ -158,7 +216,11 @@ const Navbar: React.FC = () => {
               aria-expanded={open}
               aria-controls="mobile-navigation"
             >
-              {open ? <CloseIcon className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
+              {open ? (
+                <CloseIcon className="w-6 h-6" />
+              ) : (
+                <MenuIcon className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
@@ -182,6 +244,7 @@ const Navbar: React.FC = () => {
             >
               {navItems.map((item) => {
                 const isCurrent = location.pathname === item.to;
+
                 return (
                   <Link
                     key={item.to}
@@ -211,21 +274,59 @@ export default Navbar;
 /* Icons */
 
 const MenuIcon: React.FC<{ className?: string }> = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    aria-hidden="true"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M4 6h16M4 12h16M4 18h16"
+    />
   </svg>
 );
 
 const CloseIcon: React.FC<{ className?: string }> = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    aria-hidden="true"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M6 18L18 6M6 6l12 12"
+    />
   </svg>
 );
 
 const GlobeIcon: React.FC<{ className?: string }> = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 21a9 9 0 100-18 9 9 0 000 18z" />
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12h18" />
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    aria-hidden="true"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M12 21a9 9 0 100-18 9 9 0 000 18z"
+    />
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M3 12h18"
+    />
     <path
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -235,34 +336,19 @@ const GlobeIcon: React.FC<{ className?: string }> = ({ className }) => (
   </svg>
 );
 
-const IsraelFlag: React.FC<{ className?: string }> = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24" aria-hidden="true">
-    <rect width="24" height="24" fill="#fff" />
-    <rect y="3" width="24" height="3" fill="#1d4ed8" />
-    <rect y="18" width="24" height="3" fill="#1d4ed8" />
-    <path d="M12 8l3.2 5.5H8.8L12 8z" fill="none" stroke="#1d4ed8" strokeWidth="1.3" />
-    <path d="M12 16l-3.2-5.5h6.4L12 16z" fill="none" stroke="#1d4ed8" strokeWidth="1.3" />
-  </svg>
-);
-
-const UsaFlag: React.FC<{ className?: string }> = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24" aria-hidden="true">
-    <rect width="24" height="24" fill="#fff" />
-    <rect width="24" height="2" y="0" fill="#b91c1c" />
-    <rect width="24" height="2" y="4" fill="#b91c1c" />
-    <rect width="24" height="2" y="8" fill="#b91c1c" />
-    <rect width="24" height="2" y="12" fill="#b91c1c" />
-    <rect width="24" height="2" y="16" fill="#b91c1c" />
-    <rect width="24" height="2" y="20" fill="#b91c1c" />
-    <rect width="10" height="10" fill="#1e3a8a" />
-    <circle cx="2.5" cy="2.5" r="0.6" fill="#fff" />
-    <circle cx="5" cy="2.5" r="0.6" fill="#fff" />
-    <circle cx="7.5" cy="2.5" r="0.6" fill="#fff" />
-    <circle cx="2.5" cy="5" r="0.6" fill="#fff" />
-    <circle cx="5" cy="5" r="0.6" fill="#fff" />
-    <circle cx="7.5" cy="5" r="0.6" fill="#fff" />
-    <circle cx="2.5" cy="7.5" r="0.6" fill="#fff" />
-    <circle cx="5" cy="7.5" r="0.6" fill="#fff" />
-    <circle cx="7.5" cy="7.5" r="0.6" fill="#fff" />
+const ChevronDownIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    aria-hidden="true"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M19 9l-7 7-7-7"
+    />
   </svg>
 );

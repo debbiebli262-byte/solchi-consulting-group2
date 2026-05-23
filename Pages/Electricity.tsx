@@ -2,7 +2,7 @@ import React from "react";
 import { useI18n } from "../i18n";
 
 const Electricity: React.FC = () => {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
 
   const clients = [
     {
@@ -41,7 +41,9 @@ const Electricity: React.FC = () => {
     <div className="bg-white min-h-screen animate-fade-in">
       {/* Hero */}
       <div className="bg-slate-900 py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/grid-me.png')] opacity-10"></div>
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-blue-600/20 blur-[120px] rounded-full"></div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col md:flex-row gap-16 items-center">
             <div className="md:w-1/2">
@@ -53,18 +55,35 @@ const Electricity: React.FC = () => {
                 {t("electricity.name")}
               </h1>
 
-              <p className="text-xl text-slate-300 leading-relaxed font-light border-r-4 border-blue-600 pr-6">
+              <p
+                className={`text-xl text-blue-100 leading-relaxed font-light ${
+                  lang === "he"
+                    ? "pr-6 border-r-4 border-blue-500"
+                    : "pl-6 border-l-4 border-blue-500"
+                }`}
+              >
                 {t("electricity.role")}
               </p>
+              <div className="mt-10 flex flex-wrap gap-4">
+                <div className="bg-blue-500/10 backdrop-blur-md border border-blue-500/30 px-4 py-2 rounded-lg text-blue-200 text-sm font-bold">
+                  {t("electricity.badges.energy")}
+                </div>
 
-              <p className="mt-6 text-slate-400">{t("electricity.lead")}</p>
+                <div className="bg-blue-500/10 backdrop-blur-md border border-blue-500/30 px-4 py-2 rounded-lg text-blue-200 text-sm font-bold">
+                  {t("electricity.badges.substations")}
+                </div>
+
+                <div className="bg-blue-500/10 backdrop-blur-md border border-blue-500/30 px-4 py-2 rounded-lg text-blue-200 text-sm font-bold">
+                  {t("electricity.badges.gis")}
+                </div>
+              </div>
             </div>
 
             <div className="md:w-1/2 flex justify-center">
               <div className="relative group">
-                <div className="absolute inset-0 bg-blue-600/30 blur-3xl rounded-full scale-75 group-hover:scale-100 transition-transform duration-700"></div>
+                <div className="absolute inset-0 bg-blue-600/40 blur-3xl rounded-full scale-90 group-hover:scale-110 transition-transform duration-700"></div>
 
-                <div className="relative w-64 h-80 md:w-80 md:h-[450px] bg-slate-800 rounded-[2rem] border-2 border-blue-500/50 overflow-hidden shadow-[0_0_50px_rgba(37,99,235,0.2)]">
+                <div className="relative w-64 h-80 md:w-80 md:h-[450px] bg-slate-800 rounded-[3rem] border-2 border-blue-400/50 overflow-hidden shadow-[0_0_60px_rgba(37,99,235,0.3)] transform rotate-2 group-hover:rotate-0 transition-transform duration-500">
                   <img
                     src="/yehielcohen.png"
                     alt={t("electricity.name")}
@@ -72,7 +91,7 @@ const Electricity: React.FC = () => {
                   />
                 </div>
 
-                <div className="absolute -bottom-4 -left-4 w-24 h-24 border-b-4 border-l-4 border-blue-500 rounded-bl-3xl"></div>
+                <div className="absolute -top-6 -right-6 w-12 h-12 border-t-4 border-r-4 border-blue-500 rounded-tr-2xl opacity-50"></div>
               </div>
             </div>
           </div>
@@ -131,7 +150,7 @@ const Electricity: React.FC = () => {
                       className="border-b border-blue-400 pb-4 flex gap-3 leading-relaxed"
                     >
                       <span className="font-bold text-blue-200">0{i + 1}</span>
-                      <p>{t(`electricity.planningItems.${i}`)}</p>
+                      <p>{t(`electricity.planningSummary.${i}`)}</p>
                     </li>
                   ))}
                 </ul>

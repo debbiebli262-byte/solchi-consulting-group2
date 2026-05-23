@@ -15,11 +15,11 @@ const Home: React.FC = () => {
           <img
             src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1800"
             alt="Technology and electrical systems background"
-            className="w-full h-full object-cover opacity-50"
+            className="w-full h-full object-cover opacity-35"
             fetchPriority="high"
           />
 
-          <div className="absolute inset-0 bg-slate-950/20"></div>
+          <div className="absolute inset-0 bg-slate-950/45"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/20 via-slate-950/35 to-slate-950"></div>
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/grid-me.png')] opacity-10"></div>
         </div>

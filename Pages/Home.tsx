@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useI18n } from "../i18n";
 
 const Home: React.FC = () => {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
 
   const logoUrl = "/logo.png";
 
@@ -90,7 +90,7 @@ const Home: React.FC = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-24">
             <div className="space-y-6">
-              <h3 className="text-3xl font-bold text-slate-900 tech-font border-r-4 border-blue-600 pr-4">
+              <h3 className={`text-3xl font-bold text-slate-900 tech-font border-blue-600 ${lang === "he" ? "border-r-4 pr-4" : "border-l-4 pl-4"}`}>
                 {t("home.aboutBlock.title")}
               </h3>
 

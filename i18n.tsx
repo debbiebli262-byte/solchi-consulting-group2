@@ -253,84 +253,53 @@ export const copy = {
         },
       },
       popups: {
-        processAutomation: {
-          eyebrow: "Process Automation",
-          title: "פחות עבודה ידנית, יותר תוצאות",
-          subtitle:
-            "מיכון תהליכים ארגוניים שמצמצם טעויות, מקצר זמני עבודה ומייצר שקיפות ניהולית.",
-          cards: [
-            {
-              title: "מיפוי ואבחון",
-              desc: "ניתוח המצב הקיים ואיתור צווארי בקבוק תפעוליים.",
-            },
-            {
-              title: "ארכיטקטורת מידע",
-              desc: "בחירת הכלים הנכונים למיכון משימות ידניות ותהליכים חוזרים.",
-            },
-            {
-              title: "הטמעה וניהול שינוי",
-              desc: "ליווי הצוותים במעבר לעבודה ממוכנת, יעילה ומדידה.",
-            },
-          ],
-          result: {
-            title: "התוצאה",
-            desc:
-              "פחות טעויות, יותר שליטה, ודוחות בזמן אמת על ביצועי הארגון.",
-          },
-        },
-
-        fintech: {
-          eyebrow: "Fintech Solutions",
-          title: "הופכים מורכבות פיננסית למצוינות טכנולוגית",
-          subtitle:
-            "תכנון והקמת מערכות פיננסיות קריטיות שמשלבות רגולציה, תפעול וחוויית משתמש מתקדמת.",
-          cards: [
-            {
-              title: "מחזור חיי אשראי",
-              desc: "אפיון והקמת תהליכים מקצה לקצה — מבקשת הלקוח ועד לשחרור הכספים.",
-            },
-            {
-              title: "פיקדונות וחסכונות",
-              desc: "בניית לוגיקה עסקית מורכבת במערכות המידע הארגוניות.",
-            },
-            {
-              title: "דיגיטציה בנקאית",
-              desc: "התאמת מערכות Legacy לעידן הדיגיטלי והפתוח.",
-            },
-          ],
-          result: {
-            title: "הערך המוסף",
-            desc:
-              "חיבור מדויק בין דרישות עסקיות, חיתום, סיכונים ופיתוח טכנולוגי.",
-          },
-        },
-
         salesforce: {
-          eyebrow: "Salesforce CRM",
-          title: "מערכת CRM לניהול עבודות ולקוחות",
-          subtitle:
-            "פתרון Salesforce מותאם לחברות חשמל, שירות ותשתיות — לניהול יעיל של קריאות, צוותים, לקוחות ותהליכים תפעוליים.",
+          eyebrow: "Salesforce",
+          title: "Salesforce כפלטפורמה לניהול וצמיחה",
+          subtitle: "Salesforce היא הרבה מעבר למערכת CRM. אני מתמחה בתכנון ובהקמה של פתרונות מותאמים אישית על גבי הפלטפורמה, במטרה לייעל תהליכים עסקיים, לשפר בקרה ולתמוך בצמיחה ארגונית.",
           cards: [
-            {
-              title: "התאמה אישית ב-Salesforce",
-              desc: "Custom Objects, Workflows ודוחות לפי מבנה הארגון.",
-            },
-            {
-              title: "אוטומציה תפעולית",
-              desc: "הפחתת עבודה ידנית באמצעות תהליכים חכמים, התראות ואישורים.",
-            },
-            {
-              title: "ניהול לקוחות וקריאות שירות",
-              desc: "מעקב אחר פניות, סטטוסים, תקלות והיסטוריית טיפול.",
-            },
+            { title: "אוטומציה של תהליכי עבודה וזרימות נתונים.", desc: "" },
+            { title: "הקמת פורטלים ותהליכי הרשמה.", desc: "" },
+            { title: "ניהול הקצאות ומעקב בזמן אמת.", desc: "" },
+            { title: "התאמה של מבני מידע, אובייקטים ותהליכים לצרכים הייחודיים של כל ארגון.", desc: "" },
           ],
           result: {
-            title: "התוצאה",
-            desc:
-              "מערכת שמרכזת מידע, משפרת זמני תגובה ומאפשרת קבלת החלטות מבוססת נתונים.",
+            title: "הערך לארגון",
+            desc: "מערכת מדויקת, יציבה וגמישה יותר, שמפחיתה עבודה ידנית, חוסכת זמן ומספקת תמונת מצב רחבה ואחידה של הפעילות העסקית.",
           },
         },
-     },
+        fintech: {
+          eyebrow: "FINTECH",
+          title: "פתרונות טכנולוגיים לעולמות פיננסיים מורכבים",
+          subtitle: "עם ניסיון בעבודה מול מערכות פיננסיות ובנקאיות, אני מלווה ארגונים בתכנון ובהקמה של תשתיות ותהליכים המשלבים בין דרישות רגולטוריות, לוגיקה עסקית מורכבת וחוויית משתמש מתקדמת.",
+          cards: [
+            { title: "אפיון והקמה של מערכות לניהול אשראי והלוואות מקצה לקצה.", desc: "" },
+            { title: "בניית פתרונות לניהול פיקדונות וחסכונות.", desc: "" },
+            { title: "דיגיטציה של תהליכים פיננסיים.", desc: "" },
+            { title: "התאמה למערכות קיימות ולסביבה טכנולוגית מתקדמת.", desc: "" },
+          ],
+          result: {
+            title: "הערך לארגון",
+            desc: "שילוב בין הבנה עסקית-פיננסית עמוקה לבין יישום טכנולוגי מדויק, תוך גישור אפקטיבי בין צורכי הרגולציה, הסיכונים והפיתוח.",
+          },
+        },
+        processAutomation: {
+          eyebrow: "PROCESS AUTOMATION",
+          title: "מיכון תהליכים והתייעלות תפעולית",
+          subtitle: "אני מתמחה בזיהוי צווארי בקבוק תפעוליים ובהפיכת תהליכים ידניים, מורכבים או לא עקביים לתהליכים מסודרים, אוטומטיים ומדידים.",
+          cards: [
+            { title: "מיפוי ואבחון של תהליכי עבודה קיימים.", desc: "" },
+            { title: "זיהוי נקודות חולשה וחוסר יעילות.", desc: "" },
+            { title: "תכנון ארכיטקטורת מידע מתאימה.", desc: "" },
+            { title: "הטמעת פתרונות שמאפשרים עבודה רציפה, מדויקת ושקופה יותר.", desc: "" },
+          ],
+          result: {
+            title: "הערך לארגון",
+            desc: "צמצום טעויות אנוש, שיפור היעילות התפעולית, הגדלת יכולת הסקייל וקבלת תמונת מצב עדכנית באמצעות דוחות ודשבורדים בזמן אמת.",
+          },
+        },
+      },
+
       /* ---------- מומחיות וערך ---------- */
       expertise: {
         title: "מומחיות וערך מוסף",
@@ -498,33 +467,27 @@ export const copy = {
     /* ===================== הצהרת נגישות ===================== */
     accessibility: {
       title: "הצהרת נגישות",
-      updatedLine: "הצהרת נגישות אתר מעודכנת לתאריך 1.11.2023",
-      intro:
-        "מתן שירות לאנשים עם מוגבלויות הוא בחשיבות עליונה מבחינתנו, ואנו עושים ככל שמתאפשר לנו בעניין הנגשת האתר שלנו.",
-      levelTitle: "רמת הנגישות באתר:",
-      levelText:
-        'עשינו כמיטב יכולתנו על מנת שהאתר יעמוד בתקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע"ג 2013 ברמת AA, ושהאתר יקיים את הוראות מסמך WCAG2.0 מאת ארגון W3C.',
-      adjustmentsTitle: "התאמות הנגישות שביצענו:",
+      updatedLine: "עדכון נגישות בעותק הניסיון: 20.11.2026",
+      intro: "חשוב לנו לאפשר שימוש באתר לאנשים עם מוגבלויות. אנו משפרים את הנגישות ומזמינים דיווח על קשיים.",
+      levelTitle: "סטטוס בדיקות הנגישות",
+      levelText: "בוצעו שיפורים טכניים המכוונים לדרישות תקן ישראלי 5568 ורמת AA. טרם הושלמו בדיקות נגישות מלאות, ולכן אין לראות בהצהרה זו אישור שהאתר עומד בכל דרישות התקן.",
+      adjustmentsTitle: "התאמות שנוספו לאתר הניסיון",
       adjustments: [
-        "האתר מותאם לצפייה בדפדפנים הפופולריים גם באמצעות מחשב וגם באמצעות טלפון נייד.",
-        "הניווט באתר פשוט, ידידותי וברור.",
-        "תכני האתר כתובים בצורה מסודרת ובאופן ברור ומפורט.",
-        "האתר מותאם למגוון גדלים של מסכים ורזולוציות.",
-        "הדפים באתר בעלי מבנה פשוט וידידותי לגולשים.",
-        "לתמונות באתר יש הסבר טקסטואלי חלופי (Alt Text).",
-        "האתר מאפשר שינוי גודל תצוגה על ידי שימוש במקש Ctrl וגלגלת העכבר.",
-        "אין באתר שימוש בטקסט מהבהב או באלמנטים לא ברורים.",
-        "צבעי האתר מנוגדים בצורה מצוינת וברורה.",
+        "קישור דילוג לתוכן הראשי באמצעות מקלדת.",
+        "תמיכה במעבר בין שדות וכפתורים באמצעות מקלדת.",
+        "חלונות מידע עם ניהול מיקוד, סגירה במקש Escape והחזרת מיקוד.",
+        "תוויות לשדות טופס יצירת הקשר והכרזה על הודעות שגיאה.",
+        "תיאורי טקסט לתמונות תוכן.",
+        "אפשרות לשינוי גודל טקסט ולהפעלת ניגודיות גבוהה.",
+        "התאמה לכיוון כתיבה בעברית, באנגלית וביפנית.",
+        "התחשבות בהעדפת המשתמש להפחתת תנועה ואנימציות.",
+        "התאמות לצפייה במחשבים ובטלפונים.",
       ],
-      issueTitle: "נתקלתם בבעיה?",
-      issueText:
-        "למרות מאמצינו להנגיש את האתר, עלולים להיות פרטים שלא הונגשו בצורה מושלמת. אם נתקלתם בפרט כזה – אנא אל תהססו לפנות אלינו באמצעות כתובת הדואר האלקטרוני שנמצאת באתר.",
-      businessArrangementsTitle: "הסדרי נגישות בבית העסק:",
+      issueTitle: "דיווח על בעיית נגישות",
+      issueText: "אם נתקלתם בקושי בגלישה או זקוקים לתוכן בפורמט נגיש, כתבו ל־hila@solchi.co.il או ל־yehiel@solchi.co.il ותארו את העמוד והבעיה.",
+      businessArrangementsTitle: "הסדרי נגישות במקום העסק",
       businessArrangements: [
-        "קיימת גישה לבעלי מוגבלויות.",
-        "קיימות חניות נכים בסביבה הקרובה וברחובות הסמוכים.",
-        "קיימים שירותי נכים נגישים.",
-        "קיימים שלטי זיהוי והכוונה.",
+        "כדי לברר את הסדרי הנגישות הפיזית לפני הגעה למשרד, פנו אלינו בדוא״ל: hila@solchi.co.il. הפרטים על ההסדרים במקום מחייבים אימות מול הנהלת החברה.",
       ],
     },
   },
@@ -768,80 +731,48 @@ export const copy = {
 
       popups: {
         salesforce: {
-          eyebrow: "Salesforce CRM",
-          title: "CRM System for Managing Work Orders and Clients",
-          subtitle:
-            "A tailored Salesforce solution for energy, service, and infrastructure companies — enabling efficient management of service calls, teams, clients, and operational processes.",
+          eyebrow: "SALESFORCE",
+          title: "Salesforce as a Platform for Management and Growth",
+          subtitle: "Salesforce is much more than a CRM system. I specialize in designing and implementing customized solutions on the platform to streamline business processes, improve oversight and support organizational growth.",
           cards: [
-            {
-              title: "Salesforce Customization",
-              desc: "Custom Objects, Workflows, and reports aligned with the organization’s structure.",
-            },
-            {
-              title: "Operational Automation",
-              desc: "Reducing manual work through smart processes, alerts, and approvals.",
-            },
-            {
-              title: "Client and Service Call Management",
-              desc: "Tracking inquiries, statuses, faults, and service history.",
-            },
+            { title: "Automation of workflows and data flows.", desc: "" },
+            { title: "Building portals and registration processes.", desc: "" },
+            { title: "Managing allocations and real-time tracking.", desc: "" },
+            { title: "Adapting data structures, objects and processes to each organization's unique needs.", desc: "" },
           ],
           result: {
-            title: "The Result",
-            desc:
-              "A centralized system that improves response times and enables data-driven decision-making.",
+            title: "Value to the Organization",
+            desc: "A more precise, stable and flexible system that reduces manual work, saves time and provides a comprehensive, unified view of business operations.",
           },
         },
-
-        processAutomation: {
-          eyebrow: "Process Automation",
-          title: "Less Manual Work, More Results",
-          subtitle:
-            "Automation of organizational processes that reduces errors, shortens work cycles, and creates managerial transparency.",
-          cards: [
-            {
-              title: "Mapping and Diagnosis",
-              desc: "Analyzing the current state and identifying operational bottlenecks.",
-            },
-            {
-              title: "Information Architecture",
-              desc: "Choosing the right tools to automate manual and repetitive tasks.",
-            },
-            {
-              title: "Implementation and Change Management",
-              desc: "Supporting teams in the transition to automated, efficient, and measurable work.",
-            },
-          ],
-          result: {
-            title: "The Result",
-            desc:
-              "Fewer errors, greater control, and real-time reporting on organizational performance.",
-          },
-        },
-
         fintech: {
-          eyebrow: "Fintech Solutions",
-          title: "Turning Financial Complexity into Technological Excellence",
-          subtitle:
-            "Planning and implementing critical financial systems that combine regulation, operations, and advanced user experience.",
+          eyebrow: "FINTECH",
+          title: "Technology Solutions for Complex Financial Environments",
+          subtitle: "With experience working with financial and banking systems, I support organizations in designing and implementing infrastructures and processes that combine regulatory requirements, complex business logic and advanced user experience.",
           cards: [
-            {
-              title: "Credit Lifecycle",
-              desc: "Designing and implementing end-to-end processes — from customer request to fund release.",
-            },
-            {
-              title: "Deposits and Savings",
-              desc: "Building complex business logic within organizational information systems.",
-            },
-            {
-              title: "Banking Digitization",
-              desc: "Adapting legacy systems to the modern digital and open-banking era.",
-            },
+            { title: "Designing and implementing end-to-end credit and loan management systems.", desc: "" },
+            { title: "Developing solutions for deposit and savings management.", desc: "" },
+            { title: "Digitizing financial processes.", desc: "" },
+            { title: "Integration with existing systems and advanced technology environments.", desc: "" },
           ],
           result: {
-            title: "Added Value",
-            desc:
-              "A precise connection between business requirements, underwriting, risk, and technological development.",
+            title: "Value to the Organization",
+            desc: "Combining deep business and financial understanding with precise technical implementation, effectively bridging regulatory, risk and development needs.",
+          },
+        },
+        processAutomation: {
+          eyebrow: "PROCESS AUTOMATION",
+          title: "Process Automation and Operational Efficiency",
+          subtitle: "I specialize in identifying operational bottlenecks and transforming manual, complex or inconsistent processes into structured, automated and measurable workflows.",
+          cards: [
+            { title: "Mapping and analyzing existing workflows.", desc: "" },
+            { title: "Identifying weaknesses and inefficiencies.", desc: "" },
+            { title: "Designing suitable information architecture.", desc: "" },
+            { title: "Implementing solutions for more consistent, accurate and transparent operations.", desc: "" },
+          ],
+          result: {
+            title: "Value to the Organization",
+            desc: "Reducing human error, improving operational efficiency, increasing scalability, and gaining up-to-date insights through real-time reports and dashboards.",
           },
         },
       },
@@ -1015,34 +946,27 @@ export const copy = {
     /* ===================== הצהרת נגישות ===================== */
     accessibility: {
       title: "Accessibility Statement",
-      updatedLine: "Website accessibility statement updated on 01.11.2023",
-      intro:
-        "Providing accessible service for people with disabilities is a top priority for us, and we make every reasonable effort to ensure our website is accessible.",
-      levelTitle: "Accessibility level:",
-      levelText:
-        "We have made our best efforts for the website to comply with the Equal Rights for Persons with Disabilities Regulations (Service Accessibility Adjustments), 2013, at AA level, and to follow the WCAG 2.0 guidelines published by the W3C.",
-      adjustmentsTitle: "Accessibility adjustments we implemented:",
+      updatedLine: "Accessibility work in the test site updated: November 20, 2026",
+      intro: "We aim to make our services accessible to people with disabilities and welcome feedback on barriers encountered while using the website.",
+      levelTitle: "Accessibility testing status",
+      levelText: "Technical improvements have been made with Israeli Standard 5568 and AA-level accessibility in mind. A complete accessibility audit has not yet been completed, so this statement does not certify full compliance.",
+      adjustmentsTitle: "Improvements made to the test website",
       adjustments: [
-        "The website is optimized for popular browsers on both desktop and mobile devices.",
-        "Site navigation is simple, clear, and user-friendly.",
-        "Content is organized and written in a clear, detailed manner.",
-        "The website supports a range of screen sizes and resolutions.",
-        "Pages are designed with a simple and user-friendly structure.",
-        "Images include alternative text (Alt Text).",
-        "Users can adjust display size using Ctrl and the mouse wheel.",
-        "No flashing text or unclear elements are used on the site.",
-        "Color contrast is clear and highly readable.",
+        "Keyboard-accessible skip link to the main content.",
+        "Keyboard navigation for controls and form fields.",
+        "Dialogs with managed focus, Escape to close, and focus restoration.",
+        "Associated labels for contact form fields and announced errors.",
+        "Text alternatives for content images.",
+        "Options to adjust text size and enable higher contrast.",
+        "Support for Hebrew, English and Japanese reading directions.",
+        "Support for reduced-motion preferences.",
+        "Responsive layout for desktop and mobile browsers.",
       ],
-      issueTitle: "Found an issue?",
-      issueText:
-        "Despite our efforts, some parts of the website may not be perfectly accessible. If you encounter an accessibility issue, please contact us via the email address listed on the website.",
-      businessArrangementsTitle:
-        "Accessibility arrangements at our business:",
+      issueTitle: "Report an accessibility issue",
+      issueText: "If you encounter an accessibility barrier or need content in an accessible format, email hila@solchi.co.il or yehiel@solchi.co.il and include the page and problem.",
+      businessArrangementsTitle: "Accessibility at our premises",
       businessArrangements: [
-        "Accessible access is available.",
-        "Accessible parking is available nearby and on adjacent streets.",
-        "Accessible restroom facilities are available.",
-        "Clear identification and directional signage are available.",
+        "For information about physical accessibility arrangements before visiting, contact hila@solchi.co.il. Details of on-site accessibility arrangements must be confirmed with company management.",
       ],
     },
   },
@@ -1264,80 +1188,48 @@ export const copy = {
 
       popups: {
         salesforce: {
-          eyebrow: "Salesforce CRM",
-          title: "作業・顧客管理のためのCRMシステム",
-          subtitle:
-            "電力、サービス、インフラ企業向けにカスタマイズされたSalesforceソリューション。問い合わせ、チーム、顧客、業務プロセスを効率的に管理します。",
+          eyebrow: "SALESFORCE",
+          title: "管理と成長を支えるSalesforceプラットフォーム",
+          subtitle: "Salesforceは単なるCRMシステムではありません。ビジネスプロセスの効率化、管理の向上、組織の成長を目的に、プラットフォーム上で各組織に合わせたソリューションを設計・構築します。",
           cards: [
-            {
-              title: "Salesforceのカスタマイズ",
-              desc: "組織構造に合わせたCustom Objects、Workflows、レポートを構築します。",
-            },
-            {
-              title: "業務自動化",
-              desc: "スマートなプロセス、通知、承認フローにより手作業を削減します。",
-            },
-            {
-              title: "顧客・サービス対応管理",
-              desc: "問い合わせ、ステータス、障害、対応履歴を一元的に追跡します。",
-            },
+            { title: "業務フローとデータフローの自動化。", desc: "" },
+            { title: "ポータルと登録プロセスの構築。", desc: "" },
+            { title: "割り当て管理とリアルタイム追跡。", desc: "" },
+            { title: "組織固有のニーズに合わせたデータ構造、オブジェクト、プロセスの最適化。", desc: "" },
           ],
           result: {
-            title: "成果",
-            desc:
-              "情報を集約し、対応時間を改善し、データに基づいた意思決定を可能にするシステムです。",
+            title: "組織にもたらす価値",
+            desc: "手作業を減らして時間を節約し、事業活動の全体像を統一的に把握できる、正確で安定性と柔軟性に優れたシステムを実現します。",
           },
         },
-
-        processAutomation: {
-          eyebrow: "Process Automation",
-          title: "手作業を減らし、成果を増やす",
-          subtitle:
-            "ミスを減らし、作業時間を短縮し、管理の透明性を高める業務プロセス自動化です。",
-          cards: [
-            {
-              title: "業務分析と診断",
-              desc: "現状を分析し、業務上のボトルネックを特定します。",
-            },
-            {
-              title: "情報アーキテクチャ",
-              desc: "手作業や反復作業を自動化するための適切なツールを選定します。",
-            },
-            {
-              title: "導入と変更管理",
-              desc: "チームが効率的で測定可能な自動化業務へ移行できるよう支援します。",
-            },
-          ],
-          result: {
-            title: "成果",
-            desc:
-              "ミスの削減、管理精度の向上、組織パフォーマンスのリアルタイム可視化を実現します。",
-          },
-        },
-
         fintech: {
-          eyebrow: "Fintech Solutions",
-          title: "金融の複雑性を技術的な強みに変える",
-          subtitle:
-            "規制、業務、先進的なユーザー体験を組み合わせた重要な金融システムを設計・構築します。",
+          eyebrow: "FINTECH",
+          title: "複雑な金融分野に対応するテクノロジーソリューション",
+          subtitle: "金融・銀行システムでの経験を活かし、規制要件、複雑なビジネスロジック、先進的なユーザー体験を融合した基盤とプロセスの設計・構築を支援します。",
           cards: [
-            {
-              title: "信用ライフサイクル",
-              desc: "「顧客の申請から資金実行まで、一貫したプロセスを設計・実装します。」",
-            },
-            {
-              title: "預金・貯蓄",
-              desc: "組織の情報システム内に複雑なビジネスロジックを構築します。",
-            },
-            {
-              title: "銀行業務のデジタル化",
-              desc: "Legacyシステムをデジタル時代に適応させます。",
-            },
+            { title: "与信・融資管理システムのエンドツーエンド設計・構築。", desc: "" },
+            { title: "預金・貯蓄管理ソリューションの構築。", desc: "" },
+            { title: "金融プロセスのデジタル化。", desc: "" },
+            { title: "既存システムおよび先進的な技術環境への適合。", desc: "" },
           ],
           result: {
-            title: "付加価値",
-            desc:
-              "ビジネス要件、審査、リスク、技術開発を正確につなぎます。",
+            title: "組織にもたらす価値",
+            desc: "金融ビジネスへの深い理解と正確な技術実装を組み合わせ、規制・リスク・開発の要件を効果的につなぎます。",
+          },
+        },
+        processAutomation: {
+          eyebrow: "PROCESS AUTOMATION",
+          title: "プロセス自動化と業務効率化",
+          subtitle: "業務上のボトルネックを見極め、手作業で複雑、あるいは一貫性のないプロセスを、整理された自動化可能で測定可能なプロセスへ変革します。",
+          cards: [
+            { title: "既存業務プロセスの可視化と診断。", desc: "" },
+            { title: "弱点と非効率の特定。", desc: "" },
+            { title: "適切な情報アーキテクチャの設計。", desc: "" },
+            { title: "継続的で正確かつ透明性の高い業務を可能にするソリューションの導入。", desc: "" },
+          ],
+          result: {
+            title: "組織にもたらす価値",
+            desc: "人的ミスの削減、業務効率と拡張性の向上、リアルタイムのレポートとダッシュボードによる最新状況の把握を実現します。",
           },
         },
       },
@@ -1500,33 +1392,27 @@ export const copy = {
     /* ===================== アクセシビリティ ===================== */
     accessibility: {
       title: "アクセシビリティ声明",
-      updatedLine: "ウェブサイトのアクセシビリティ声明 更新日：2023年11月1日",
-      intro:
-        "障がいのある方へのアクセシブルなサービス提供は、当社にとって非常に重要です。当社は可能な限りウェブサイトのアクセシビリティ向上に努めています。",
-      levelTitle: "ウェブサイトのアクセシビリティレベル：",
-      levelText:
-        "当社は、ウェブサイトがイスラエルのアクセシビリティ関連規則およびW3CのWCAG 2.0ガイドラインAAレベルに可能な限り準拠するよう努めています。",
-      adjustmentsTitle: "実施したアクセシビリティ対応：",
+      updatedLine: "テストサイトのアクセシビリティ対応更新日：2026年11月20日",
+      intro: "障がいのある方にもサービスをご利用いただけるよう、ウェブサイトのアクセシビリティ改善に取り組んでいます。問題があればご連絡ください。",
+      levelTitle: "アクセシビリティ検証の状況",
+      levelText: "イスラエル規格5568およびAAレベルを考慮した技術的な改善を行いました。ただし、包括的なアクセシビリティ監査はまだ完了しておらず、すべての要件への適合を保証するものではありません。",
+      adjustmentsTitle: "テストサイトで実施した改善",
       adjustments: [
-        "主要なブラウザ、PC、モバイル端末で閲覧できるよう最適化しています。",
-        "サイトのナビゲーションはシンプルで分かりやすく設計されています。",
-        "コンテンツは整理され、明確に記述されています。",
-        "さまざまな画面サイズと解像度に対応しています。",
-        "ページ構造はシンプルで利用しやすい設計です。",
-        "画像には代替テキスト（Alt Text）を設定しています。",
-        "Ctrlキーとマウスホイールで表示サイズを調整できます。",
-        "点滅するテキストや不明瞭な要素は使用していません。",
-        "色のコントラストは読みやすさを考慮しています。",
+        "キーボードで利用できるメインコンテンツへのスキップリンク。",
+        "ボタンや入力欄のキーボード操作。",
+        "フォーカス管理、Escapeによる閉鎖、元の位置への復帰に対応したダイアログ。",
+        "お問い合わせフォームのラベルとエラー通知。",
+        "コンテンツ画像の代替テキスト。",
+        "文字サイズ変更と高コントラストの切り替え。",
+        "ヘブライ語・英語・日本語の文字方向への対応。",
+        "動きを減らす設定への対応。",
+        "PCとモバイルに対応したレイアウト。",
       ],
-      issueTitle: "問題を見つけましたか？",
-      issueText:
-        "アクセシビリティ向上に努めていますが、一部が完全に対応できていない可能性があります。問題を見つけた場合は、サイトに記載されているメールアドレスまでご連絡ください。",
-      businessArrangementsTitle: "事業所のアクセシビリティ対応：",
+      issueTitle: "アクセシビリティの問題を報告",
+      issueText: "操作上の問題やアクセシブルな形式での情報が必要な場合は、該当ページと問題の内容を添えて hila@solchi.co.il または yehiel@solchi.co.il へご連絡ください。",
+      businessArrangementsTitle: "事業所のアクセシビリティ",
       businessArrangements: [
-        "アクセシブルなアクセスが可能です。",
-        "近隣および周辺道路に障がい者用駐車スペースがあります。",
-        "アクセシブルなトイレ設備があります。",
-        "識別および案内表示があります。",
+        "訪問前の施設のアクセシビリティについては hila@solchi.co.il へお問い合わせください。施設の具体的な設備については会社側の確認が必要です。",
       ],
     },
   },

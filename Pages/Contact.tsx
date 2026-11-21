@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { useI18n } from "../i18n";
 
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
@@ -15,23 +15,31 @@ const CONTACT_EMAILS: Record<string, string> = {
 const Contact: React.FC = () => {
   const { t, lang } = useI18n();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const requestedDivision = searchParams.get("division");
+  const initialDivision =
+    requestedDivision === "electrical" ? "electrical" :
+    requestedDivision === "information_systems" || requestedDivision === "informationSystems" ? "information_systems" : "";
 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    division: "",
+    division: initialDivision,
     subject: "",
     message: "",
   });
 
   const [isSending, setIsSending] = useState(false);
   const [error, setError] = useState("");
+  // Honeypot is a low-friction spam deterrent, not a substitute for server-side limits.
+  const [companyWebsite, setCompanyWebsite] = useState("");
 
   const openMap = () => {
     window.open(
       "https://www.google.com/maps/place/Ha-Vered+St+544,+Kidron,+Israel",
-      "_blank"
+      "_blank",
+      "noopener,noreferrer"
     );
   };
 
@@ -51,6 +59,20 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setError("");
 
+    // Invisible to human visitors and assistive technology; bots may fill this field.
+    if (companyWebsite.trim()) {
+      navigate("/thank-you");
+      return;
+    }
+
+    const clean = {
+      name: formData.name.trim().replace(/[\r\n\x00-\x1F\x7F]/g, " ").slice(0, 120),
+      email: formData.email.trim().slice(0, 254),
+      phone: formData.phone.trim().replace(/[\r\n\x00-\x1F\x7F]/g, "").slice(0, 40),
+      subject: formData.subject.trim().replace(/[\r\n\x00-\x1F\x7F]/g, " ").slice(0, 160),
+      message: formData.message.trim().slice(0, 4000),
+    };
+
     const toEmail = CONTACT_EMAILS[formData.division];
 
     if (!toEmail) {
@@ -58,7 +80,7 @@ const Contact: React.FC = () => {
       return;
     }
 
-    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+    if (!clean.name || !clean.email || !clean.subject || !clean.message) {
       setError(t("contact.errors.requiredFields"));
       return;
     }
@@ -76,12 +98,12 @@ const Contact: React.FC = () => {
         EMAILJS_TEMPLATE_ID,
         {
           to_email: toEmail,
-          from_name: formData.name,
-          from_email: formData.email,
-          phone: formData.phone,
+          from_name: clean.name,
+          from_email: clean.email,
+          phone: clean.phone,
           division: getDivisionLabel(),
-          subject: formData.subject,
-          message: formData.message,
+          subject: clean.subject,
+          message: clean.message,
         },
         { publicKey: EMAILJS_PUBLIC_KEY }
       );
@@ -128,6 +150,9 @@ const Contact: React.FC = () => {
               <div className="space-y-10">
                 <div
                   onClick={openMap}
+                  role="link"
+                  tabIndex={0}
+                  onKeyDown={(e) => { if (e.key === "Enter") openMap(); }}
                   className="flex items-start gap-5 cursor-pointer group"
                 >
                   <div className="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-all transform group-hover:scale-110 duration-300">
@@ -235,11 +260,17 @@ const Contact: React.FC = () => {
             </h2>
 
             <form onSubmit={handleSubmit} className="space-y-6">
+              <div aria-hidden="true" className="absolute -left-[10000px] top-auto h-px w-px overflow-hidden">
+                <label htmlFor="contact-company-website">Company website (leave blank)</label>
+                <input id="contact-company-website" type="text" name="company_website" autoComplete="off" tabIndex={-1} value={companyWebsite} onChange={(e) => setCompanyWebsite(e.target.value)} />
+              </div>
               <div className="space-y-2">
-                <label className="block text-sm font-bold text-slate-700">
+                <label htmlFor="contact-name" className="block text-sm font-bold text-slate-700">
                   {t("contact.fields.fullName")}
                 </label>
                 <input
+                  id="contact-name"
+                  maxLength={120}
                   type="text"
                   required
                   value={formData.name}
@@ -253,10 +284,11 @@ const Contact: React.FC = () => {
               </div>
 
               <div className="space-y-2">
-                <label className="block text-sm font-bold text-slate-700">
+                <label htmlFor="contact-division" className="block text-sm font-bold text-slate-700">
                   {t("contact.fields.division")}
                 </label>
                 <select
+                  id="contact-division"
                   required
                   value={formData.division}
                   onChange={(e) =>
@@ -280,10 +312,12 @@ const Contact: React.FC = () => {
               </div>
 
               <div className="space-y-2">
-                <label className="block text-sm font-bold text-slate-700">
+                <label htmlFor="contact-subject" className="block text-sm font-bold text-slate-700">
                   {t("contact.fields.subject")}
                 </label>
                 <input
+                  id="contact-subject"
+                  maxLength={160}
                   type="text"
                   required
                   value={formData.subject}
@@ -298,10 +332,12 @@ const Contact: React.FC = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="block text-sm font-bold text-slate-700">
+                  <label htmlFor="contact-email" className="block text-sm font-bold text-slate-700">
                     {t("contact.fields.email")}
                   </label>
                   <input
+                  id="contact-email"
+                  maxLength={254}
                     type="email"
                     required
                     value={formData.email}
@@ -315,10 +351,12 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="block text-sm font-bold text-slate-700">
+                  <label htmlFor="contact-phone" className="block text-sm font-bold text-slate-700">
                     {t("contact.fields.phone")}
                   </label>
                   <input
+                  id="contact-phone"
+                  maxLength={40}
                     type="tel"
                     value={formData.phone}
                     onChange={(e) =>
@@ -332,10 +370,12 @@ const Contact: React.FC = () => {
               </div>
 
               <div className="space-y-2">
-                <label className="block text-sm font-bold text-slate-700">
+                <label htmlFor="contact-message" className="block text-sm font-bold text-slate-700">
                   {t("contact.fields.message")}
                 </label>
                 <textarea
+                  id="contact-message"
+                  maxLength={4000}
                   rows={4}
                   required
                   value={formData.message}
@@ -349,7 +389,7 @@ const Contact: React.FC = () => {
               </div>
 
               {error && (
-                <p className="text-red-600 font-bold text-sm">{error}</p>
+                <p role="alert" className="text-red-600 font-bold text-sm">{error}</p>
               )}
 
               <button

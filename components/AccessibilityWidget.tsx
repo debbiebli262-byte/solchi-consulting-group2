@@ -21,8 +21,9 @@ const AccessibilityWidget: React.FC = () => {
   const [hidden, setHidden] = useState<boolean>(false);
 
   const [fontScale, setFontScale] = useState<number>(() => {
-    const saved = Number(localStorage.getItem(FONT_KEY));
-    return Number.isFinite(saved) ? saved : 1;
+    const stored = localStorage.getItem(FONT_KEY);
+    const saved = stored === null ? 1 : Number(stored);
+    return Number.isFinite(saved) ? clamp(saved, MIN_SCALE, MAX_SCALE) : 1;
   });
 
   const [contrast, setContrast] = useState<ContrastMode>(() => {
@@ -81,6 +82,23 @@ const AccessibilityWidget: React.FC = () => {
           smaller: "הקטנת טקסט",
           bigger: "הגדלת טקסט",
         }
+      : lang === "ja"
+      ? {
+          button: "アクセシビリティ",
+          panelTitle: "アクセシビリティ",
+          close: "閉じる",
+          hide: "非表示",
+          textSize: "文字サイズ",
+          contrast: "ハイコントラスト",
+          on: "オン",
+          off: "オフ",
+          reset: "リセット",
+          hiddenHint: "非表示にするにはボタン横の×を押してください。ページを再読み込みすると再表示されます。",
+          minReached: "最小の文字サイズです",
+          maxReached: "最大の文字サイズです",
+          smaller: "文字を小さくする",
+          bigger: "文字を大きくする",
+        }
       : {
           button: "Accessibility",
           panelTitle: "Accessibility",
@@ -133,10 +151,11 @@ const AccessibilityWidget: React.FC = () => {
 
       <div
         id={panelId}
+        hidden={!open}
         className={`fixed bottom-24 left-6 z-[9998] w-72 rounded-2xl bg-white border border-slate-200 shadow-2xl p-4 transition-all duration-300 ${
           open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3 pointer-events-none"
         }`}
-        role="dialog"
+        role="region"
         aria-labelledby={titleId}
         aria-hidden={!open}
         dir={lang === "he" ? "rtl" : "ltr"}

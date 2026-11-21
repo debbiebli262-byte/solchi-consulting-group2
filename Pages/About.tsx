@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useI18n } from "../i18n";
 
 const About: React.FC = () => {
@@ -43,7 +44,7 @@ const About: React.FC = () => {
       <section className="relative -mt-10 z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Electricity Card */}
-          <div className="group bg-slate-900 rounded-[2.5rem] p-8 md:p-10 border border-blue-500/30 shadow-[0_0_40px_rgba(59,130,246,0.22)] hover:shadow-[0_0_60px_rgba(59,130,246,0.35)] hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+          <Link to="/electricity" aria-label={t("about.divisions.electricity.title")} className="group block cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-500 bg-slate-900 rounded-[2.5rem] p-8 md:p-10 border border-blue-500/30 shadow-[0_0_40px_rgba(59,130,246,0.22)] hover:shadow-[0_0_60px_rgba(59,130,246,0.35)] hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
             <div className="absolute -top-16 -left-16 w-40 h-40 bg-blue-600/25 blur-3xl rounded-full"></div>
 
@@ -75,10 +76,10 @@ const About: React.FC = () => {
                 </svg>
               </div>
             </div>
-          </div>
+          </Link>
 
           {/* Information Systems Card */}
-          <div className="group bg-slate-900 rounded-[2.5rem] p-8 md:p-10 border border-indigo-500/30 shadow-[0_0_40px_rgba(99,102,241,0.22)] hover:shadow-[0_0_60px_rgba(99,102,241,0.35)] hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+          <Link to="/is" aria-label={t("about.divisions.informationSystems.title")} className="group block cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-500 bg-slate-900 rounded-[2.5rem] p-8 md:p-10 border border-indigo-500/30 shadow-[0_0_40px_rgba(99,102,241,0.22)] hover:shadow-[0_0_60px_rgba(99,102,241,0.35)] hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
             <div className="absolute -top-16 -left-16 w-40 h-40 bg-indigo-600/25 blur-3xl rounded-full"></div>
 
@@ -163,7 +164,7 @@ const About: React.FC = () => {
                 </svg>
               </div>
             </div>
-          </div>
+          </Link>
         </div>
       </section>
 

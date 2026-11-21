@@ -7,8 +7,17 @@ html {
 }
 
 /* ניגודיות גבוהה */
-body.a11y-high-contrast {
+body.a11y-high-contrast main,
+body.a11y-high-contrast header,
+body.a11y-high-contrast footer {
   filter: contrast(1.25);
+}
+
+/* Keep the accessibility controls pinned to the mobile viewport. */
+@supports (bottom: env(safe-area-inset-bottom)) {
+  body > div.fixed:has(button[aria-controls]) {
+    bottom: max(1.5rem, env(safe-area-inset-bottom));
+  }
 }
 
 /* פוקוס ברור למקלדת */

@@ -13,13 +13,14 @@ import Accessibility from "./Pages/Accessibility";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import AccessibilityWidget from "./components/AccessibilityWidget";
+import { scrollToPageTop } from "./components/scrollToPageTop";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   const { t } = useI18n();
   const previousPath = React.useRef(pathname);
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     const labels: Record<string, string> = {
       "/": t("nav.home"),
       "/about": t("nav.about"),
@@ -30,8 +31,8 @@ const ScrollToTop = () => {
     };
     document.title = `${labels[pathname] ?? "SOLCHI"} | SOLCHI`;
     if (previousPath.current !== pathname) {
-      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-      document.getElementById("main")?.focus();
+      document.getElementById("main")?.focus({ preventScroll: true });
+      scrollToPageTop();
     }
     previousPath.current = pathname;
   }, [pathname, t]);

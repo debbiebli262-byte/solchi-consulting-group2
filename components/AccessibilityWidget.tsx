@@ -1,4 +1,5 @@
 import React, { useEffect, useId, useState } from "react";
+import { createPortal } from "react-dom";
 import { useI18n } from "../i18n";
 
 type ContrastMode = "normal" | "high";
@@ -119,7 +120,7 @@ const AccessibilityWidget: React.FC = () => {
 
   if (hidden) return null;
 
-  return (
+  return createPortal(
     <>
       <div className="fixed bottom-6 left-6 z-[9999] pointer-events-auto">
         <div className="relative">
@@ -248,7 +249,8 @@ const AccessibilityWidget: React.FC = () => {
           {labels.hiddenHint}
         </div>
       </div>
-    </>
+    </>,
+    document.body
   );
 };
 

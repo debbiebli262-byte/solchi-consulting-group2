@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Lang, useI18n } from "../i18n";
+import { scrollToPageTop } from "./scrollToPageTop";
 
 const languages: { code: Lang; label: string; flagSrc: string }[] = [
   { code: "he", label: "עברית", flagSrc: "https://flagcdn.com/il.svg" },
@@ -31,11 +32,11 @@ const Navbar: React.FC = () => {
   );
 
   const handleNavClick = (to: string) => {
+    setOpen(false);
     if (location.pathname === to) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      const main = document.getElementById("main");
-      main?.focus();
+      document.getElementById("main")?.focus({ preventScroll: true });
     }
+    scrollToPageTop();
   };
 
   const currentLanguage =

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useI18n } from "../i18n";
+import { scrollToPageTop } from "./scrollToPageTop";
 
 const Footer: React.FC = () => {
   const { t, lang } = useI18n();
@@ -38,19 +39,19 @@ const Footer: React.FC = () => {
 
             <ul className="space-y-4 text-slate-400">
               <li>
-                <Link to="/">{t("footer.nav.home")}</Link>
+                <Link to="/" onClick={scrollToPageTop}>{t("footer.nav.home")}</Link>
               </li>
               <li>
-                <Link to="/about">{t("footer.nav.about")}</Link>
+                <Link to="/about" onClick={scrollToPageTop}>{t("footer.nav.about")}</Link>
               </li>
               <li>
-                <Link to="/electricity">{t("footer.nav.electricity")}</Link>
+                <Link to="/electricity" onClick={scrollToPageTop}>{t("footer.nav.electricity")}</Link>
               </li>
               <li>
-                <Link to="/is">{t("footer.nav.is")}</Link>
+                <Link to="/is" onClick={scrollToPageTop}>{t("footer.nav.is")}</Link>
               </li>
               <li>
-                <Link to="/contact">{t("footer.nav.contact")}</Link>
+                <Link to="/contact" onClick={scrollToPageTop}>{t("footer.nav.contact")}</Link>
               </li>
             </ul>
           </div>
@@ -129,7 +130,7 @@ const Footer: React.FC = () => {
           </p>
 
           <div>
-            <Link to="/accessibility">{t("footer.accessibility")}</Link>
+            <Link to="/accessibility" onClick={scrollToPageTop}>{t("footer.accessibility")}</Link>
           </div>
         </div>
       </div>

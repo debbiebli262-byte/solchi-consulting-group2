@@ -83,7 +83,7 @@ const Footer: React.FC = () => {
                   <p className="text-sm text-slate-400 mb-1">
                     {lang === "he"
                       ? "מנהלת מערכות מידע"
-                      : "Information Systems Manager"}
+                      : lang === "ja" ? "情報システム部門責任者" : "Information Systems Manager"}
                   </p>
               
                   <a
@@ -105,7 +105,7 @@ const Footer: React.FC = () => {
                   <p className="text-sm text-slate-400 mb-1">
                     {lang === "he"
                       ? "מנהל חטיבת החשמל"
-                      : "Head of Electrical Division"}
+                      : lang === "ja" ? "電力部門責任者" : "Head of Electrical Division"}
                   </p>
               
                   <a

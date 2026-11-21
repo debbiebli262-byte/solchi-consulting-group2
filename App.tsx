@@ -1,4 +1,5 @@
 import React from "react";
+import { useI18n } from "./i18n";
 import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
 
 import Home from "./Pages/Home";
@@ -15,10 +16,25 @@ import AccessibilityWidget from "./components/AccessibilityWidget";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
+  const { t } = useI18n();
+  const previousPath = React.useRef(pathname);
 
   React.useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-  }, [pathname]);
+    const labels: Record<string, string> = {
+      "/": t("nav.home"),
+      "/about": t("nav.about"),
+      "/electricity": t("nav.electricity"),
+      "/is": t("nav.is"),
+      "/contact": t("nav.contact"),
+      "/accessibility": t("footer.accessibility"),
+    };
+    document.title = `${labels[pathname] ?? "SOLCHI"} | SOLCHI`;
+    if (previousPath.current !== pathname) {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      document.getElementById("main")?.focus();
+    }
+    previousPath.current = pathname;
+  }, [pathname, t]);
 
   return null;
 };

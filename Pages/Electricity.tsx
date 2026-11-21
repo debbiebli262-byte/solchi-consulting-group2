@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
+import { ElectricityTopicModal } from "../components/ElectricityTopicModal";
 import { useI18n } from "../i18n";
 
 const Electricity: React.FC = () => {
   const { t, lang } = useI18n();
+  const [activeTopic, setActiveTopic] = useState<number | null>(null);
+  const closeTopic = useCallback(() => setActiveTopic(null), []);
 
   const clients = [
     {
@@ -18,6 +21,21 @@ const Electricity: React.FC = () => {
     {
       src: "/logos/EDF_Energy_logo.svg.png",
       alt: "EDF Energy",
+      className: "max-h-16 w-auto object-contain hover:scale-105 transition duration-300",
+    },
+    {
+      src: "/logos/MeshekEnergy.png",
+      alt: "משק אנרגיה",
+      className: "max-h-16 w-auto object-contain hover:scale-105 transition duration-300",
+    },
+    {
+      src: "/logos/InterPlus.png",
+      alt: "InterPlus",
+      className: "max-h-16 w-auto object-contain hover:scale-105 transition duration-300",
+    },
+    {
+      src: "/logos/EshkolAvshal.png",
+      alt: "אשכול אבשלום",
       className: "max-h-16 w-auto object-contain hover:scale-105 transition duration-300",
     },
     {
@@ -65,17 +83,17 @@ const Electricity: React.FC = () => {
                 {t("electricity.role")}
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
-                <div className="bg-blue-500/10 backdrop-blur-md border border-blue-500/30 px-4 py-2 rounded-lg text-blue-200 text-sm font-bold">
-                  {t("electricity.badges.energy")}
-                </div>
-
-                <div className="bg-blue-500/10 backdrop-blur-md border border-blue-500/30 px-4 py-2 rounded-lg text-blue-200 text-sm font-bold">
-                  {t("electricity.badges.substations")}
-                </div>
-
-                <div className="bg-blue-500/10 backdrop-blur-md border border-blue-500/30 px-4 py-2 rounded-lg text-blue-200 text-sm font-bold">
-                  {t("electricity.badges.gis")}
-                </div>
+                {[0, 1, 2].map((i) => (
+                  <button
+                    key={i}
+                    type="button"
+                    aria-haspopup="dialog"
+                    onClick={() => setActiveTopic(i)}
+                    className="relative rounded-lg border border-blue-500/30 bg-blue-500/10 px-4 py-2 text-sm font-bold text-blue-200 backdrop-blur-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-blue-300 hover:bg-blue-500/25 hover:text-white hover:shadow-[0_0_16px_rgba(59,130,246,0.7),0_0_36px_rgba(37,99,235,0.42)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-300"
+                  >
+                    {t(i === 0 ? "electricity.badges.energy" : i === 1 ? "electricity.badges.substations" : "electricity.badges.gis")}
+                  </button>
+                ))}
               </div>
             </div>
 
@@ -134,6 +152,7 @@ const Electricity: React.FC = () => {
                 tabIndex={0}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
                     const section = document.getElementById("planning-services");
                     section?.scrollIntoView({ behavior: "smooth" });
                   }
@@ -242,6 +261,7 @@ const Electricity: React.FC = () => {
           </div>
         </div>
       </section>
+      <ElectricityTopicModal topic={activeTopic} close={closeTopic} />
     </div>
   );
 };

@@ -143,6 +143,12 @@ const Navbar: React.FC = () => {
     <>
       <a
         href="#main"
+        onClick={(event) => {
+          event.preventDefault();
+          const main = document.getElementById("main");
+          main?.scrollIntoView({ behavior: "auto", block: "start" });
+          main?.focus();
+        }}
         className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 bg-white border border-slate-200 px-4 py-2 rounded-lg z-[9999] font-bold text-slate-800"
       >
         {labels.skip}

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useI18n } from "../i18n";
+import ContactPhone, { normalizeContactPhone } from "../components/ContactPhone";
+import type { CountryCode } from "libphonenumber-js";
 
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
@@ -30,6 +32,8 @@ const Contact: React.FC = () => {
     message: "",
   });
 
+  const [phoneCountry, setPhoneCountry] = useState<CountryCode>("IL");
+  const [invalidPhone, setInvalidPhone] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [error, setError] = useState("");
   // Honeypot is a low-friction spam deterrent, not a substitute for server-side limits.
@@ -65,10 +69,18 @@ const Contact: React.FC = () => {
       return;
     }
 
+    const phone = normalizeContactPhone(formData.phone, phoneCountry);
+    if (phone === null) {
+      setInvalidPhone(true);
+      document.getElementById("contact-phone")?.focus();
+      return;
+    }
+    setInvalidPhone(false);
+
     const clean = {
       name: formData.name.trim().replace(/[\r\n\x00-\x1F\x7F]/g, " ").slice(0, 120),
       email: formData.email.trim().slice(0, 254),
-      phone: formData.phone.trim().replace(/[\r\n\x00-\x1F\x7F]/g, "").slice(0, 40),
+      phone,
       subject: formData.subject.trim().replace(/[\r\n\x00-\x1F\x7F]/g, " ").slice(0, 160),
       message: formData.message.trim().slice(0, 4000),
     };
@@ -119,7 +131,7 @@ const Contact: React.FC = () => {
 
       navigate("/thank-you");
     } catch (err) {
-      console.error("EmailJS error:", err);
+      console.error("EmailJS request failed.");
       setError(t("contact.errors.sendFailed"));
     } finally {
       setIsSending(false);
@@ -330,7 +342,7 @@ const Contact: React.FC = () => {
                 />
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-6">
                 <div className="space-y-2">
                   <label htmlFor="contact-email" className="block text-sm font-bold text-slate-700">
                     {t("contact.fields.email")}
@@ -350,23 +362,21 @@ const Contact: React.FC = () => {
                   />
                 </div>
 
-                <div className="space-y-2">
-                  <label htmlFor="contact-phone" className="block text-sm font-bold text-slate-700">
-                    {t("contact.fields.phone")}
-                  </label>
-                  <input
-                  id="contact-phone"
-                  maxLength={40}
-                    type="tel"
-                    value={formData.phone}
-                    onChange={(e) =>
-                      setFormData({ ...formData, phone: e.target.value })
-                    }
-                    className="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all bg-slate-50/50"
-                    placeholder={t("contact.placeholders.phone")}
-                    dir="ltr"
-                  />
-                </div>
+                <ContactPhone
+                  label={t("contact.fields.phone")}
+                  language={lang}
+                  country={phoneCountry}
+                  value={formData.phone}
+                  invalid={invalidPhone}
+                  onCountryChange={(country) => {
+                    setPhoneCountry(country);
+                    setInvalidPhone(false);
+                  }}
+                  onChange={(phone) => {
+                    setFormData((data) => ({ ...data, phone }));
+                    setInvalidPhone(false);
+                  }}
+                />
               </div>
 
               <div className="space-y-2">

@@ -15,7 +15,18 @@
     
     <meta property="og:image" content="https://solchi-consulting-group-d32o.vercel.app/logo.png"> 
     
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Apply the saved direction before the first frame, including on refresh.
+      try {
+        const language = localStorage.getItem("site_lang");
+        if (language === "en" || language === "ja") {
+          document.documentElement.lang = language;
+          document.documentElement.dir = "ltr";
+        }
+      } catch {
+        // Storage may be disabled. The document already defaults to Hebrew.
+      }
+    </script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
